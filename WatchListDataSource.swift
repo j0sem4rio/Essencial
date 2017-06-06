@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WatchListDataSource: NSObject , UITableViewDataSource, WatchListOutputPresenter {
+class WatchListDataSource: NSObject, UITableViewDataSource, WatchListOutputPresenter {
     
     // MARK: Properties
     

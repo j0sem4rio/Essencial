@@ -20,10 +20,10 @@ protocol LeftMenuProtocol : class {
     func changeViewController(_ menu: LeftMenu)
 }
 
-class LeftViewController : UIViewController, LeftMenuProtocol {
+class LeftViewController: UIViewController, LeftMenuProtocol {
     
     @IBOutlet weak var tableView: UITableView!
-    var menuToReturn = [Dictionary<String,String>]()
+    var menuToReturn = [[String: String]]()
     var mainViewController: UIViewController!
     var swiftViewController: UIViewController!
     var javaViewController: UIViewController!
@@ -91,10 +91,7 @@ class LeftViewController : UIViewController, LeftMenuProtocol {
     }
     
     func addChildView(_ storyBoardID: String, titleOfChildren: String, iconName: String) {
-        
-        
-        
-        menuToReturn.append(["title":titleOfChildren, "icon":iconName])
+        menuToReturn.append(["title": titleOfChildren, "icon": iconName])
     }
 }
 
@@ -136,10 +133,7 @@ extension LeftViewController : UITableViewDataSource {
         }
     }
 }
-
-
 extension LeftViewController: UIScrollViewDelegate {
-    
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if self.tableView == scrollView {

@@ -21,24 +21,23 @@ extension UIColor {
         }
         
         let scanner = Scanner(string: hexWithoutSymbol)
-        var hexInt:UInt32 = 0x0
+        var hexInt: UInt32 = 0x0
         scanner.scanHexInt32(&hexInt)
         
-        var r:UInt32!, g:UInt32!, b:UInt32!
-        switch (hexWithoutSymbol.length) {
+        var r: UInt32!, g: UInt32!, b: UInt32!
+        switch  hexWithoutSymbol.length {
         case 3: // #RGB
             r = ((hexInt >> 4) & 0xf0 | (hexInt >> 8) & 0x0f)
             g = ((hexInt >> 0) & 0xf0 | (hexInt >> 4) & 0x0f)
             b = ((hexInt << 4) & 0xf0 | hexInt & 0x0f)
-            break;
+            break
         case 6: // #RRGGBB
             r = (hexInt >> 16) & 0xff
             g = (hexInt >> 8) & 0xff
             b = hexInt & 0xff
-            break;
+            break
         default:
-            // TODO:ERROR
-            break;
+            break
         }
         
         self.init(

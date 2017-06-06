@@ -15,13 +15,12 @@ class MediaEntity: MediaItem {
 //    var slug: String = ""
 //    var banner: NSURL? = nil
 //    var fanart: NSURL? = nil
-//    var poster: NSURL? = nil
-    
+//    var poster: NSURL? = nil    
 //    var runtime: Int = 0
 //    var tagline: String = ""
 //    var summary: String = ""
 
-    public init(title: String?){
+    public init(title: String?) {
         self.title = title!
     }
     public init() {

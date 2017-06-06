@@ -28,15 +28,7 @@ class ExSlideMenuController: SlideMenuController {
         case .leftFlickOpen:
             print("TrackAction: left flick open.")
         case .leftFlickClose:
-            print("TrackAction: left flick close.")
-        case .rightTapOpen:
-            print("TrackAction: right tap open.")
-        case .rightTapClose:
-            print("TrackAction: right tap close.")
-        case .rightFlickOpen:
-            print("TrackAction: right flick open.")
-        case .rightFlickClose:
-            print("TrackAction: right flick close.")
+            print("TrackAction: left flick close.")        
         }
     }
 }

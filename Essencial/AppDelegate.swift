@@ -19,19 +19,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // create viewController code...
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let watchListViewController = storyboard.instantiateViewController(withIdentifier: "WatchListViewController") as! WatchListViewController
-        let leftViewController = storyboard.instantiateViewController(withIdentifier: "LeftViewController") as! LeftViewController
+        let watchListViewController = storyboard.instantiateViewController(withIdentifier: "WatchListViewController") as? WatchListViewController
+        let leftViewController = storyboard.instantiateViewController(withIdentifier: "LeftViewController") as? LeftViewController
         
-        let nvc: UINavigationController = UINavigationController(rootViewController: watchListViewController)
+        let nvc: UINavigationController = UINavigationController(rootViewController: watchListViewController!)
         
         UINavigationBar.appearance().tintColor = UIColor(hex: "ffffff")//cores dos icones
         
-        leftViewController.mainViewController = nvc
+        leftViewController?.mainViewController = nvc
         
-        let slideMenuController = ExSlideMenuController(mainViewController:nvc, leftMenuViewController: leftViewController)
+        let slideMenuController = ExSlideMenuController(mainViewController:nvc, leftMenuViewController: leftViewController!)
         slideMenuController.automaticallyAdjustsScrollViewInsets = true
         slideMenuController.delegate = watchListViewController
-        slideMenuController.changeLeftViewWidth(leftViewController.mainViewController.view.frame.width * 0.8 )
+        slideMenuController.changeLeftViewWidth((leftViewController?.mainViewController.view.frame.width)! * 0.8 )
         
         self.window?.backgroundColor = UIColor(red: 236.0, green: 238.0, blue: 241.0, alpha: 1.0)
         self.window?.rootViewController = slideMenuController
@@ -44,13 +44,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+        
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -64,7 +62,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
-
