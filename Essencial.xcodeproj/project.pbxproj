@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD59ACD11EE6C3D4004DEBE4 /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD59ACD01EE6C3D4004DEBE4 /* SlideMenuController.swift */; };
+		BD59ACD31EE6C54C004DEBE4 /* ExSlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD59ACD21EE6C54C004DEBE4 /* ExSlideMenuController.swift */; };
+		BD59ACD61EE6C5A5004DEBE4 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD59ACD51EE6C5A5004DEBE4 /* UIApplication.swift */; };
+		BD59ACDA1EE6C64B004DEBE4 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD59ACD91EE6C64B004DEBE4 /* UIColor.swift */; };
+		BD59ACDC1EE6C681004DEBE4 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD59ACDB1EE6C681004DEBE4 /* String.swift */; };
+		BD59ACDF1EE6C72E004DEBE4 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD59ACDE1EE6C72E004DEBE4 /* LeftViewController.swift */; };
+		BD59ACE11EE6C78E004DEBE4 /* ImageHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD59ACE01EE6C78E004DEBE4 /* ImageHeaderView.swift */; };
+		BD59ACE31EE6C7AF004DEBE4 /* ImageHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD59ACE21EE6C7AF004DEBE4 /* ImageHeaderView.xib */; };
+		BD59ACE51EE6D000004DEBE4 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD59ACE41EE6D000004DEBE4 /* UIView.swift */; };
+		BD59ACE91EE6D3EA004DEBE4 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD59ACE81EE6D3EA004DEBE4 /* BaseTableViewCell.swift */; };
+		BD59ACEB1EE6D4EC004DEBE4 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD59ACEA1EE6D4EC004DEBE4 /* UITableView.swift */; };
+		BD59ACED1EE6D7C8004DEBE4 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD59ACEC1EE6D7C8004DEBE4 /* UIViewController.swift */; };
 		BDA16F691EE58BFA00164AE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA16F681EE58BFA00164AE2 /* AppDelegate.swift */; };
 		BDA16F6B1EE58BFA00164AE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA16F6A1EE58BFA00164AE2 /* ViewController.swift */; };
 		BDA16F6E1EE58BFA00164AE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDA16F6C1EE58BFA00164AE2 /* Main.storyboard */; };
@@ -41,6 +53,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BD59ACD01EE6C3D4004DEBE4 /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
+		BD59ACD21EE6C54C004DEBE4 /* ExSlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExSlideMenuController.swift; path = ../ExSlideMenuController.swift; sourceTree = "<group>"; };
+		BD59ACD51EE6C5A5004DEBE4 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		BD59ACD91EE6C64B004DEBE4 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		BD59ACDB1EE6C681004DEBE4 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		BD59ACDE1EE6C72E004DEBE4 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
+		BD59ACE01EE6C78E004DEBE4 /* ImageHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHeaderView.swift; sourceTree = "<group>"; };
+		BD59ACE21EE6C7AF004DEBE4 /* ImageHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageHeaderView.xib; sourceTree = "<group>"; };
+		BD59ACE41EE6D000004DEBE4 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		BD59ACE81EE6D3EA004DEBE4 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		BD59ACEA1EE6D4EC004DEBE4 /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		BD59ACEC1EE6D7C8004DEBE4 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		BDA16F651EE58BFA00164AE2 /* Essencial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Essencial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDA16F681EE58BFA00164AE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDA16F6A1EE58BFA00164AE2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Essencial/ViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +112,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD59ACD41EE6C57E004DEBE4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BD59ACD51EE6C5A5004DEBE4 /* UIApplication.swift */,
+				BD59ACD91EE6C64B004DEBE4 /* UIColor.swift */,
+				BD59ACDB1EE6C681004DEBE4 /* String.swift */,
+				BD59ACE41EE6D000004DEBE4 /* UIView.swift */,
+				BD59ACEA1EE6D4EC004DEBE4 /* UITableView.swift */,
+				BD59ACEC1EE6D7C8004DEBE4 /* UIViewController.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		BD59ACDD1EE6C6FE004DEBE4 /* LeftMenu */ = {
+			isa = PBXGroup;
+			children = (
+				BD59ACDE1EE6C72E004DEBE4 /* LeftViewController.swift */,
+				BD59ACE01EE6C78E004DEBE4 /* ImageHeaderView.swift */,
+				BD59ACE21EE6C7AF004DEBE4 /* ImageHeaderView.xib */,
+			);
+			name = LeftMenu;
+			sourceTree = "<group>";
+		};
+		BD59ACE61EE6D3C3004DEBE4 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BD59ACE81EE6D3EA004DEBE4 /* BaseTableViewCell.swift */,
+			);
+			name = TableViewCell;
+			sourceTree = "<group>";
+		};
 		BDA16F5C1EE58BFA00164AE2 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +166,7 @@
 		BDA16F671EE58BFA00164AE2 /* Essencial */ = {
 			isa = PBXGroup;
 			children = (
+				BD59ACD41EE6C57E004DEBE4 /* Extension */,
 				BDA16FA81EE5979C00164AE2 /* Entities */,
 				BDA16FA51EE5927000164AE2 /* Repositories */,
 				BDA16FA21EE5917300164AE2 /* Interactors */,
@@ -118,6 +174,8 @@
 				BDA16F9C1EE58F8A00164AE2 /* Presenters */,
 				BDA16F961EE58C3D00164AE2 /* Views */,
 				BDA16F681EE58BFA00164AE2 /* AppDelegate.swift */,
+				BD59ACD01EE6C3D4004DEBE4 /* SlideMenuController.swift */,
+				BD59ACD21EE6C54C004DEBE4 /* ExSlideMenuController.swift */,
 				BDA16F6F1EE58BFA00164AE2 /* Assets.xcassets */,
 				BDA16F741EE58BFA00164AE2 /* Info.plist */,
 			);
@@ -145,6 +203,7 @@
 		BDA16F961EE58C3D00164AE2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BD59ACE61EE6D3C3004DEBE4 /* TableViewCell */,
 				BDA16F971EE58E9A00164AE2 /* ViewControllers */,
 				BDA16F711EE58BFA00164AE2 /* LaunchScreen.storyboard */,
 				BDA16F6A1EE58BFA00164AE2 /* ViewController.swift */,
@@ -157,6 +216,7 @@
 		BDA16F971EE58E9A00164AE2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BD59ACDD1EE6C6FE004DEBE4 /* LeftMenu */,
 				BDA16F981EE58EE100164AE2 /* WatchListViewController.swift */,
 				BDA16F9A1EE58F2E00164AE2 /* WatchListDataSource.swift */,
 			);
@@ -314,6 +374,7 @@
 				BDA16F731EE58BFA00164AE2 /* LaunchScreen.storyboard in Resources */,
 				BDA16F701EE58BFA00164AE2 /* Assets.xcassets in Resources */,
 				BDA16F6E1EE58BFA00164AE2 /* Main.storyboard in Resources */,
+				BD59ACE31EE6C7AF004DEBE4 /* ImageHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,12 +399,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD59ACD61EE6C5A5004DEBE4 /* UIApplication.swift in Sources */,
 				BDA16F6B1EE58BFA00164AE2 /* ViewController.swift in Sources */,
 				BDA16F991EE58EE100164AE2 /* WatchListViewController.swift in Sources */,
+				BD59ACDF1EE6C72E004DEBE4 /* LeftViewController.swift in Sources */,
+				BD59ACE91EE6D3EA004DEBE4 /* BaseTableViewCell.swift in Sources */,
 				BDA16F9B1EE58F2E00164AE2 /* WatchListDataSource.swift in Sources */,
+				BD59ACDC1EE6C681004DEBE4 /* String.swift in Sources */,
 				BDA16F691EE58BFA00164AE2 /* AppDelegate.swift in Sources */,
+				BD59ACE11EE6C78E004DEBE4 /* ImageHeaderView.swift in Sources */,
 				BDA16F9E1EE58FE900164AE2 /* WatchListOutputPresenter.swift in Sources */,
+				BD59ACEB1EE6D4EC004DEBE4 /* UITableView.swift in Sources */,
+				BD59ACD31EE6C54C004DEBE4 /* ExSlideMenuController.swift in Sources */,
 				BDA16FA71EE592A400164AE2 /* MedialRepository.swift in Sources */,
+				BD59ACD11EE6C3D4004DEBE4 /* SlideMenuController.swift in Sources */,
+				BD59ACED1EE6D7C8004DEBE4 /* UIViewController.swift in Sources */,
+				BD59ACDA1EE6C64B004DEBE4 /* UIColor.swift in Sources */,
+				BD59ACE51EE6D000004DEBE4 /* UIView.swift in Sources */,
 				BDA16FA11EE5909500164AE2 /* MediaItem.swift in Sources */,
 				BDA16FAA1EE597CA00164AE2 /* MediaEntity.swift in Sources */,
 				BDA16FA41EE591B000164AE2 /* ListMedialItensInteractor.swift in Sources */,
@@ -595,6 +667,7 @@
 				BDA16F8F1EE58BFA00164AE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BDA16F901EE58BFB00164AE2 /* Build configuration list for PBXNativeTarget "EssencialTests" */ = {
 			isa = XCConfigurationList;
@@ -603,6 +676,7 @@
 				BDA16F921EE58BFB00164AE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BDA16F931EE58BFB00164AE2 /* Build configuration list for PBXNativeTarget "EssencialUITests" */ = {
 			isa = XCConfigurationList;
@@ -611,6 +685,7 @@
 				BDA16F951EE58BFB00164AE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

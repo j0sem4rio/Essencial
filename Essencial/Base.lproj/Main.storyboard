@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -13,17 +13,17 @@
         <!--Watch List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="WatchListViewController" customModule="Essencial" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WatchListViewController" id="BYZ-38-t0r" customClass="WatchListViewController" customModule="Essencial" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mvk-ay-581">
-                                <rect key="frame" x="16" y="20" width="343" height="647"/>
+                                <rect key="frame" x="16" y="20" width="288" height="548"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -41,6 +41,44 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Left View Controller-->
+        <scene sceneID="JjV-vQ-6YA">
+            <objects>
+                <viewController storyboardIdentifier="LeftViewController" id="xa3-jU-2t1" customClass="LeftViewController" customModule="Essencial" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XV1-Gc-cJv"/>
+                        <viewControllerLayoutGuide type="bottom" id="OBW-hC-tlk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="H9P-Sq-7fu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ior-BU-MVg">
+                                <rect key="frame" x="0.0" y="160" width="320" height="408"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="xa3-jU-2t1" id="Ntn-Lg-UPC"/>
+                                    <outlet property="delegate" destination="xa3-jU-2t1" id="nGQ-IU-cMI"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OBW-hC-tlk" firstAttribute="top" secondItem="ior-BU-MVg" secondAttribute="bottom" id="DeC-vv-Zji"/>
+                            <constraint firstAttribute="trailing" secondItem="ior-BU-MVg" secondAttribute="trailing" id="SbZ-Ho-Rvh"/>
+                            <constraint firstItem="ior-BU-MVg" firstAttribute="leading" secondItem="H9P-Sq-7fu" secondAttribute="leading" id="UNC-AG-1zx"/>
+                            <constraint firstItem="ior-BU-MVg" firstAttribute="top" secondItem="H9P-Sq-7fu" secondAttribute="top" constant="160" id="gcv-C2-ncd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="ior-BU-MVg" id="zD1-sQ-oAg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EXY-TO-fuD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="94" y="-646"/>
         </scene>
     </scenes>
 </document>
