@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SafariServices
 
-class WatchListViewController: UIViewController {
+class WatchListViewController: UIViewController, SFSafariViewControllerDelegate {
 
     // MARK: Outlets
     
@@ -22,6 +23,13 @@ class WatchListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        let safariViewController = SFSafariViewController(url: TraktTVAPI().authorizationURL!)
+//        present(safariViewController, animated: true, completion: nil)
+//        safariViewController.delegate = self       
+    }
+    
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        controller.dismiss(animated: true, completion: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {

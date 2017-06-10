@@ -11,7 +11,6 @@ import UIKit
 class ImageHeaderView: UIView {
     
     @IBOutlet weak var profileImage: UIImageView!
-    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var textEmail: UILabel!
     @IBOutlet weak var textName: UILabel!
     
@@ -22,7 +21,6 @@ class ImageHeaderView: UIView {
         self.profileImage.clipsToBounds = true
         self.profileImage.layer.borderWidth = 0
         self.profileImage.layer.borderColor = UIColor.white.cgColor
-        self.backgroundImage.image = UIImage(named: "header")
         //        self.profileImage.setRandomDownloadImage(80, height: 80)
     }
 }

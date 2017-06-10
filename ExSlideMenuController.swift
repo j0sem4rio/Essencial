@@ -12,7 +12,8 @@ class ExSlideMenuController: SlideMenuController {
     
     override func isTagetViewController() -> Bool {
         if let vc = UIApplication.topViewController() {
-            if vc is WatchListViewController {
+            if vc is WatchListViewController ||
+                vc is LoginTrakt {
                 return true
             }
         }

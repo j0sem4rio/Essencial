@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -41,6 +41,71 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Login Trakt-->
+        <scene sceneID="NRU-Wh-wEJ">
+            <objects>
+                <viewController storyboardIdentifier="LoginTrakt" id="4mv-dS-VC0" customClass="LoginTrakt" customModule="Essencial" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ipC-0g-bZw"/>
+                        <viewControllerLayoutGuide type="bottom" id="Pa6-DI-uGj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3jh-xv-l5g">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="70f-av-ufj" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                <rect key="frame" x="0.0" y="120" width="320" height="43"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="IPe-gb-MF6"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Pin"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="selectedTitle" value="Pin"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="pin"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="selectedLineHeight">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Efv-MF-hZD">
+                                <rect key="frame" x="137" y="189" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="submitPin:" destination="4mv-dS-VC0" eventType="touchUpInside" id="rps-ai-kcv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Efv-MF-hZD" firstAttribute="top" secondItem="70f-av-ufj" secondAttribute="bottom" constant="26" id="3qz-oJ-AJc"/>
+                            <constraint firstAttribute="trailing" secondItem="70f-av-ufj" secondAttribute="trailing" id="8SA-Kt-lw5"/>
+                            <constraint firstItem="70f-av-ufj" firstAttribute="top" secondItem="ipC-0g-bZw" secondAttribute="bottom" constant="100" id="BhC-wE-62A"/>
+                            <constraint firstItem="Efv-MF-hZD" firstAttribute="centerX" secondItem="3jh-xv-l5g" secondAttribute="centerX" id="I7p-Ak-17V"/>
+                            <constraint firstItem="70f-av-ufj" firstAttribute="leading" secondItem="3jh-xv-l5g" secondAttribute="leading" id="K7A-RL-bfZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pinField" destination="70f-av-ufj" id="kvu-8U-kjU"/>
+                        <outlet property="submit" destination="Efv-MF-hZD" id="GuX-ZJ-HXW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WIG-Xv-KUB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="866.25" y="289.43661971830988"/>
         </scene>
         <!--Left View Controller-->
         <scene sceneID="JjV-vQ-6YA">

@@ -15,14 +15,15 @@ public protocol MedialRepository {
 
 open class MedialRepositoryStore: MedialRepository {
     
-    var mediaItens: [MediaItem]
-    
-    public init() {
-        let mediaItem = MediaEntity(title: "teste")
-        self.mediaItens = [mediaItem]
-    }
-    
+    var mediaItens: [MediaItem] = []    
+
     open func all() -> [MediaItem] {
+//        TraktTVAPI().scrobble(id: "tt0372784", progress: 0, type: .Movies, status: .Watching) { (medias) in
+//            self.mediaItens = medias
+//        }
+        TraktTVAPI().getList { (medias) in
+            self.mediaItens = medias
+        }
         return mediaItens
     }
     

@@ -1,15 +1,25 @@
 PODS:
   - Alamofire (4.4.0)
+  - RxCocoa (3.4.1):
+    - RxSwift (~> 3.4)
+  - RxSwift (3.4.1)
+  - SkyFloatingLabelTextField (3.1.0)
   - SwiftLint (0.18.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
+  - RxCocoa
+  - RxSwift
+  - SkyFloatingLabelTextField
   - SwiftLint
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  RxCocoa: a8a5f1d061d0043e28f56976829f31ce63e8eb09
+  RxSwift: 656f8fbeca5bc372121a72d9ebdd3cd3bc0ffade
+  SkyFloatingLabelTextField: 26a92ad407044dd5a7c3e4e348738ff0991514fe
   SwiftLint: b467d08f5b25dc3b3cfed243d8e1b74b91714c67
 
-PODFILE CHECKSUM: 9904a4a991027d23e595626e888ae0fa6d308db7
+PODFILE CHECKSUM: 69ac2f99d13c21c28937df7bc6a9da5343090485
 
 COCOAPODS: 1.2.0

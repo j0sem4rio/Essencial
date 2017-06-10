@@ -34,5 +34,16 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLName</key>
+            <string>Mario-Corp.Essencial</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>Essencial</string>
+            </array>
+        </dict>
+    </array>
 </dict>
 </plist>

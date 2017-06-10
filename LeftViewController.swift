@@ -10,10 +10,7 @@ import UIKit
 
 enum LeftMenu: String {
     case Main = "HOME"
-//    case Swift = "CONTACT"
-//    case Java = "LOVE"
-//    case Go = "SETTINGS"
-//    case NonMenu = "NonMenu"
+    case Login = "LOGIN"
 }
 
 protocol LeftMenuProtocol : class {
@@ -25,7 +22,7 @@ class LeftViewController: UIViewController, LeftMenuProtocol {
     @IBOutlet weak var tableView: UITableView!
     var menuToReturn = [[String: String]]()
     var mainViewController: UIViewController!
-    var swiftViewController: UIViewController!
+    var loginTrakt: UIViewController!
     var javaViewController: UIViewController!
     var goViewController: UIViewController!
     var nonMenuViewController: UIViewController!
@@ -40,53 +37,40 @@ class LeftViewController: UIViewController, LeftMenuProtocol {
         self.tableView.separatorColor = UIColor(red: 224/255, green: 224/255, blue: 224/255, alpha: 1.0)
         
         addChildView("HomeScreenID", titleOfChildren: "HOME", iconName: "home")
-        addChildView("ContactScreenID", titleOfChildren: "CONTACT", iconName: "contact")
-        addChildView("LoveScreenID", titleOfChildren: "LOVE", iconName: "love")
-        addChildView("SettingsScreenID", titleOfChildren: "SETTINGS", iconName: "settings")
+        addChildView("ContactScreenID", titleOfChildren: "LOGIN", iconName: "config")
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let swiftViewController = storyboard.instantiateViewController(withIdentifier: "SwiftViewController") as! SwiftViewController
-//        self.swiftViewController = UINavigationController(rootViewController: swiftViewController)
-//        
-//        let javaViewController = storyboard.instantiateViewController(withIdentifier: "JavaViewController") as! JavaViewController
-//        self.javaViewController = UINavigationController(rootViewController: javaViewController)
-//        
-//        let goViewController = storyboard.instantiateViewController(withIdentifier: "GoViewController") as! GoViewController
-//        self.goViewController = UINavigationController(rootViewController: goViewController)
-//        
-//        let nonMenuController = storyboard.instantiateViewController(withIdentifier: "NonMenuController") as! NonMenuController
-//        nonMenuController.delegate = self
-//        self.nonMenuViewController = UINavigationController(rootViewController: nonMenuController)
+        let loginTrakt = storyboard.instantiateViewController(withIdentifier: "LoginTrakt") as? LoginTrakt
+        self.loginTrakt = UINavigationController(rootViewController: loginTrakt!)
         
         self.tableView.registerCellClass(BaseTableViewCell.self)
         
         self.imageHeaderView = ImageHeaderView.loadNib()
         self.view.addSubview(self.imageHeaderView)
+        setUser()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.imageHeaderView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 160)
+        self.view.layoutIfNeeded()
+    }
+    
+    func setUser() {
+        self.imageHeaderView.textName.text =  "Não Logado"
+        self.imageHeaderView.textEmail.text = "Não Logado"
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        self.imageHeaderView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 160)
-        self.imageHeaderView.profileImage.image = UIImage(named: "icon")
-        self.view.layoutIfNeeded()
-    }
-    
     func changeViewController(_ menu: LeftMenu) {
         switch menu {
         case .Main:
             self.slideMenuController()?.changeMainViewController(self.mainViewController, close: true)
-//        case .Swift:
-//            self.slideMenuController()?.changeMainViewController(self.swiftViewController, close: true)
-//        case .Java:
-//            self.slideMenuController()?.changeMainViewController(self.javaViewController, close: true)
-//        case .Go:
-//            self.slideMenuController()?.changeMainViewController(self.goViewController, close: true)
-//        case .NonMenu:
-//            self.slideMenuController()?.changeMainViewController(self.nonMenuViewController, close: true)
+        case .Login:
+            self.slideMenuController()?.changeMainViewController(self.loginTrakt, close: true)
         }
     }
     
@@ -99,7 +83,7 @@ extension LeftViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if let menu = LeftMenu(rawValue: menuToReturn[indexPath.item]["title"]!) {
             switch menu {
-            case .Main:
+            case .Main, .Login:
                 return BaseTableViewCell.height()
             }
         }
@@ -117,7 +101,7 @@ extension LeftViewController : UITableViewDataSource {
         
         if let menu = LeftMenu(rawValue: menuToReturn[indexPath.row]["title"]!) {
             switch menu {
-            case .Main:
+            case .Main, .Login:
                 let cell = BaseTableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: BaseTableViewCell.identifier)
                 cell.setData(menuToReturn[indexPath.row]["title"]!)
                 cell.img.image = UIImage(named: menuToReturn[indexPath.row]["icon"]!)

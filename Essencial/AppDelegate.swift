@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 let medialRepositoryStore = MedialRepositoryStore()
 
 @UIApplicationMain
@@ -15,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     fileprivate func createMenuView() {
-        
+
         // create viewController code...
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
@@ -43,6 +44,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        guard let query = url.query else { return false }
+        guard let code = query.components(separatedBy: "=").last else { return false }
+        print(code)
+        
+        return true
+    }
+    
+    func application(_ application: UIApplication, handleOpen url: URL) -> Bool {
+        let urlString = url.absoluteString
+        print(urlString)
+        
+        return true
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         
     }
