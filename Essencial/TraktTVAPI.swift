@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import AlamofireObjectMapper
 
 class TraktTVAPI {
     
@@ -114,25 +115,45 @@ class TraktTVAPI {
             parameters: ["extended": "images"],
             headers: headers).responseJSON { response in
                 
-                if let data = response.result.value {
+//                if let data = response.result.value {
 //                    let data = text.data(using: .utf8)
-                    var names = [String]()
-                    
-                    do {
-                        
-                       let d = try JSONSerialization.data(withJSONObject: data, options: [])
-                       let json = try JSONSerialization.jsonObject(with: d, options: []) as? [String: Any]
-                        print(json)
-                        
-                    } catch {
-                        print("Error deserializing JSON: \(error)")
-                    }
-                    
-                }
+//                    var names = [String]()
+//                    
+//                    do {
+//                        
+//                       let d = try JSONSerialization.data(withJSONObject: data, options: [])
+//                       let json = try JSONSerialization.jsonObject(with: d, options: []) as? [String: Any]
+//                        print(json)
+//                        
+//                    } catch {
+//                        print("Error deserializing JSON: \(error)")
+//                    }
+//                    
+//                }
         }
         
     }
     
+    func profile(completion: @escaping (_ background: UserEntity) -> Void) {
+        let credential = defs.string(forKey: "password_preference")
+        Alamofire.request("https://api.trakt.tv/users/id/\(credential ?? "")",
+            headers: ["trakt-api-key": clientId, "trakt-api-version": "2"]).responseObject { (response: DataResponse<UserEntity>) in
+                
+                switch response.result {
+                case .success(let posts):
+                    
+                        print("JSON: \(posts)")
+                        completion(posts)
+                    
+                    
+                case .failure( _):
+                    if let json = response.result.value {
+                        print("JSON: \(json)")
+                        completion(UserEntity())
+                    }
+                }
+        }
+    }
     func convertToDictionary(text: String) -> [String: Any]? {
         if let data = text.data(using: .utf8) {
             do {

@@ -23,6 +23,11 @@
 		BD59ACED1EE6D7C8004DEBE4 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD59ACEC1EE6D7C8004DEBE4 /* UIViewController.swift */; };
 		BD59ACF31EE7190F004DEBE4 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD59ACF21EE7190F004DEBE4 /* MenuController.swift */; };
 		BD59AF631EE9B2D8004DEBE4 /* LoginTrakt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD59AF621EE9B2D8004DEBE4 /* LoginTrakt.swift */; };
+		BD881FA21EEF6764001A0FEB /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD881FA11EEF6764001A0FEB /* UserEntity.swift */; };
+		BD981AD81EF0248500458123 /* LeftMenuViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD981AD71EF0248500458123 /* LeftMenuViewProtocols.swift */; };
+		BD981ADB1EF04D3F00458123 /* UserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD981ADA1EF04D3F00458123 /* UserPresenter.swift */; };
+		BD981ADE1EF0503D00458123 /* UserRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD981ADD1EF0503D00458123 /* UserRemoteDataManager.swift */; };
+		BD981AE11EF052A900458123 /* UserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD981AE01EF052A900458123 /* UserInteractor.swift */; };
 		BDA16F691EE58BFA00164AE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA16F681EE58BFA00164AE2 /* AppDelegate.swift */; };
 		BDA16F6B1EE58BFA00164AE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA16F6A1EE58BFA00164AE2 /* ViewController.swift */; };
 		BDA16F6E1EE58BFA00164AE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDA16F6C1EE58BFA00164AE2 /* Main.storyboard */; };
@@ -79,6 +84,11 @@
 		BD59ACEC1EE6D7C8004DEBE4 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		BD59ACF21EE7190F004DEBE4 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		BD59AF621EE9B2D8004DEBE4 /* LoginTrakt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTrakt.swift; sourceTree = "<group>"; };
+		BD881FA11EEF6764001A0FEB /* UserEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
+		BD981AD71EF0248500458123 /* LeftMenuViewProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuViewProtocols.swift; sourceTree = "<group>"; };
+		BD981ADA1EF04D3F00458123 /* UserPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPresenter.swift; sourceTree = "<group>"; };
+		BD981ADD1EF0503D00458123 /* UserRemoteDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRemoteDataManager.swift; sourceTree = "<group>"; };
+		BD981AE01EF052A900458123 /* UserInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInteractor.swift; sourceTree = "<group>"; };
 		BDA16F651EE58BFA00164AE2 /* Essencial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Essencial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDA16F681EE58BFA00164AE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDA16F6A1EE58BFA00164AE2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Essencial/ViewController.swift; sourceTree = "<group>"; };
@@ -172,11 +182,14 @@
 		BD59ACDD1EE6C6FE004DEBE4 /* LeftMenu */ = {
 			isa = PBXGroup;
 			children = (
-				BD59ACDE1EE6C72E004DEBE4 /* LeftViewController.swift */,
-				BD59ACE01EE6C78E004DEBE4 /* ImageHeaderView.swift */,
-				BD59ACE21EE6C7AF004DEBE4 /* ImageHeaderView.xib */,
+				BD981ADF1EF0528B00458123 /* Interactor */,
+				BD981ADC1EF0502600458123 /* Remote */,
+				BD981AD91EF04D1C00458123 /* Presenter */,
+				BD981AD61EF0244600458123 /* Protocol */,
+				BD981AD51EF0243400458123 /* View */,
 			);
 			name = LeftMenu;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		BD59ACE61EE6D3C3004DEBE4 /* TableViewCell */ = {
@@ -193,6 +206,48 @@
 				BD59AF621EE9B2D8004DEBE4 /* LoginTrakt.swift */,
 			);
 			name = login;
+			sourceTree = "<group>";
+		};
+		BD981AD51EF0243400458123 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BD59ACDE1EE6C72E004DEBE4 /* LeftViewController.swift */,
+				BD59ACE01EE6C78E004DEBE4 /* ImageHeaderView.swift */,
+				BD59ACE21EE6C7AF004DEBE4 /* ImageHeaderView.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		BD981AD61EF0244600458123 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				BD981AD71EF0248500458123 /* LeftMenuViewProtocols.swift */,
+			);
+			name = Protocol;
+			sourceTree = "<group>";
+		};
+		BD981AD91EF04D1C00458123 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BD981ADA1EF04D3F00458123 /* UserPresenter.swift */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		BD981ADC1EF0502600458123 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				BD981ADD1EF0503D00458123 /* UserRemoteDataManager.swift */,
+			);
+			name = Remote;
+			sourceTree = "<group>";
+		};
+		BD981ADF1EF0528B00458123 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				BD981AE01EF052A900458123 /* UserInteractor.swift */,
+			);
+			name = Interactor;
 			sourceTree = "<group>";
 		};
 		BDA16F5C1EE58BFA00164AE2 = {
@@ -220,6 +275,7 @@
 		BDA16F671EE58BFA00164AE2 /* Essencial */ = {
 			isa = PBXGroup;
 			children = (
+				BD59ACDD1EE6C6FE004DEBE4 /* LeftMenu */,
 				BDA32F861EE7862700078E1B /* Api */,
 				BD59ACD41EE6C57E004DEBE4 /* Extension */,
 				BDA16FA81EE5979C00164AE2 /* Entities */,
@@ -273,7 +329,6 @@
 			isa = PBXGroup;
 			children = (
 				BD59AF611EE9B225004DEBE4 /* login */,
-				BD59ACDD1EE6C6FE004DEBE4 /* LeftMenu */,
 				BDA16F981EE58EE100164AE2 /* WatchListViewController.swift */,
 				BDA16F9A1EE58F2E00164AE2 /* WatchListDataSource.swift */,
 			);
@@ -316,6 +371,7 @@
 			isa = PBXGroup;
 			children = (
 				BDA16FA91EE597CA00164AE2 /* MediaEntity.swift */,
+				BD881FA11EEF6764001A0FEB /* UserEntity.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -628,9 +684,13 @@
 				BD59ACD61EE6C5A5004DEBE4 /* UIApplication.swift in Sources */,
 				BD59ACF31EE7190F004DEBE4 /* MenuController.swift in Sources */,
 				BDA16F6B1EE58BFA00164AE2 /* ViewController.swift in Sources */,
+				BD981ADE1EF0503D00458123 /* UserRemoteDataManager.swift in Sources */,
+				BD881FA21EEF6764001A0FEB /* UserEntity.swift in Sources */,
+				BD981AE11EF052A900458123 /* UserInteractor.swift in Sources */,
 				BDA16F991EE58EE100164AE2 /* WatchListViewController.swift in Sources */,
 				BD59ACDF1EE6C72E004DEBE4 /* LeftViewController.swift in Sources */,
 				BD59ACE91EE6D3EA004DEBE4 /* BaseTableViewCell.swift in Sources */,
+				BD981AD81EF0248500458123 /* LeftMenuViewProtocols.swift in Sources */,
 				BD59AF631EE9B2D8004DEBE4 /* LoginTrakt.swift in Sources */,
 				BDA16F9B1EE58F2E00164AE2 /* WatchListDataSource.swift in Sources */,
 				BD59ACDC1EE6C681004DEBE4 /* String.swift in Sources */,
@@ -640,6 +700,7 @@
 				BDA16F9E1EE58FE900164AE2 /* WatchListOutputPresenter.swift in Sources */,
 				BD59ACEB1EE6D4EC004DEBE4 /* UITableView.swift in Sources */,
 				BD59ACD31EE6C54C004DEBE4 /* ExSlideMenuController.swift in Sources */,
+				BD981ADB1EF04D3F00458123 /* UserPresenter.swift in Sources */,
 				BDA16FA71EE592A400164AE2 /* MedialRepository.swift in Sources */,
 				BD59ACD11EE6C3D4004DEBE4 /* SlideMenuController.swift in Sources */,
 				BD59ACED1EE6D7C8004DEBE4 /* UIViewController.swift in Sources */,

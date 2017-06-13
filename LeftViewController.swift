@@ -20,6 +20,9 @@ protocol LeftMenuProtocol : class {
 class LeftViewController: UIViewController, LeftMenuProtocol {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    var presenter: UserPresenterProtocol?
+    
     var menuToReturn = [[String: String]]()
     var mainViewController: UIViewController!
     var loginTrakt: UIViewController!
@@ -47,18 +50,13 @@ class LeftViewController: UIViewController, LeftMenuProtocol {
         
         self.imageHeaderView = ImageHeaderView.loadNib()
         self.view.addSubview(self.imageHeaderView)
-        setUser()
+        presenter?.viewDidLoad()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.imageHeaderView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 160)
         self.view.layoutIfNeeded()
-    }
-    
-    func setUser() {
-        self.imageHeaderView.textName.text =  "Não Logado"
-        self.imageHeaderView.textEmail.text = "Não Logado"
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -76,6 +74,18 @@ class LeftViewController: UIViewController, LeftMenuProtocol {
     
     func addChildView(_ storyBoardID: String, titleOfChildren: String, iconName: String) {
         menuToReturn.append(["title": titleOfChildren, "icon": iconName])
+    }
+
+}
+
+extension LeftViewController: LeftMenuViewProtocol {
+    func showPosts(with posts: UserEntity) {
+        self.imageHeaderView.textName.text =  posts.name
+        self.imageHeaderView.textEmail.text = ""
+    }
+    
+    func showError() {
+        
     }
 }
 
