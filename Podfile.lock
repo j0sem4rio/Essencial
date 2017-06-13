@@ -6,6 +6,7 @@ PODS:
     - Alamofire (~> 4.1)
     - ObjectMapper (~> 2.0)
   - ObjectMapper (2.2.6)
+  - PKHUD (4.2.2)
   - RxCocoa (3.4.1):
     - RxSwift (~> 3.4)
   - RxSwift (3.4.1)
@@ -16,6 +17,7 @@ DEPENDENCIES:
   - Alamofire (~> 4.4)
   - AlamofireImage (~> 3.1)
   - AlamofireObjectMapper (~> 4.0)
+  - PKHUD (~> 4.0)
   - RxCocoa
   - RxSwift
   - SkyFloatingLabelTextField
@@ -26,11 +28,12 @@ SPEC CHECKSUMS:
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
   AlamofireObjectMapper: 435adc82f5b367679bd9e71c4974a54efd0b2521
   ObjectMapper: 042708195cc46c20871cbcbec0453826398273fd
+  PKHUD: 9a3599e04d57676ec14746c40e423a52fb6588c0
   RxCocoa: a8a5f1d061d0043e28f56976829f31ce63e8eb09
   RxSwift: 656f8fbeca5bc372121a72d9ebdd3cd3bc0ffade
   SkyFloatingLabelTextField: 26a92ad407044dd5a7c3e4e348738ff0991514fe
   SwiftLint: b467d08f5b25dc3b3cfed243d8e1b74b91714c67
 
-PODFILE CHECKSUM: 5d86d085c62d0cb8ded765433dfcce06bde30660
+PODFILE CHECKSUM: 18223c4733e3a145fdf88ace03fbcd62d9944450
 
 COCOAPODS: 1.2.0

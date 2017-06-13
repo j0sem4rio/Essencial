@@ -45,7 +45,7 @@ class TraktTVAPI {
         return URLQueryItem(name: key, value: value)
     }
     
-    func scrobble(id: String, progress: Float, type: TraktTVAPI.type, status: TraktTVAPI.status, completion: (_ backgroundImageAsString: [MediaItem]) -> Void ) {
+    func scrobble(id: String, progress: Float, type: TraktTVAPI.type, status: TraktTVAPI.status, completion: (_ backgroundImageAsString: [MediaEntity]) -> Void ) {
         
         let credential = defs.string(forKey: "password_preference")
             var parameters = [String: Any]()
@@ -100,9 +100,32 @@ class TraktTVAPI {
             }
         }
     }
-    func getList(completion: (_ background: [MediaItem] ) -> Void) {
+    
+    func watchList(type: TraktTVAPI.type, completion: @escaping (_ background: [MediaEntity] ) -> Void) {
+        let credential = defs.string(forKey: "access_token")
+        let headers = [
+            "trakt-api-key": self.clientId,
+            "Accept": "application/json",
+            "trakt-api-version": "2",
+            "Authorization": "Bearer \(credential ?? "")"
+        ]
         
-        let credential = defs.string(forKey: "password_preference")
+        Alamofire.request("https://api.trakt.tv/sync/watchlist/\(type)",
+                          method: .get,
+                          parameters: ["extended": "images"],
+                          headers: headers).responseArray(completionHandler: { (response: DataResponse<[MediaEntity]>) in
+                            switch response.result {
+                            case .success(let posts):
+                                completion(posts)
+                            case .failure( _):
+                                completion([])
+                            }
+                          })
+    }
+    
+    func getList(completion: @escaping (_ background: [MediaEntity] ) -> Void) {
+        
+        let credential = defs.string(forKey: "access_token")
         let headers = [
             "trakt-api-key": self.clientId,
             "Accept": "application/json",
@@ -111,31 +134,20 @@ class TraktTVAPI {
         ]
         
         Alamofire.request("https://api.trakt.tv/shows/trending",
-                        method: .get,
-            parameters: ["extended": "images"],
-            headers: headers).responseJSON { response in
-                
-//                if let data = response.result.value {
-//                    let data = text.data(using: .utf8)
-//                    var names = [String]()
-//                    
-//                    do {
-//                        
-//                       let d = try JSONSerialization.data(withJSONObject: data, options: [])
-//                       let json = try JSONSerialization.jsonObject(with: d, options: []) as? [String: Any]
-//                        print(json)
-//                        
-//                    } catch {
-//                        print("Error deserializing JSON: \(error)")
-//                    }
-//                    
-//                }
-        }
-        
+                          method: .get,
+                          parameters: ["extended": "images"],
+                          headers: headers).responseArray(completionHandler: { (response: DataResponse<[MediaEntity]>) in
+                            switch response.result {
+                            case .success(let posts):
+                                completion(posts)
+                            case .failure( _):
+                                completion([])
+                            }
+                          })
     }
     
     func profile(completion: @escaping (_ background: UserEntity) -> Void) {
-        let credential = defs.string(forKey: "password_preference")
+        let credential = defs.string(forKey: "access_token")
         Alamofire.request("https://api.trakt.tv/users/id/\(credential ?? "")",
             headers: ["trakt-api-key": clientId, "trakt-api-version": "2"]).responseObject { (response: DataResponse<UserEntity>) in
                 
@@ -144,7 +156,6 @@ class TraktTVAPI {
                     
                         print("JSON: \(posts)")
                         completion(posts)
-                    
                     
                 case .failure( _):
                     if let json = response.result.value {

@@ -28,6 +28,8 @@
 		BD981ADB1EF04D3F00458123 /* UserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD981ADA1EF04D3F00458123 /* UserPresenter.swift */; };
 		BD981ADE1EF0503D00458123 /* UserRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD981ADD1EF0503D00458123 /* UserRemoteDataManager.swift */; };
 		BD981AE11EF052A900458123 /* UserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD981AE01EF052A900458123 /* UserInteractor.swift */; };
+		BD981AE41EF070A500458123 /* WatchListViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD981AE31EF070A500458123 /* WatchListViewProtocol.swift */; };
+		BD981AE71EF0745600458123 /* WatchListRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD981AE61EF0745600458123 /* WatchListRemoteDataManager.swift */; };
 		BDA16F691EE58BFA00164AE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA16F681EE58BFA00164AE2 /* AppDelegate.swift */; };
 		BDA16F6B1EE58BFA00164AE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA16F6A1EE58BFA00164AE2 /* ViewController.swift */; };
 		BDA16F6E1EE58BFA00164AE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDA16F6C1EE58BFA00164AE2 /* Main.storyboard */; };
@@ -38,9 +40,7 @@
 		BDA16F991EE58EE100164AE2 /* WatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA16F981EE58EE100164AE2 /* WatchListViewController.swift */; };
 		BDA16F9B1EE58F2E00164AE2 /* WatchListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA16F9A1EE58F2E00164AE2 /* WatchListDataSource.swift */; };
 		BDA16F9E1EE58FE900164AE2 /* WatchListOutputPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA16F9D1EE58FE900164AE2 /* WatchListOutputPresenter.swift */; };
-		BDA16FA11EE5909500164AE2 /* MediaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA16FA01EE5909500164AE2 /* MediaItem.swift */; };
-		BDA16FA41EE591B000164AE2 /* ListMedialItensInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA16FA31EE591B000164AE2 /* ListMedialItensInteractor.swift */; };
-		BDA16FA71EE592A400164AE2 /* MedialRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA16FA61EE592A400164AE2 /* MedialRepository.swift */; };
+		BDA16FA41EE591B000164AE2 /* WatchListItensInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA16FA31EE591B000164AE2 /* WatchListItensInteractor.swift */; };
 		BDA16FAA1EE597CA00164AE2 /* MediaEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA16FA91EE597CA00164AE2 /* MediaEntity.swift */; };
 		BDA32F881EE7867300078E1B /* TraktTVAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA32F871EE7867300078E1B /* TraktTVAPI.swift */; };
 		ED5E0B33DFF9891684A6063E /* Pods_Essencial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34645EC8031336918A509D9D /* Pods_Essencial.framework */; };
@@ -89,6 +89,8 @@
 		BD981ADA1EF04D3F00458123 /* UserPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPresenter.swift; sourceTree = "<group>"; };
 		BD981ADD1EF0503D00458123 /* UserRemoteDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRemoteDataManager.swift; sourceTree = "<group>"; };
 		BD981AE01EF052A900458123 /* UserInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInteractor.swift; sourceTree = "<group>"; };
+		BD981AE31EF070A500458123 /* WatchListViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchListViewProtocol.swift; sourceTree = "<group>"; };
+		BD981AE61EF0745600458123 /* WatchListRemoteDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchListRemoteDataManager.swift; sourceTree = "<group>"; };
 		BDA16F651EE58BFA00164AE2 /* Essencial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Essencial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDA16F681EE58BFA00164AE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDA16F6A1EE58BFA00164AE2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Essencial/ViewController.swift; sourceTree = "<group>"; };
@@ -105,9 +107,7 @@
 		BDA16F981EE58EE100164AE2 /* WatchListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchListViewController.swift; sourceTree = "<group>"; };
 		BDA16F9A1EE58F2E00164AE2 /* WatchListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchListDataSource.swift; sourceTree = "<group>"; };
 		BDA16F9D1EE58FE900164AE2 /* WatchListOutputPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchListOutputPresenter.swift; sourceTree = "<group>"; };
-		BDA16FA01EE5909500164AE2 /* MediaItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaItem.swift; sourceTree = "<group>"; };
-		BDA16FA31EE591B000164AE2 /* ListMedialItensInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListMedialItensInteractor.swift; sourceTree = "<group>"; };
-		BDA16FA61EE592A400164AE2 /* MedialRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedialRepository.swift; sourceTree = "<group>"; };
+		BDA16FA31EE591B000164AE2 /* WatchListItensInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchListItensInteractor.swift; sourceTree = "<group>"; };
 		BDA16FA91EE597CA00164AE2 /* MediaEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaEntity.swift; sourceTree = "<group>"; };
 		BDA32F871EE7867300078E1B /* TraktTVAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraktTVAPI.swift; sourceTree = "<group>"; };
 		CACCE46EC8CA2AE7DE2FE72C /* Pods_EssencialTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EssencialTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -250,6 +250,22 @@
 			name = Interactor;
 			sourceTree = "<group>";
 		};
+		BD981AE21EF0704500458123 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				BD981AE31EF070A500458123 /* WatchListViewProtocol.swift */,
+			);
+			name = Protocol;
+			sourceTree = "<group>";
+		};
+		BD981AE51EF0743200458123 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				BD981AE61EF0745600458123 /* WatchListRemoteDataManager.swift */,
+			);
+			name = Remote;
+			sourceTree = "<group>";
+		};
 		BDA16F5C1EE58BFA00164AE2 = {
 			isa = PBXGroup;
 			children = (
@@ -275,14 +291,11 @@
 		BDA16F671EE58BFA00164AE2 /* Essencial */ = {
 			isa = PBXGroup;
 			children = (
-				BD59ACDD1EE6C6FE004DEBE4 /* LeftMenu */,
 				BDA32F861EE7862700078E1B /* Api */,
 				BD59ACD41EE6C57E004DEBE4 /* Extension */,
 				BDA16FA81EE5979C00164AE2 /* Entities */,
-				BDA16FA51EE5927000164AE2 /* Repositories */,
-				BDA16FA21EE5917300164AE2 /* Interactors */,
-				BDA16F9F1EE5906D00164AE2 /* ValueObjects */,
-				BDA16F9C1EE58F8A00164AE2 /* Presenters */,
+				BD59ACDD1EE6C6FE004DEBE4 /* LeftMenu */,
+				BDA16F971EE58E9A00164AE2 /* WatchList */,
 				BDA16F961EE58C3D00164AE2 /* Views */,
 				BDA16F681EE58BFA00164AE2 /* AppDelegate.swift */,
 				BD59ACD01EE6C3D4004DEBE4 /* SlideMenuController.swift */,
@@ -315,8 +328,8 @@
 		BDA16F961EE58C3D00164AE2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BD59AF611EE9B225004DEBE4 /* login */,
 				BD59ACE61EE6D3C3004DEBE4 /* TableViewCell */,
-				BDA16F971EE58E9A00164AE2 /* ViewControllers */,
 				BDA16F711EE58BFA00164AE2 /* LaunchScreen.storyboard */,
 				BDA16F6A1EE58BFA00164AE2 /* ViewController.swift */,
 				BDA16F6C1EE58BFA00164AE2 /* Main.storyboard */,
@@ -325,14 +338,18 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		BDA16F971EE58E9A00164AE2 /* ViewControllers */ = {
+		BDA16F971EE58E9A00164AE2 /* WatchList */ = {
 			isa = PBXGroup;
 			children = (
-				BD59AF611EE9B225004DEBE4 /* login */,
+				BD981AE51EF0743200458123 /* Remote */,
+				BD981AE21EF0704500458123 /* Protocol */,
+				BDA16FA21EE5917300164AE2 /* Interactors */,
+				BDA16F9C1EE58F8A00164AE2 /* Presenters */,
 				BDA16F981EE58EE100164AE2 /* WatchListViewController.swift */,
 				BDA16F9A1EE58F2E00164AE2 /* WatchListDataSource.swift */,
 			);
-			name = ViewControllers;
+			name = WatchList;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		BDA16F9C1EE58F8A00164AE2 /* Presenters */ = {
@@ -341,30 +358,16 @@
 				BDA16F9D1EE58FE900164AE2 /* WatchListOutputPresenter.swift */,
 			);
 			name = Presenters;
-			sourceTree = "<group>";
-		};
-		BDA16F9F1EE5906D00164AE2 /* ValueObjects */ = {
-			isa = PBXGroup;
-			children = (
-				BDA16FA01EE5909500164AE2 /* MediaItem.swift */,
-			);
-			name = ValueObjects;
+			path = Essencial;
 			sourceTree = "<group>";
 		};
 		BDA16FA21EE5917300164AE2 /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
-				BDA16FA31EE591B000164AE2 /* ListMedialItensInteractor.swift */,
+				BDA16FA31EE591B000164AE2 /* WatchListItensInteractor.swift */,
 			);
 			name = Interactors;
-			sourceTree = "<group>";
-		};
-		BDA16FA51EE5927000164AE2 /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-				BDA16FA61EE592A400164AE2 /* MedialRepository.swift */,
-			);
-			name = Repositories;
+			path = Essencial;
 			sourceTree = "<group>";
 		};
 		BDA16FA81EE5979C00164AE2 /* Entities */ = {
@@ -682,6 +685,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD59ACD61EE6C5A5004DEBE4 /* UIApplication.swift in Sources */,
+				BD981AE41EF070A500458123 /* WatchListViewProtocol.swift in Sources */,
+				BD981AE71EF0745600458123 /* WatchListRemoteDataManager.swift in Sources */,
 				BD59ACF31EE7190F004DEBE4 /* MenuController.swift in Sources */,
 				BDA16F6B1EE58BFA00164AE2 /* ViewController.swift in Sources */,
 				BD981ADE1EF0503D00458123 /* UserRemoteDataManager.swift in Sources */,
@@ -701,14 +706,12 @@
 				BD59ACEB1EE6D4EC004DEBE4 /* UITableView.swift in Sources */,
 				BD59ACD31EE6C54C004DEBE4 /* ExSlideMenuController.swift in Sources */,
 				BD981ADB1EF04D3F00458123 /* UserPresenter.swift in Sources */,
-				BDA16FA71EE592A400164AE2 /* MedialRepository.swift in Sources */,
 				BD59ACD11EE6C3D4004DEBE4 /* SlideMenuController.swift in Sources */,
 				BD59ACED1EE6D7C8004DEBE4 /* UIViewController.swift in Sources */,
 				BD59ACDA1EE6C64B004DEBE4 /* UIColor.swift in Sources */,
 				BD59ACE51EE6D000004DEBE4 /* UIView.swift in Sources */,
-				BDA16FA11EE5909500164AE2 /* MediaItem.swift in Sources */,
 				BDA16FAA1EE597CA00164AE2 /* MediaEntity.swift in Sources */,
-				BDA16FA41EE591B000164AE2 /* ListMedialItensInteractor.swift in Sources */,
+				BDA16FA41EE591B000164AE2 /* WatchListItensInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

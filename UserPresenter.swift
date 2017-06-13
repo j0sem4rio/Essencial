@@ -11,19 +11,19 @@ class UserPresenter: UserPresenterProtocol {
     var interactor: UserInteractorInputProtocol?
     
     func viewDidLoad() {
-        
+        view?.showLoading()
         interactor?.retrievePostUser()
     }
 }
 extension UserPresenter: UserInteractorOutputProtocol {
     
     func didRetrievePosts(_ posts: UserEntity) {
-//        view?.hideLoading()
+        view?.hideLoading()
         view?.showPosts(with: posts)
     }
     
     func onError() {
-//        view?.hideLoading()
+        view?.hideLoading()
         view?.showError()
     }
     

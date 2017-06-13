@@ -8,6 +8,26 @@
 
 import UIKit
 
-public protocol WatchListOutputPresenter {
-    func list(_ medialItens: [MediaItem])
+class WatchListOutputPresenter: WatchListPresenterProtocol {
+    weak var view: WatchListViewProtocol?
+    var interactor: WatchListInteractorInputProtocol?
+    
+    func viewDidLoad() {
+        view?.showLoading()
+        interactor?.retrievePostList()
+    }
+}
+extension WatchListOutputPresenter: WatchListInteractorOutputProtocol {
+    
+    func didRetrievePosts(_ posts: [MediaEntity]) {
+        view?.hideLoading()
+        view?.showPosts(with: posts)
+    }
+    
+    func onError() {
+        view?.hideLoading()
+        view?.showError()
+    }
+ 
+    
 }

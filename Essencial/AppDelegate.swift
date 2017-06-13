@@ -8,8 +8,6 @@
 
 import UIKit
 
-let medialRepositoryStore = MedialRepositoryStore()
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -48,6 +46,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.backgroundColor = UIColor(red: 236.0, green: 238.0, blue: 241.0, alpha: 1.0)
         self.window?.rootViewController = slideMenuController
         self.window?.makeKeyAndVisible()
+    }
+    func watchListVC(storyboard: UIStoryboard) -> WatchListViewController {
+        let watchListViewController = storyboard.instantiateViewController(withIdentifier: "WatchListViewController") as? WatchListViewController
+        let presenter: WatchListPresenterProtocol & WatchListInteractorOutputProtocol = WatchListOutputPresenter()
+        let interactor: WatchListInteractorInputProtocol & WatchListRemoteDataManagerOutputProtocol = WatchListItensInteractor()
+        let remoteDataManager: WatchListRemoteDataManagerInputProtocol = WatchListRemoteDataManager()
+        
+        watchListViewController?.presenter = presenter
+        presenter.view = watchListViewController
+        presenter.interactor = interactor
+        interactor.presenter = presenter
+        interactor.remoteDatamanager = remoteDataManager
+        remoteDataManager.remoteRequestHandler = interactor
+        return watchListViewController!
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {

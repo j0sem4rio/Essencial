@@ -8,9 +8,12 @@
 
 import UIKit
 import SafariServices
+import PKHUD
 
 class WatchListViewController: UIViewController, SFSafariViewControllerDelegate {
 
+    var presenter: WatchListPresenterProtocol?
+    
     // MARK: Outlets
     
     @IBOutlet weak var tableView: UITableView!
@@ -22,10 +25,8 @@ class WatchListViewController: UIViewController, SFSafariViewControllerDelegate 
     // MARK: UIView
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-//        let safariViewController = SFSafariViewController(url: TraktTVAPI().authorizationURL!)
-//        present(safariViewController, animated: true, completion: nil)
-//        safariViewController.delegate = self       
+        super.viewDidLoad()  
+        presenter?.viewDidLoad()
     }
     
     func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
@@ -38,7 +39,7 @@ class WatchListViewController: UIViewController, SFSafariViewControllerDelegate 
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        configureDataSource()
+//        configureDataSource()
         tableView.reloadData()
     }
     
@@ -52,6 +53,27 @@ class WatchListViewController: UIViewController, SFSafariViewControllerDelegate 
     }
 
 }
+extension WatchListViewController: WatchListViewProtocol {
+    
+    func showPosts(with posts: [MediaEntity]) {
+//        postList = posts
+        tableView.reloadData()
+    }
+    
+    func showError() {
+        HUD.flash(.label("Internet not connected"), delay: 2.0)
+    }
+    
+    func showLoading() {
+        HUD.show(.progress)
+    }
+    
+    func hideLoading() {
+        HUD.hide()
+    }
+    
+}
+
 extension WatchListViewController: SlideMenuControllerDelegate {
     
     func leftWillOpen() {

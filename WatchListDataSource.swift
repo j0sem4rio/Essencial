@@ -8,18 +8,18 @@
 
 import UIKit
 
-class WatchListDataSource: NSObject, UITableViewDataSource, WatchListOutputPresenter {
+class WatchListDataSource: NSObject, UITableViewDataSource {
     
     // MARK: Properties
     
-    var mediaItems: [MediaItem] = []
+    var mediaItems: [MediaEntity] = []
     let cellIdentifier = "CustomerCell"
     
     // MARK: Initializers
     
     override init() {
         super.init()
-        ListMedialItensInteractor(watchListOutputPresenter: self, medialRepository: medialRepositoryStore).list()
+//        ListMedialItensInteractor(watchListOutputPresenter: self, medialRepository: medialRepositoryStore).list()
     }
     
     // MARK: UITableViewDataSource
@@ -37,7 +37,7 @@ class WatchListDataSource: NSObject, UITableViewDataSource, WatchListOutputPrese
     
     // MARK: ListCustomersOutputPresenter
     
-    func list(_ mediaItems: [MediaItem]) {
-        self.mediaItems = mediaItems
-    }
+//    func list(_ mediaItems: [MediaItem]) {
+//        self.mediaItems = mediaItems
+//    }
 }

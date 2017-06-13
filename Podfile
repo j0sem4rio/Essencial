@@ -12,6 +12,7 @@ target 'Essencial' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'SkyFloatingLabelTextField'
+  pod 'PKHUD', '~> 4.0'
 
   target 'EssencialTests' do
     inherit! :search_paths

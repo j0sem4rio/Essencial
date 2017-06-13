@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 enum LeftMenu: String {
     case Main = "HOME"
@@ -50,7 +51,7 @@ class LeftViewController: UIViewController, LeftMenuProtocol {
         
         self.imageHeaderView = ImageHeaderView.loadNib()
         self.view.addSubview(self.imageHeaderView)
-        presenter?.viewDidLoad()
+//        presenter?.viewDidLoad()
     }
     
     override func viewDidLayoutSubviews() {
@@ -86,6 +87,14 @@ extension LeftViewController: LeftMenuViewProtocol {
     
     func showError() {
         
+    }
+    
+    func showLoading() {
+        HUD.show(.progress)
+    }
+    
+    func hideLoading() {
+        HUD.hide()
     }
 }
 

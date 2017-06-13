@@ -16,6 +16,9 @@ protocol LeftMenuViewProtocol: class {
     
     func showError()
     
+    func showLoading()
+    
+    func hideLoading()
 }
 
 protocol UserPresenterProtocol: class {
