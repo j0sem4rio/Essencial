@@ -6,7 +6,7 @@
 //  Copyright © 2017 Jose Mario Fernandes. All rights reserved.
 //
 
-class WatchListItensInteractor : WatchListInteractorInputProtocol {
+class WatchListItensInteractor: WatchListInteractorInputProtocol {
     
     weak var presenter: WatchListInteractorOutputProtocol?
     var remoteDatamanager: WatchListRemoteDataManagerInputProtocol?
@@ -19,7 +19,7 @@ class WatchListItensInteractor : WatchListInteractorInputProtocol {
 
 extension WatchListItensInteractor: WatchListRemoteDataManagerOutputProtocol {
     
-    func onPostsRetrieved(_ posts: [MediaEntity]){
+    func onPostsRetrieved(_ posts: [MediaEntity]) {
         presenter?.didRetrievePosts(posts)
         
     }

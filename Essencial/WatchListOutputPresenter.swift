@@ -28,6 +28,4 @@ extension WatchListOutputPresenter: WatchListInteractorOutputProtocol {
         view?.hideLoading()
         view?.showError()
     }
- 
-    
 }

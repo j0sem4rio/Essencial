@@ -17,7 +17,8 @@ class WatchListDataSource: NSObject, UITableViewDataSource {
     
     // MARK: Initializers
     
-    override init() {
+    init(mediaItems: [MediaEntity]) {
+        self.mediaItems = mediaItems
         super.init()
 //        ListMedialItensInteractor(watchListOutputPresenter: self, medialRepository: medialRepositoryStore).list()
     }

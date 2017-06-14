@@ -39,14 +39,13 @@ class WatchListViewController: UIViewController, SFSafariViewControllerDelegate 
     }
     
     override func viewDidAppear(_ animated: Bool) {
-//        configureDataSource()
         tableView.reloadData()
     }
     
     // MARK: Setups
     
-    fileprivate func configureDataSource() {
-        watchListDataSource = WatchListDataSource()
+    fileprivate func configureDataSource(mediaItems: [MediaEntity]) {
+        watchListDataSource = WatchListDataSource(mediaItems: mediaItems)
         if let watchListDataSource = watchListDataSource {
             tableView.dataSource = watchListDataSource
         }
@@ -56,7 +55,7 @@ class WatchListViewController: UIViewController, SFSafariViewControllerDelegate 
 extension WatchListViewController: WatchListViewProtocol {
     
     func showPosts(with posts: [MediaEntity]) {
-//        postList = posts
+        configureDataSource(mediaItems: posts)
         tableView.reloadData()
     }
     

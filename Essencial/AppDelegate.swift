@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // create viewController code...
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let watchListViewController = storyboard.instantiateViewController(withIdentifier: "WatchListViewController") as? WatchListViewController
+        let watchListViewController = watchListVC(storyboard: storyboard)
         let leftViewController = storyboard.instantiateViewController(withIdentifier: "LeftViewController") as? LeftViewController
         
         let presenter: UserPresenterProtocol & UserInteractorOutputProtocol = UserPresenter()
@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         interactor.remoteDatamanager = remoteDataManager
         remoteDataManager.remoteRequestHandler = interactor
         
-        let nvc: UINavigationController = UINavigationController(rootViewController: watchListViewController!)
+        let nvc: UINavigationController = UINavigationController(rootViewController: watchListViewController)
         
         UINavigationBar.appearance().tintColor = UIColor(hex: "ffffff")//cores dos icones
         
