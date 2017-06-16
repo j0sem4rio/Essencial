@@ -10,7 +10,7 @@ import UIKit
 import SafariServices
 import PKHUD
 
-class WatchListViewController: UIViewController, SFSafariViewControllerDelegate {
+class WatchListViewController: UIViewController, UITableViewDelegate, SFSafariViewControllerDelegate {
 
     var presenter: WatchListPresenterProtocol?
     
@@ -42,6 +42,12 @@ class WatchListViewController: UIViewController, SFSafariViewControllerDelegate 
         tableView.reloadData()
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let cell = tableView.dequeueReusableCell(withIdentifier: WatchListTableViewCell.identifier)
+        let height = (cell?.bounds)!.height
+        return height
+    }
+    
     // MARK: Setups
     
     fileprivate func configureDataSource(mediaItems: [MediaEntity]) {
@@ -56,6 +62,11 @@ extension WatchListViewController: WatchListViewProtocol {
     
     func showPosts(with posts: [MediaEntity]) {
         configureDataSource(mediaItems: posts)
+        presenter?.image(posts)
+        tableView.reloadData()
+    }
+    func showUpdatePosts() {
+//        configureDataSource(mediaItems: posts)
         tableView.reloadData()
     }
     

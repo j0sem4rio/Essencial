@@ -15,6 +15,9 @@ class WatchListItensInteractor: WatchListInteractorInputProtocol {
         remoteDatamanager?.retrievePostList()
     }
     
+    func retrieveUpdatImageList(_ posts: [MediaEntity]) {
+        remoteDatamanager?.retrieveLoadImageList(posts)
+    }    
 }
 
 extension WatchListItensInteractor: WatchListRemoteDataManagerOutputProtocol {
@@ -22,6 +25,10 @@ extension WatchListItensInteractor: WatchListRemoteDataManagerOutputProtocol {
     func onPostsRetrieved(_ posts: [MediaEntity]) {
         presenter?.didRetrievePosts(posts)
         
+    }
+    
+    func onPostsImage() {
+        presenter?.onRetrieveImage()
     }
     
     func onError() {

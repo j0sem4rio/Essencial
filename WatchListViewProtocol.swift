@@ -14,6 +14,8 @@ protocol WatchListViewProtocol: class {
     // PRESENTER -> VIEW
     func showPosts(with posts: [MediaEntity])
     
+    func showUpdatePosts()
+    
     func showError()
     
     func showLoading()
@@ -27,11 +29,13 @@ protocol WatchListPresenterProtocol: class {
     
     // VIEW -> PRESENTER
     func viewDidLoad()
+    func image(_ posts: [MediaEntity])
 }
 
 protocol WatchListInteractorOutputProtocol: class {
     // INTERACTOR -> PRESENTER
     func didRetrievePosts(_ posts: [MediaEntity])
+    func onRetrieveImage()
     func onError()
 }
 
@@ -40,11 +44,13 @@ protocol WatchListRemoteDataManagerInputProtocol: class {
     
     // INTERACTOR -> REMOTEDATAMANAGER
     func retrievePostList()
+    func retrieveLoadImageList(_ posts: [MediaEntity])
 }
 
 protocol WatchListRemoteDataManagerOutputProtocol: class {
     // REMOTEDATAMANAGER -> INTERACTOR
     func onPostsRetrieved(_ posts: [MediaEntity])
+    func onPostsImage()
     func onError()
 }
 
@@ -54,4 +60,5 @@ protocol WatchListInteractorInputProtocol: class {
     
     // PRESENTER -> INTERACTOR
     func retrievePostList()
+    func retrieveUpdatImageList(_ posts: [MediaEntity])
 }

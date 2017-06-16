@@ -19,5 +19,11 @@ class WatchListRemoteDataManager: WatchListRemoteDataManagerInputProtocol {
             self.remoteRequestHandler?.onPostsRetrieved(medias)
         }
     }
-    
+    func retrieveLoadImageList(_ posts: [MediaEntity]) {
+        for medie in posts {
+            TraktTVAPI().poster(mediaEntity: medie, completion: { _ in
+                self.remoteRequestHandler?.onPostsImage()
+            })
+        }
+    }
 }

@@ -9,7 +9,7 @@
 import UIKit
 import ObjectMapper
 
-struct MediaEntity {
+class MediaEntity: Mappable {
     var type = ""
     var id = 0
     var title = ""
@@ -20,14 +20,17 @@ struct MediaEntity {
     var imdb = ""
     var tmdb = 0
     var tvrage = 0
+    var imageUrl: String?
+    var thumbImageUrl = ""
+    
+    required init?(map: Map) {
+        
+    }
 }
 
-extension MediaEntity: Mappable {
+extension MediaEntity {
     
-    init?(map: Map) {
-    }
-    
-    mutating func mapping(map: Map) {
+    func mapping(map: Map) {
         type    <- map["type"]
         id      <- map["id"]
         title   <- map["\(type).title"]
@@ -38,6 +41,5 @@ extension MediaEntity: Mappable {
         imdb    <- map["\(type).ids.imdb"]
         tmdb    <- map["\(type).ids.tmdb"]
         tvrage  <- map["\(type).ids.tvrage"]
-    }
-    
+    }    
 }

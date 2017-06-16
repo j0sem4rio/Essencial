@@ -30,6 +30,7 @@
 		BD981AE11EF052A900458123 /* UserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD981AE01EF052A900458123 /* UserInteractor.swift */; };
 		BD981AE41EF070A500458123 /* WatchListViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD981AE31EF070A500458123 /* WatchListViewProtocol.swift */; };
 		BD981AE71EF0745600458123 /* WatchListRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD981AE61EF0745600458123 /* WatchListRemoteDataManager.swift */; };
+		BD981AEA1EF1B8F200458123 /* WatchListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD981AE91EF1B8F200458123 /* WatchListTableViewCell.swift */; };
 		BDA16F691EE58BFA00164AE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA16F681EE58BFA00164AE2 /* AppDelegate.swift */; };
 		BDA16F6B1EE58BFA00164AE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA16F6A1EE58BFA00164AE2 /* ViewController.swift */; };
 		BDA16F6E1EE58BFA00164AE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDA16F6C1EE58BFA00164AE2 /* Main.storyboard */; };
@@ -91,6 +92,7 @@
 		BD981AE01EF052A900458123 /* UserInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInteractor.swift; sourceTree = "<group>"; };
 		BD981AE31EF070A500458123 /* WatchListViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchListViewProtocol.swift; sourceTree = "<group>"; };
 		BD981AE61EF0745600458123 /* WatchListRemoteDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchListRemoteDataManager.swift; sourceTree = "<group>"; };
+		BD981AE91EF1B8F200458123 /* WatchListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchListTableViewCell.swift; sourceTree = "<group>"; };
 		BDA16F651EE58BFA00164AE2 /* Essencial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Essencial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDA16F681EE58BFA00164AE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDA16F6A1EE58BFA00164AE2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Essencial/ViewController.swift; sourceTree = "<group>"; };
@@ -266,6 +268,16 @@
 			name = Remote;
 			sourceTree = "<group>";
 		};
+		BD981AE81EF1B83400458123 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BDA16F981EE58EE100164AE2 /* WatchListViewController.swift */,
+				BDA16F9A1EE58F2E00164AE2 /* WatchListDataSource.swift */,
+				BD981AE91EF1B8F200458123 /* WatchListTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		BDA16F5C1EE58BFA00164AE2 = {
 			isa = PBXGroup;
 			children = (
@@ -341,12 +353,11 @@
 		BDA16F971EE58E9A00164AE2 /* WatchList */ = {
 			isa = PBXGroup;
 			children = (
+				BD981AE81EF1B83400458123 /* Views */,
 				BD981AE51EF0743200458123 /* Remote */,
 				BD981AE21EF0704500458123 /* Protocol */,
 				BDA16FA21EE5917300164AE2 /* Interactors */,
 				BDA16F9C1EE58F8A00164AE2 /* Presenters */,
-				BDA16F981EE58EE100164AE2 /* WatchListViewController.swift */,
-				BDA16F9A1EE58F2E00164AE2 /* WatchListDataSource.swift */,
 			);
 			name = WatchList;
 			path = ..;
@@ -687,6 +698,7 @@
 				BD59ACD61EE6C5A5004DEBE4 /* UIApplication.swift in Sources */,
 				BD981AE41EF070A500458123 /* WatchListViewProtocol.swift in Sources */,
 				BD981AE71EF0745600458123 /* WatchListRemoteDataManager.swift in Sources */,
+				BD981AEA1EF1B8F200458123 /* WatchListTableViewCell.swift in Sources */,
 				BD59ACF31EE7190F004DEBE4 /* MenuController.swift in Sources */,
 				BDA16F6B1EE58BFA00164AE2 /* ViewController.swift in Sources */,
 				BD981ADE1EF0503D00458123 /* UserRemoteDataManager.swift in Sources */,

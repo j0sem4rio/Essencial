@@ -16,12 +16,19 @@ class WatchListOutputPresenter: WatchListPresenterProtocol {
         view?.showLoading()
         interactor?.retrievePostList()
     }
+    func image(_ posts: [MediaEntity]) {
+        interactor?.retrieveUpdatImageList(posts)
+        view?.showUpdatePosts()
+    }
 }
 extension WatchListOutputPresenter: WatchListInteractorOutputProtocol {
     
     func didRetrievePosts(_ posts: [MediaEntity]) {
         view?.hideLoading()
         view?.showPosts(with: posts)
+    }
+    func onRetrieveImage() {
+        view?.showUpdatePosts()
     }
     
     func onError() {
