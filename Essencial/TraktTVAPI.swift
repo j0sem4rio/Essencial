@@ -159,25 +159,47 @@ class TraktTVAPI {
                           })
     }
     
-    func profile(completion: @escaping (_ background: UserEntity) -> Void) {
+    func settings(completion: @escaping (_ background: UserEntity?) -> Void) {
         let credential = defs.string(forKey: "access_token")
-        Alamofire.request("https://api.trakt.tv/users/id/\(credential ?? "")",
-            headers: ["trakt-api-key": clientId, "trakt-api-version": "2"]).responseObject { (response: DataResponse<UserEntity>) in
-                
+        let headers = [
+            "trakt-api-key": self.clientId,
+            "Accept": "application/json",
+            "trakt-api-version": "2",
+            "Authorization": "Bearer \(credential ?? "")"
+        ]
+        
+        Alamofire.request("https://api.trakt.tv/users/settings",
+            method: .get,
+            parameters: ["extended": "images"],
+            headers: headers).responseObject(completionHandler: { (response: DataResponse<UserEntity>) in
                 switch response.result {
                 case .success(let posts):
-                    
-                        print("JSON: \(posts)")
-                        completion(posts)
-                    
+                    completion(posts)
                 case .failure( _):
-                    if let json = response.result.value {
-                        print("JSON: \(json)")
-                        completion(UserEntity())
-                    }
+                    completion(nil)
                 }
-        }
+            })
     }
+    
+//    func profile(completion: @escaping (_ background: UserEntity) -> Void) {
+//        let credential = defs.string(forKey: "access_token")
+//        Alamofire.request("https://api.trakt.tv/users/id/\(credential ?? "")",
+//            headers: ["trakt-api-key": clientId, "trakt-api-version": "2"]).responseObject { (response: DataResponse<UserEntity>) in
+//                
+//                switch response.result {
+//                case .success(let posts):
+//                    
+//                        print("JSON: \(posts)")
+//                        completion(posts)
+//                    
+//                case .failure( _):
+//                    if let json = response.result.value {
+//                        print("JSON: \(json)")
+//                        completion(UserEntity())
+//                    }
+//                }
+//        }
+//    }
     func convertToDictionary(text: String) -> [String: Any]? {
         if let data = text.data(using: .utf8) {
             do {

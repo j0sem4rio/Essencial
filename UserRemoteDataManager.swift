@@ -14,8 +14,8 @@ class UserRemoteDataManager: UserRemoteDataManagerInputProtocol {
     
     func retrievePostUser() {
         
-        TraktTVAPI().profile { (user) in
-            self.remoteRequestHandler?.onPostsRetrieved(user)
+        TraktTVAPI().settings { user in
+            self.remoteRequestHandler?.onPostsRetrieved(user!)
         }
     }
 }
