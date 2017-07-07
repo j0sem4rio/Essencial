@@ -51,7 +51,7 @@ class LeftViewController: UIViewController, LeftMenuProtocol {
         
         self.imageHeaderView = ImageHeaderView.loadNib()
         self.view.addSubview(self.imageHeaderView)
-//        presenter?.viewDidLoad()
+        presenter?.viewDidLoad()
     }
     
     override func viewDidLayoutSubviews() {
@@ -81,8 +81,7 @@ class LeftViewController: UIViewController, LeftMenuProtocol {
 
 extension LeftViewController: LeftMenuViewProtocol {
     func showPosts(with posts: UserEntity) {
-        self.imageHeaderView.textName.text =  posts.name
-        self.imageHeaderView.textEmail.text = ""
+        self.imageHeaderView.set( forPost: posts )
     }
     
     func showError() {

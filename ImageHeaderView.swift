@@ -23,4 +23,11 @@ class ImageHeaderView: UIView {
         self.profileImage.layer.borderColor = UIColor.white.cgColor
         //        self.profileImage.setRandomDownloadImage(80, height: 80)
     }
+    
+    func set(forPost post: UserEntity) {
+        textName?.text = post.name
+        let url = URL(string: post.avatar)
+        let placeholderImage = UIImage(named: "placeholder")!
+        profileImage?.af_setImage(withURL: url!, placeholderImage: placeholderImage)
+    }
 }

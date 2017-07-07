@@ -21,7 +21,7 @@ class UserEntity: Mappable {
     var about = ""
     var gender = ""
     var age = 0
-    var avatar: URL?
+    var avatar = ""
     var vip_og = true
     var vip_years = 0
     var account: [String: String] = [:]
@@ -47,7 +47,7 @@ extension UserEntity {
          about         <- map["user.about"]
          gender        <- map["user.gender"]
          age           <- map["user.age"]
-         avatar        <- map["user.avatar"]
+         avatar        <- map["user.images.avatar.full"]
          vip_og        <- map["user.vip_og"]
          vip_years     <- map["user.vip_years"]
          account       <- map["user.account"]
