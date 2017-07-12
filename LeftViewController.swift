@@ -40,8 +40,8 @@ class LeftViewController: UIViewController, LeftMenuProtocol {
         super.viewDidLoad()
         self.tableView.separatorColor = UIColor(red: 224/255, green: 224/255, blue: 224/255, alpha: 1.0)
         
-        addChildView("HomeScreenID", titleOfChildren: "HOME", iconName: "home")
-        addChildView("ContactScreenID", titleOfChildren: "LOGIN", iconName: "config")
+        addChildView("HOME", titleOfMenu: NSLocalizedString("watchList", comment: ""), iconName: "home")
+        addChildView("LOGIN", titleOfMenu: NSLocalizedString("login", comment: ""), iconName: "config")
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let loginTrakt = storyboard.instantiateViewController(withIdentifier: "LoginTrakt") as? LoginTrakt
@@ -73,8 +73,8 @@ class LeftViewController: UIViewController, LeftMenuProtocol {
         }
     }
     
-    func addChildView(_ storyBoardID: String, titleOfChildren: String, iconName: String) {
-        menuToReturn.append(["title": titleOfChildren, "icon": iconName])
+    func addChildView(_ titleOfChildren: String, titleOfMenu: String, iconName: String) {
+        menuToReturn.append(["title": titleOfChildren, "icon": iconName, "name": titleOfMenu])
     }
 
 }
@@ -121,7 +121,7 @@ extension LeftViewController : UITableViewDataSource {
             switch menu {
             case .Main, .Login:
                 let cell = BaseTableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: BaseTableViewCell.identifier)
-                cell.setData(menuToReturn[indexPath.row]["title"]!)
+                cell.setData(menuToReturn[(indexPath as NSIndexPath).row]["name"]!)
                 cell.img.image = UIImage(named: menuToReturn[indexPath.row]["icon"]!)
                 return cell
             }

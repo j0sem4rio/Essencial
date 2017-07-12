@@ -11,14 +11,14 @@ import UIKit
 extension UIViewController {
     
     func setNavigationBarItem() {
-        self.navigationController?.navigationBar.barTintColor = UIColor(hex: "0077D9")
+        self.navigationController?.navigationBar.barTintColor = UIColor(hex: "D69F83")
         self.addLeftBarButtonWithImage(UIImage(named: "ic_menu_black_24dp")!)
         self.slideMenuController()?.removeLeftGestures()
         self.slideMenuController()?.addLeftGestures()
     }
     
     func removeNavigationBarItem() {
-        self.navigationController?.navigationBar.barTintColor = UIColor(hex: "0077D9")
+        self.navigationController?.navigationBar.barTintColor = UIColor(hex: "D69F83")
         self.navigationItem.leftBarButtonItem = nil
         self.navigationItem.rightBarButtonItem = nil
         self.slideMenuController()?.removeLeftGestures()

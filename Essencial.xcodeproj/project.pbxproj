@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4DF3D9DE0ED4FC52236CA9F2 /* Pods_EssencialUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4B7D333AB2964CC95F75DC /* Pods_EssencialUITests.framework */; };
 		AA965B5434608A4687AB0628 /* Pods_EssencialTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CACCE46EC8CA2AE7DE2FE72C /* Pods_EssencialTests.framework */; };
+		BD4693F51F163A370055EAD7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BD4693F41F163A370055EAD7 /* Localizable.strings */; };
+		BD4693F71F1687640055EAD7 /* ThemoviedbAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4693F61F1687640055EAD7 /* ThemoviedbAPI.swift */; };
 		BD59ACD11EE6C3D4004DEBE4 /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD59ACD01EE6C3D4004DEBE4 /* SlideMenuController.swift */; };
 		BD59ACD31EE6C54C004DEBE4 /* ExSlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD59ACD21EE6C54C004DEBE4 /* ExSlideMenuController.swift */; };
 		BD59ACD61EE6C5A5004DEBE4 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD59ACD51EE6C5A5004DEBE4 /* UIApplication.swift */; };
@@ -71,6 +73,8 @@
 		78B9516709F628BD7CD332A1 /* Pods-EssencialTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EssencialTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EssencialTests/Pods-EssencialTests.release.xcconfig"; sourceTree = "<group>"; };
 		7F6C933E4E6E9538ED97D9C4 /* Pods-EssencialUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EssencialUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EssencialUITests/Pods-EssencialUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AC4B7D333AB2964CC95F75DC /* Pods_EssencialUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EssencialUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD4693F41F163A370055EAD7 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		BD4693F61F1687640055EAD7 /* ThemoviedbAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemoviedbAPI.swift; sourceTree = "<group>"; };
 		BD59ACD01EE6C3D4004DEBE4 /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
 		BD59ACD21EE6C54C004DEBE4 /* ExSlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExSlideMenuController.swift; path = ../ExSlideMenuController.swift; sourceTree = "<group>"; };
 		BD59ACD51EE6C5A5004DEBE4 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
@@ -315,6 +319,7 @@
 				BD59ACD21EE6C54C004DEBE4 /* ExSlideMenuController.swift */,
 				BDA16F6F1EE58BFA00164AE2 /* Assets.xcassets */,
 				BDA16F741EE58BFA00164AE2 /* Info.plist */,
+				BD4693F41F163A370055EAD7 /* Localizable.strings */,
 			);
 			path = Essencial;
 			sourceTree = "<group>";
@@ -394,6 +399,7 @@
 			isa = PBXGroup;
 			children = (
 				BDA32F871EE7867300078E1B /* TraktTVAPI.swift */,
+				BD4693F61F1687640055EAD7 /* ThemoviedbAPI.swift */,
 			);
 			name = Api;
 			sourceTree = "<group>";
@@ -516,6 +522,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD4693F51F163A370055EAD7 /* Localizable.strings in Resources */,
 				BDA16F731EE58BFA00164AE2 /* LaunchScreen.storyboard in Resources */,
 				BDA16F701EE58BFA00164AE2 /* Assets.xcassets in Resources */,
 				BDA16F6E1EE58BFA00164AE2 /* Main.storyboard in Resources */,
@@ -716,6 +723,7 @@
 				BD59ACE11EE6C78E004DEBE4 /* ImageHeaderView.swift in Sources */,
 				BDA16F9E1EE58FE900164AE2 /* WatchListOutputPresenter.swift in Sources */,
 				BD59ACEB1EE6D4EC004DEBE4 /* UITableView.swift in Sources */,
+				BD4693F71F1687640055EAD7 /* ThemoviedbAPI.swift in Sources */,
 				BD59ACD31EE6C54C004DEBE4 /* ExSlideMenuController.swift in Sources */,
 				BD981ADB1EF04D3F00458123 /* UserPresenter.swift in Sources */,
 				BD59ACD11EE6C3D4004DEBE4 /* SlideMenuController.swift in Sources */,
