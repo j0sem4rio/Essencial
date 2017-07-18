@@ -11,6 +11,12 @@
 		AA965B5434608A4687AB0628 /* Pods_EssencialTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CACCE46EC8CA2AE7DE2FE72C /* Pods_EssencialTests.framework */; };
 		BD4693F51F163A370055EAD7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BD4693F41F163A370055EAD7 /* Localizable.strings */; };
 		BD4693F71F1687640055EAD7 /* ThemoviedbAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4693F61F1687640055EAD7 /* ThemoviedbAPI.swift */; };
+		BD4693FF1F1787390055EAD7 /* WatchingCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4693FE1F1787390055EAD7 /* WatchingCollectionViewController.swift */; };
+		BD4694021F1795360055EAD7 /* WatchingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4694011F1795360055EAD7 /* WatchingCollectionViewCell.swift */; };
+		BD4694081F17D7410055EAD7 /* WatchingViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4694071F17D7410055EAD7 /* WatchingViewProtocol.swift */; };
+		BD46940B1F17D9200055EAD7 /* WatchingOutputPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46940A1F17D9200055EAD7 /* WatchingOutputPresenter.swift */; };
+		BD46940E1F17DA5A0055EAD7 /* WatchingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46940D1F17DA5A0055EAD7 /* WatchingInteractor.swift */; };
+		BD4694111F17DC6E0055EAD7 /* WatchingRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4694101F17DC6E0055EAD7 /* WatchingRemoteDataManager.swift */; };
 		BD59ACD11EE6C3D4004DEBE4 /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD59ACD01EE6C3D4004DEBE4 /* SlideMenuController.swift */; };
 		BD59ACD31EE6C54C004DEBE4 /* ExSlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD59ACD21EE6C54C004DEBE4 /* ExSlideMenuController.swift */; };
 		BD59ACD61EE6C5A5004DEBE4 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD59ACD51EE6C5A5004DEBE4 /* UIApplication.swift */; };
@@ -46,6 +52,14 @@
 		BDA16FA41EE591B000164AE2 /* WatchListItensInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA16FA31EE591B000164AE2 /* WatchListItensInteractor.swift */; };
 		BDA16FAA1EE597CA00164AE2 /* MediaEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA16FA91EE597CA00164AE2 /* MediaEntity.swift */; };
 		BDA32F881EE7867300078E1B /* TraktTVAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA32F871EE7867300078E1B /* TraktTVAPI.swift */; };
+		BDB32A831F1CCD27005C63F5 /* Watched.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB32A821F1CCD27005C63F5 /* Watched.swift */; };
+		BDB32A861F1CCF5B005C63F5 /* DateFormatTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB32A851F1CCF5B005C63F5 /* DateFormatTransform.swift */; };
+		BDB32A881F1CD5B9005C63F5 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB32A871F1CD5B8005C63F5 /* Movie.swift */; };
+		BDB32A8A1F1CD6D3005C63F5 /* Ids.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB32A891F1CD6D3005C63F5 /* Ids.swift */; };
+		BDB32A8D1F1CF66F005C63F5 /* WatchedParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB32A8C1F1CF66F005C63F5 /* WatchedParser.swift */; };
+		BDB32A8F1F1D4518005C63F5 /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB32A8E1F1D4518005C63F5 /* Show.swift */; };
+		BDB32A911F1D45B9005C63F5 /* Seasons.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB32A901F1D45B9005C63F5 /* Seasons.swift */; };
+		BDB32A931F1D467A005C63F5 /* Episodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB32A921F1D467A005C63F5 /* Episodes.swift */; };
 		ED5E0B33DFF9891684A6063E /* Pods_Essencial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34645EC8031336918A509D9D /* Pods_Essencial.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +89,12 @@
 		AC4B7D333AB2964CC95F75DC /* Pods_EssencialUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EssencialUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD4693F41F163A370055EAD7 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		BD4693F61F1687640055EAD7 /* ThemoviedbAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemoviedbAPI.swift; sourceTree = "<group>"; };
+		BD4693FE1F1787390055EAD7 /* WatchingCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchingCollectionViewController.swift; sourceTree = "<group>"; };
+		BD4694011F1795360055EAD7 /* WatchingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchingCollectionViewCell.swift; sourceTree = "<group>"; };
+		BD4694071F17D7410055EAD7 /* WatchingViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchingViewProtocol.swift; sourceTree = "<group>"; };
+		BD46940A1F17D9200055EAD7 /* WatchingOutputPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchingOutputPresenter.swift; sourceTree = "<group>"; };
+		BD46940D1F17DA5A0055EAD7 /* WatchingInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchingInteractor.swift; sourceTree = "<group>"; };
+		BD4694101F17DC6E0055EAD7 /* WatchingRemoteDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchingRemoteDataManager.swift; sourceTree = "<group>"; };
 		BD59ACD01EE6C3D4004DEBE4 /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
 		BD59ACD21EE6C54C004DEBE4 /* ExSlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExSlideMenuController.swift; path = ../ExSlideMenuController.swift; sourceTree = "<group>"; };
 		BD59ACD51EE6C5A5004DEBE4 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
@@ -116,6 +136,14 @@
 		BDA16FA31EE591B000164AE2 /* WatchListItensInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchListItensInteractor.swift; sourceTree = "<group>"; };
 		BDA16FA91EE597CA00164AE2 /* MediaEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaEntity.swift; sourceTree = "<group>"; };
 		BDA32F871EE7867300078E1B /* TraktTVAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraktTVAPI.swift; sourceTree = "<group>"; };
+		BDB32A821F1CCD27005C63F5 /* Watched.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Watched.swift; sourceTree = "<group>"; };
+		BDB32A851F1CCF5B005C63F5 /* DateFormatTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatTransform.swift; sourceTree = "<group>"; };
+		BDB32A871F1CD5B8005C63F5 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		BDB32A891F1CD6D3005C63F5 /* Ids.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ids.swift; sourceTree = "<group>"; };
+		BDB32A8C1F1CF66F005C63F5 /* WatchedParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchedParser.swift; sourceTree = "<group>"; };
+		BDB32A8E1F1D4518005C63F5 /* Show.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Show.swift; sourceTree = "<group>"; };
+		BDB32A901F1D45B9005C63F5 /* Seasons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seasons.swift; sourceTree = "<group>"; };
+		BDB32A921F1D467A005C63F5 /* Episodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Episodes.swift; sourceTree = "<group>"; };
 		CACCE46EC8CA2AE7DE2FE72C /* Pods_EssencialTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EssencialTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6B5DADAC6D5F968C81BB22A /* Pods-Essencial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Essencial.release.xcconfig"; path = "Pods/Target Support Files/Pods-Essencial/Pods-Essencial.release.xcconfig"; sourceTree = "<group>"; };
 		D6FC6C2DFBC871A3699D5C9B /* Pods-Essencial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Essencial.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Essencial/Pods-Essencial.debug.xcconfig"; sourceTree = "<group>"; };
@@ -170,6 +198,78 @@
 				AC4B7D333AB2964CC95F75DC /* Pods_EssencialUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BD4693F81F16A00B0055EAD7 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BD4693FA1F16A0730055EAD7 /* Watching */,
+				BD4693F91F16A0420055EAD7 /* Watched */,
+				BD59ACDD1EE6C6FE004DEBE4 /* LeftMenu */,
+				BDA16F971EE58E9A00164AE2 /* WatchList */,
+				BDA16F961EE58C3D00164AE2 /* Views */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		BD4693F91F16A0420055EAD7 /* Watched */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Watched;
+			sourceTree = "<group>";
+		};
+		BD4693FA1F16A0730055EAD7 /* Watching */ = {
+			isa = PBXGroup;
+			children = (
+				BD46940F1F17DC000055EAD7 /* Remote */,
+				BD46940C1F17DA310055EAD7 /* Interactors */,
+				BD4694091F17D85A0055EAD7 /* Presenters */,
+				BD4694061F17D6A00055EAD7 /* Protocol */,
+				BD4694001F1793740055EAD7 /* Views */,
+			);
+			name = Watching;
+			sourceTree = "<group>";
+		};
+		BD4694001F1793740055EAD7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BD4693FE1F1787390055EAD7 /* WatchingCollectionViewController.swift */,
+				BD4694011F1795360055EAD7 /* WatchingCollectionViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		BD4694061F17D6A00055EAD7 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				BD4694071F17D7410055EAD7 /* WatchingViewProtocol.swift */,
+			);
+			name = Protocol;
+			sourceTree = "<group>";
+		};
+		BD4694091F17D85A0055EAD7 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				BD46940A1F17D9200055EAD7 /* WatchingOutputPresenter.swift */,
+			);
+			name = Presenters;
+			sourceTree = "<group>";
+		};
+		BD46940C1F17DA310055EAD7 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				BD46940D1F17DA5A0055EAD7 /* WatchingInteractor.swift */,
+			);
+			name = Interactors;
+			sourceTree = "<group>";
+		};
+		BD46940F1F17DC000055EAD7 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				BD4694101F17DC6E0055EAD7 /* WatchingRemoteDataManager.swift */,
+			);
+			name = Remote;
 			sourceTree = "<group>";
 		};
 		BD59ACD41EE6C57E004DEBE4 /* Extension */ = {
@@ -307,12 +407,12 @@
 		BDA16F671EE58BFA00164AE2 /* Essencial */ = {
 			isa = PBXGroup;
 			children = (
+				BDB32A8B1F1CEE2F005C63F5 /* Parser */,
+				BDB32A841F1CCF39005C63F5 /* Transform */,
 				BDA32F861EE7862700078E1B /* Api */,
 				BD59ACD41EE6C57E004DEBE4 /* Extension */,
 				BDA16FA81EE5979C00164AE2 /* Entities */,
-				BD59ACDD1EE6C6FE004DEBE4 /* LeftMenu */,
-				BDA16F971EE58E9A00164AE2 /* WatchList */,
-				BDA16F961EE58C3D00164AE2 /* Views */,
+				BD4693F81F16A00B0055EAD7 /* ViewController */,
 				BDA16F681EE58BFA00164AE2 /* AppDelegate.swift */,
 				BD59ACD01EE6C3D4004DEBE4 /* SlideMenuController.swift */,
 				BD59ACF21EE7190F004DEBE4 /* MenuController.swift */,
@@ -391,6 +491,12 @@
 			children = (
 				BDA16FA91EE597CA00164AE2 /* MediaEntity.swift */,
 				BD881FA11EEF6764001A0FEB /* UserEntity.swift */,
+				BDB32A821F1CCD27005C63F5 /* Watched.swift */,
+				BDB32A871F1CD5B8005C63F5 /* Movie.swift */,
+				BDB32A891F1CD6D3005C63F5 /* Ids.swift */,
+				BDB32A8E1F1D4518005C63F5 /* Show.swift */,
+				BDB32A901F1D45B9005C63F5 /* Seasons.swift */,
+				BDB32A921F1D467A005C63F5 /* Episodes.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -402,6 +508,22 @@
 				BD4693F61F1687640055EAD7 /* ThemoviedbAPI.swift */,
 			);
 			name = Api;
+			sourceTree = "<group>";
+		};
+		BDB32A841F1CCF39005C63F5 /* Transform */ = {
+			isa = PBXGroup;
+			children = (
+				BDB32A851F1CCF5B005C63F5 /* DateFormatTransform.swift */,
+			);
+			name = Transform;
+			sourceTree = "<group>";
+		};
+		BDB32A8B1F1CEE2F005C63F5 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				BDB32A8C1F1CF66F005C63F5 /* WatchedParser.swift */,
+			);
+			name = Parser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -702,27 +824,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD46940E1F17DA5A0055EAD7 /* WatchingInteractor.swift in Sources */,
+				BDB32A8D1F1CF66F005C63F5 /* WatchedParser.swift in Sources */,
 				BD59ACD61EE6C5A5004DEBE4 /* UIApplication.swift in Sources */,
+				BDB32A911F1D45B9005C63F5 /* Seasons.swift in Sources */,
 				BD981AE41EF070A500458123 /* WatchListViewProtocol.swift in Sources */,
 				BD981AE71EF0745600458123 /* WatchListRemoteDataManager.swift in Sources */,
 				BD981AEA1EF1B8F200458123 /* WatchListTableViewCell.swift in Sources */,
 				BD59ACF31EE7190F004DEBE4 /* MenuController.swift in Sources */,
 				BDA16F6B1EE58BFA00164AE2 /* ViewController.swift in Sources */,
+				BDB32A931F1D467A005C63F5 /* Episodes.swift in Sources */,
 				BD981ADE1EF0503D00458123 /* UserRemoteDataManager.swift in Sources */,
+				BDB32A881F1CD5B9005C63F5 /* Movie.swift in Sources */,
 				BD881FA21EEF6764001A0FEB /* UserEntity.swift in Sources */,
 				BD981AE11EF052A900458123 /* UserInteractor.swift in Sources */,
 				BDA16F991EE58EE100164AE2 /* WatchListViewController.swift in Sources */,
+				BDB32A8A1F1CD6D3005C63F5 /* Ids.swift in Sources */,
 				BD59ACDF1EE6C72E004DEBE4 /* LeftViewController.swift in Sources */,
 				BD59ACE91EE6D3EA004DEBE4 /* BaseTableViewCell.swift in Sources */,
 				BD981AD81EF0248500458123 /* LeftMenuViewProtocols.swift in Sources */,
 				BD59AF631EE9B2D8004DEBE4 /* LoginTrakt.swift in Sources */,
+				BDB32A8F1F1D4518005C63F5 /* Show.swift in Sources */,
+				BD46940B1F17D9200055EAD7 /* WatchingOutputPresenter.swift in Sources */,
+				BD4694021F1795360055EAD7 /* WatchingCollectionViewCell.swift in Sources */,
 				BDA16F9B1EE58F2E00164AE2 /* WatchListDataSource.swift in Sources */,
 				BD59ACDC1EE6C681004DEBE4 /* String.swift in Sources */,
 				BDA16F691EE58BFA00164AE2 /* AppDelegate.swift in Sources */,
 				BDA32F881EE7867300078E1B /* TraktTVAPI.swift in Sources */,
 				BD59ACE11EE6C78E004DEBE4 /* ImageHeaderView.swift in Sources */,
 				BDA16F9E1EE58FE900164AE2 /* WatchListOutputPresenter.swift in Sources */,
+				BD4693FF1F1787390055EAD7 /* WatchingCollectionViewController.swift in Sources */,
+				BD4694111F17DC6E0055EAD7 /* WatchingRemoteDataManager.swift in Sources */,
+				BD4694081F17D7410055EAD7 /* WatchingViewProtocol.swift in Sources */,
 				BD59ACEB1EE6D4EC004DEBE4 /* UITableView.swift in Sources */,
+				BDB32A831F1CCD27005C63F5 /* Watched.swift in Sources */,
 				BD4693F71F1687640055EAD7 /* ThemoviedbAPI.swift in Sources */,
 				BD59ACD31EE6C54C004DEBE4 /* ExSlideMenuController.swift in Sources */,
 				BD981ADB1EF04D3F00458123 /* UserPresenter.swift in Sources */,
@@ -732,6 +867,7 @@
 				BD59ACE51EE6D000004DEBE4 /* UIView.swift in Sources */,
 				BDA16FAA1EE597CA00164AE2 /* MediaEntity.swift in Sources */,
 				BDA16FA41EE591B000164AE2 /* WatchListItensInteractor.swift in Sources */,
+				BDB32A861F1CCF5B005C63F5 /* DateFormatTransform.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

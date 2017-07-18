@@ -19,7 +19,7 @@ class UserInteractor: UserInteractorInputProtocol {
 
 extension UserInteractor: UserRemoteDataManagerOutputProtocol {    
     
-    func onPostsRetrieved(_ posts: UserEntity) {
+    func onPostsRetrieved(_ posts: UserEntity?) {
         presenter?.didRetrievePosts(posts)
         
     }

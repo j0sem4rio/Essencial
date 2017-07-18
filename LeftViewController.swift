@@ -11,6 +11,7 @@ import PKHUD
 
 enum LeftMenu: String {
     case Main = "HOME"
+    case Watching = "WATCHING"
     case Login = "LOGIN"
 }
 
@@ -27,10 +28,11 @@ class LeftViewController: UIViewController, LeftMenuProtocol {
     var menuToReturn = [[String: String]]()
     var mainViewController: UIViewController!
     var loginTrakt: UIViewController!
-    var javaViewController: UIViewController!
+    var watchingViewController: UIViewController!
     var goViewController: UIViewController!
     var nonMenuViewController: UIViewController!
     var imageHeaderView: ImageHeaderView!
+    var user: UserEntity!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -39,8 +41,7 @@ class LeftViewController: UIViewController, LeftMenuProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.separatorColor = UIColor(red: 224/255, green: 224/255, blue: 224/255, alpha: 1.0)
-        
-        addChildView("HOME", titleOfMenu: NSLocalizedString("watchList", comment: ""), iconName: "home")
+       
         addChildView("LOGIN", titleOfMenu: NSLocalizedString("login", comment: ""), iconName: "config")
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -54,6 +55,31 @@ class LeftViewController: UIViewController, LeftMenuProtocol {
         presenter?.viewDidLoad()
     }
     
+    func watchingVC(storyboard: UIStoryboard) -> WatchingCollectionViewController {
+        let watching = storyboard.instantiateViewController(withIdentifier: "WatchingCollectionViewController") as? WatchingCollectionViewController
+        watching?.user = user
+        let presenter: WatchingPresenterProtocol & WatchingInteractorOutputProtocol = WatchingOutputPresenter()
+        let interactor: WatchingInteractorInputProtocol & WatchingRemoteDataManagerOutputProtocol = WatchingInteractor()
+        let remoteDataManager: WatchingRemoteDataManagerInputProtocol = WatchingRemoteDataManager()
+        
+        watching?.presenter = presenter
+        presenter.view = watching
+        presenter.interactor = interactor
+        interactor.presenter = presenter
+        interactor.remoteDatamanager = remoteDataManager
+        remoteDataManager.remoteRequestHandler = interactor
+        return watching!
+    }
+    func afterLogin() {
+        menuToReturn.removeAll()
+        addChildView("HOME", titleOfMenu: NSLocalizedString("watchList", comment: ""), iconName: "home")
+        addChildView("WATCHING", titleOfMenu: NSLocalizedString("login", comment: ""), iconName: "config")
+        addChildView("LOGIN", titleOfMenu: NSLocalizedString("login", comment: ""), iconName: "config")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let watching = watchingVC(storyboard: storyboard)
+        self.watchingViewController = UINavigationController(rootViewController: watching)
+        tableView.reloadData()
+    }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.imageHeaderView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 160)
@@ -68,6 +94,8 @@ class LeftViewController: UIViewController, LeftMenuProtocol {
         switch menu {
         case .Main:
             self.slideMenuController()?.changeMainViewController(self.mainViewController, close: true)
+        case .Watching:
+            self.slideMenuController()?.changeMainViewController(self.watchingViewController, close: true)
         case .Login:
             self.slideMenuController()?.changeMainViewController(self.loginTrakt, close: true)
         }
@@ -80,8 +108,13 @@ class LeftViewController: UIViewController, LeftMenuProtocol {
 }
 
 extension LeftViewController: LeftMenuViewProtocol {
-    func showPosts(with posts: UserEntity) {
-        self.imageHeaderView.set( forPost: posts )
+    func showPosts(with posts: UserEntity?) {
+        if posts != nil {
+            self.imageHeaderView.set( forPost: posts! )
+            self.user = posts
+            
+            self.afterLogin()
+        }
     }
     
     func showError() {
@@ -101,7 +134,7 @@ extension LeftViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if let menu = LeftMenu(rawValue: menuToReturn[indexPath.item]["title"]!) {
             switch menu {
-            case .Main, .Login:
+            case .Main, .Watching, .Login:
                 return BaseTableViewCell.height()
             }
         }
@@ -119,7 +152,7 @@ extension LeftViewController : UITableViewDataSource {
         
         if let menu = LeftMenu(rawValue: menuToReturn[indexPath.row]["title"]!) {
             switch menu {
-            case .Main, .Login:
+            case .Main, .Watching, .Login:
                 let cell = BaseTableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: BaseTableViewCell.identifier)
                 cell.setData(menuToReturn[(indexPath as NSIndexPath).row]["name"]!)
                 cell.img.image = UIImage(named: menuToReturn[indexPath.row]["icon"]!)

@@ -19,9 +19,9 @@ class WatchListRemoteDataManager: WatchListRemoteDataManagerInputProtocol {
             self.remoteRequestHandler?.onPostsRetrieved(medias)
         }
     }
-    func retrieveLoadImageList(_ posts: [MediaEntity]) {
+    func retrieveLoadImageList(_ posts: [MediaEntity], type: ThemoviedbAPI.typedb) {
         for medie in posts {
-            ThemoviedbAPI().poster(mediaEntity: medie, completion: { _ in
+            ThemoviedbAPI().poster(mediaEntity: medie, type: type, completion: { _ in
                 self.remoteRequestHandler?.onPostsImage()
             })
         }

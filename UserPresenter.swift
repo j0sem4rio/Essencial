@@ -17,7 +17,7 @@ class UserPresenter: UserPresenterProtocol {
 }
 extension UserPresenter: UserInteractorOutputProtocol {
     
-    func didRetrievePosts(_ posts: UserEntity) {
+    func didRetrievePosts(_ posts: UserEntity?) {
         view?.hideLoading()
         view?.showPosts(with: posts)
     }

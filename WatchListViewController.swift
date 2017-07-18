@@ -62,7 +62,7 @@ extension WatchListViewController: WatchListViewProtocol {
     
     func showPosts(with posts: [MediaEntity]) {
         configureDataSource(mediaItems: posts)
-        presenter?.image(posts)
+        presenter?.image(posts, type: ThemoviedbAPI.typedb.Tv)
         tableView.reloadData()
     }
     func showUpdatePosts() {
@@ -75,11 +75,11 @@ extension WatchListViewController: WatchListViewProtocol {
     }
     
     func showLoading() {
-        HUD.show(.progress)
+//        HUD.show(.progress)
     }
     
     func hideLoading() {
-        HUD.hide()
+//        HUD.hide()
     }
     
 }

@@ -12,7 +12,7 @@ protocol LeftMenuViewProtocol: class {
     var presenter: UserPresenterProtocol? { get set }
     
     // PRESENTER -> VIEW
-    func showPosts(with posts: UserEntity)
+    func showPosts(with posts: UserEntity?)
     
     func showError()
     
@@ -31,7 +31,7 @@ protocol UserPresenterProtocol: class {
 
 protocol UserInteractorOutputProtocol: class {
     // INTERACTOR -> PRESENTER
-    func didRetrievePosts(_ posts: UserEntity)
+    func didRetrievePosts(_ posts: UserEntity?)
     func onError()
 }
 
@@ -44,7 +44,7 @@ protocol UserRemoteDataManagerInputProtocol: class {
 
 protocol UserRemoteDataManagerOutputProtocol: class {
     // REMOTEDATAMANAGER -> INTERACTOR
-    func onPostsRetrieved(_ posts: UserEntity)
+    func onPostsRetrieved(_ posts: UserEntity?)
     func onError()
 }
 

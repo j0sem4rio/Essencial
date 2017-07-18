@@ -16,8 +16,8 @@ class WatchListOutputPresenter: WatchListPresenterProtocol {
         view?.showLoading()
         interactor?.retrievePostList()
     }
-    func image(_ posts: [MediaEntity]) {
-        interactor?.retrieveUpdatImageList(posts)
+    func image(_ posts: [MediaEntity], type: ThemoviedbAPI.typedb) {
+        interactor?.retrieveUpdatImageList(posts, type: type)
         view?.showUpdatePosts()
     }
 }

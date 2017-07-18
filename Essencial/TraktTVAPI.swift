@@ -9,9 +9,9 @@
 import UIKit
 import Alamofire
 import AlamofireObjectMapper
+import SwiftyJSON
 
 class TraktTVAPI {
-    
     enum type: String {
         case Movies = "movies"
         case Shows = "shows"
@@ -28,6 +28,12 @@ class TraktTVAPI {
     let username = "mario_fernandes"
     let redirectURI: String = "urn:ietf:wg:oauth:2.0:oob"
     let defs: UserDefaults = UserDefaults.standard
+    
+    var headers: HTTPHeaders = [
+        "trakt-api-key": "f4c95e350153c5ecca6a353ff194cccaa7a7ea095ff88bf325030323bacdf2e0",
+        "Content-Type": "application/json",
+        "trakt-api-version": "2"
+    ]
     
     public var authorizationURL: URL? {
         guard var components = URLComponents(string: "https://www.trakt.tv/oauth/authorize") else { return nil }
@@ -55,12 +61,8 @@ class TraktTVAPI {
             } else {
                 parameters = ["episode": ["ids": ["tvdb": Int(id)!]], "progress": progress * 100.0]
             }
-        let headers: HTTPHeaders = [
-            "trakt-api-key": self.clientId,
-            "Content-Type": "application/json",
-            "trakt-api-version": "2",
-            "Authorization": "Bearer \(credential ?? "")"
-        ]
+
+        headers["Authorization"] = "Bearer \(credential ?? "")"
         
         Alamofire.request("https://api.trakt.tv/scrobble/\(status.rawValue)", method: .post, parameters:parameters, headers:headers).responseJSON { response in
             debugPrint(response)
@@ -103,14 +105,9 @@ class TraktTVAPI {
     
     func watchList(type: TraktTVAPI.type, completion: @escaping (_ background: [MediaEntity] ) -> Void) {
         let credential = defs.string(forKey: "access_token")
-        let headers = [
-            "trakt-api-key": self.clientId,
-            "Accept": "application/json",
-            "trakt-api-version": "2",
-            "Authorization": "Bearer \(credential ?? "")"
-        ]
+        headers["Authorization"] = "Bearer \(credential ?? "")"
         
-        Alamofire.request("https://api.trakt.tv/sync/watchlist/\(type)",
+        Alamofire.request("https://api.trakt.tv/sync/watchlist/\(type.rawValue)",
                           method: .get,
                           parameters: ["extended": "images"],
                           headers: headers).responseArray(completionHandler: { (response: DataResponse<[MediaEntity]>) in
@@ -121,17 +118,56 @@ class TraktTVAPI {
                                 completion([])
                             }
                           })
-    }    
+    }
+    func watching(userEntity posts: UserEntity, completion: @escaping (_ background: [MediaEntity] ) -> Void) {
+        let slug: String = posts.ids["slug"]!
+        Alamofire.request("https://api.trakt.tv/users/\(slug)/watching",
+            method: .get,
+            parameters: ["extended": "images"],
+            headers: headers).responseArray(completionHandler: { (response: DataResponse<[MediaEntity]>) in
+                switch response.result {
+                case .success(let posts):
+                    completion(posts)
+                case .failure( _):
+                    completion([])
+                }
+            })
+    }
+    
+    func watched(userEntity posts: UserEntity, type: TraktTVAPI.type, completion: @escaping (_ background: [Watched] ) -> Void) {
+        let slug: String = posts.ids["slug"]!
+//        Alamofire.request("https://api.trakt.tv/users/\(slug)/watched/\(type.rawValue)",
+//            method: .get,
+//            headers: headers).responseArray(completionHandler: { (response: DataResponse<[Watched]>) in
+//                switch response.result {
+//                case .success(let posts):
+//                    completion(posts)
+//                case .failure( _):
+//                    completion([])
+//                }
+        //            })
+        Alamofire.request("https://api.trakt.tv/users/\(slug)/watched/\(type.rawValue)",
+            method: .get,
+            headers: headers).responseJSON { response in
+                print("Request: \(String(describing: response.request))")   // original url request
+                print("Response: \(String(describing: response.response))") // http url response
+                print("Result: \(response.result)")                         // response serialization result
+                
+                if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                    print("Data: \(utf8Text)") // original server data as UTF8 string
+                    if let dataFromString = utf8Text.data(using: String.Encoding.utf8, allowLossyConversion: false) {
+                        let json = JSON(data: dataFromString)
+                        let parser: WatchedParser = WatchedParser()                        
+                        completion(parser.Parser(json: json))
+                    }
+                }
+        }
+    }
     
     func getList(completion: @escaping (_ background: [MediaEntity] ) -> Void) {
         
         let credential = defs.string(forKey: "access_token")
-        let headers = [
-            "trakt-api-key": self.clientId,
-            "Accept": "application/json",
-            "trakt-api-version": "2",
-            "Authorization": "Bearer \(credential ?? "")"
-        ]
+        headers["Authorization"] = "Bearer \(credential ?? "")"
         
         Alamofire.request("https://api.trakt.tv/shows/trending",
                           method: .get,
@@ -148,12 +184,7 @@ class TraktTVAPI {
     
     func settings(completion: @escaping (_ background: UserEntity?) -> Void) {
         let credential = defs.string(forKey: "access_token")
-        let headers = [
-            "trakt-api-key": self.clientId,
-            "Accept": "application/json",
-            "trakt-api-version": "2",
-            "Authorization": "Bearer \(credential ?? "")"
-        ]
+        headers["Authorization"] = "Bearer \(credential ?? "")"
         
         Alamofire.request("https://api.trakt.tv/users/settings",
             method: .get,
@@ -168,25 +199,6 @@ class TraktTVAPI {
             })
     }
     
-//    func profile(completion: @escaping (_ background: UserEntity) -> Void) {
-//        let credential = defs.string(forKey: "access_token")
-//        Alamofire.request("https://api.trakt.tv/users/id/\(credential ?? "")",
-//            headers: ["trakt-api-key": clientId, "trakt-api-version": "2"]).responseObject { (response: DataResponse<UserEntity>) in
-//                
-//                switch response.result {
-//                case .success(let posts):
-//                    
-//                        print("JSON: \(posts)")
-//                        completion(posts)
-//                    
-//                case .failure( _):
-//                    if let json = response.result.value {
-//                        print("JSON: \(json)")
-//                        completion(UserEntity())
-//                    }
-//                }
-//        }
-//    }
     func convertToDictionary(text: String) -> [String: Any]? {
         if let data = text.data(using: .utf8) {
             do {

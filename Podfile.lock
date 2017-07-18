@@ -12,6 +12,7 @@ PODS:
   - RxSwift (3.4.1)
   - SkyFloatingLabelTextField (3.1.0)
   - SwiftLint (0.18.1)
+  - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
@@ -22,6 +23,7 @@ DEPENDENCIES:
   - RxSwift
   - SkyFloatingLabelTextField
   - SwiftLint
+  - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
@@ -33,7 +35,8 @@ SPEC CHECKSUMS:
   RxSwift: 656f8fbeca5bc372121a72d9ebdd3cd3bc0ffade
   SkyFloatingLabelTextField: 26a92ad407044dd5a7c3e4e348738ff0991514fe
   SwiftLint: b467d08f5b25dc3b3cfed243d8e1b74b91714c67
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 18223c4733e3a145fdf88ace03fbcd62d9944450
+PODFILE CHECKSUM: d607f740bde12cfe0710e9d01c30a358d7f8d960
 
 COCOAPODS: 1.2.0

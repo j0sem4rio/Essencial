@@ -15,8 +15,8 @@ class WatchListItensInteractor: WatchListInteractorInputProtocol {
         remoteDatamanager?.retrievePostList()
     }
     
-    func retrieveUpdatImageList(_ posts: [MediaEntity]) {
-        remoteDatamanager?.retrieveLoadImageList(posts)
+    func retrieveUpdatImageList(_ posts: [MediaEntity], type: ThemoviedbAPI.typedb) {
+        remoteDatamanager?.retrieveLoadImageList(posts, type: type)
     }    
 }
 

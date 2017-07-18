@@ -29,7 +29,7 @@ protocol WatchListPresenterProtocol: class {
     
     // VIEW -> PRESENTER
     func viewDidLoad()
-    func image(_ posts: [MediaEntity])
+    func image(_ posts: [MediaEntity], type: ThemoviedbAPI.typedb)
 }
 
 protocol WatchListInteractorOutputProtocol: class {
@@ -44,7 +44,7 @@ protocol WatchListRemoteDataManagerInputProtocol: class {
     
     // INTERACTOR -> REMOTEDATAMANAGER
     func retrievePostList()
-    func retrieveLoadImageList(_ posts: [MediaEntity])
+    func retrieveLoadImageList(_ posts: [MediaEntity], type: ThemoviedbAPI.typedb)
 }
 
 protocol WatchListRemoteDataManagerOutputProtocol: class {
@@ -60,5 +60,5 @@ protocol WatchListInteractorInputProtocol: class {
     
     // PRESENTER -> INTERACTOR
     func retrievePostList()
-    func retrieveUpdatImageList(_ posts: [MediaEntity])
+    func retrieveUpdatImageList(_ posts: [MediaEntity], type: ThemoviedbAPI.typedb)
 }
