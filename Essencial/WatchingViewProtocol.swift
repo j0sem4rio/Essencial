@@ -29,7 +29,7 @@ protocol WatchingPresenterProtocol: class {
     
     // VIEW -> PRESENTER
     func viewDidLoad(userEntity posts: UserEntity, type: TraktTVAPI.type)
-    func image(_ posts: [Watched])
+    func image(_ posts: [Watched], type: ThemoviedbAPI.typedb)
 }
 
 protocol WatchingInteractorOutputProtocol: class {
@@ -44,7 +44,7 @@ protocol WatchingRemoteDataManagerInputProtocol: class {
     
     // INTERACTOR -> REMOTEDATAMANAGER
     func retrievePostList(userEntity posts: UserEntity, type: TraktTVAPI.type)
-    func retrieveLoadImageList(_ posts: [Watched])
+    func retrieveLoadImageList(_ posts: [Watched], type: ThemoviedbAPI.typedb)
 }
 
 protocol WatchingRemoteDataManagerOutputProtocol: class {
@@ -60,5 +60,5 @@ protocol WatchingInteractorInputProtocol: class {
     
     // PRESENTER -> INTERACTOR
     func retrievePostList(userEntity posts: UserEntity, type: TraktTVAPI.type)
-    func retrieveUpdatImageList(_ posts: [Watched])
+    func retrieveUpdatImageList(_ posts: [Watched], type: ThemoviedbAPI.typedb)
 }

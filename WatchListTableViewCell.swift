@@ -18,15 +18,26 @@ class WatchListTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var yearLabel: UILabel!
     
-    func set(forPost post: MediaEntity) {
+    func set(forPost post: WatchList) {
         self.selectionStyle = .none
-        titleLabel?.text = post.title
-        yearLabel?.text = String(post.year)
-        if post.imageUrl != nil {
-            let url = URL(string: post.imageUrl!)!
-            let placeholderImage = UIImage(named: "placeholder")!
-            postImageView?.af_setImage(withURL: url, placeholderImage: placeholderImage)
+        if let show = post.show {
+            titleLabel?.text = show.title
+            yearLabel?.text = String(show.year)
+            if show.imageUrl != nil {
+                let url = URL(string: show.imageUrl!)!
+                let placeholderImage = UIImage(named: "placeholder")!
+                postImageView?.af_setImage(withURL: url, placeholderImage: placeholderImage)
+            }
+        } else {
+            titleLabel?.text = post.movie.title
+            yearLabel?.text = String(post.movie.year)
+            if post.movie.imageUrl != nil {
+                let url = URL(string: post.movie.imageUrl!)!
+                let placeholderImage = UIImage(named: "placeholder")!
+                postImageView?.af_setImage(withURL: url, placeholderImage: placeholderImage)
+            }
         }
+        
     }
     
 }

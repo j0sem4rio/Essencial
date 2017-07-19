@@ -26,7 +26,7 @@ class WatchListViewController: UIViewController, UITableViewDelegate, SFSafariVi
     
     override func viewDidLoad() {
         super.viewDidLoad()  
-        presenter?.viewDidLoad()
+        presenter?.viewDidLoad(type: .Shows)
     }
     
     func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
@@ -50,7 +50,7 @@ class WatchListViewController: UIViewController, UITableViewDelegate, SFSafariVi
     
     // MARK: Setups
     
-    fileprivate func configureDataSource(mediaItems: [MediaEntity]) {
+    fileprivate func configureDataSource(mediaItems: [WatchList]) {
         watchListDataSource = WatchListDataSource(mediaItems: mediaItems)
         if let watchListDataSource = watchListDataSource {
             tableView.dataSource = watchListDataSource
@@ -60,7 +60,7 @@ class WatchListViewController: UIViewController, UITableViewDelegate, SFSafariVi
 }
 extension WatchListViewController: WatchListViewProtocol {
     
-    func showPosts(with posts: [MediaEntity]) {
+    func showPosts(with posts: [WatchList]) {
         configureDataSource(mediaItems: posts)
         presenter?.image(posts, type: ThemoviedbAPI.typedb.Tv)
         tableView.reloadData()

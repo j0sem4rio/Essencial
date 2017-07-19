@@ -30,5 +30,19 @@ class WatchingCollectionViewCell: UICollectionViewCell {
             }
         }
     }
+    func set(forPost post: Watched) {
+        if let show = post.show {
+            titleLabel?.text = show.title
+            yearLabel?.text = String(show.year)
+            if show.imageUrl != nil {
+                let url = URL(string: show.imageUrl!)!
+                let placeholderImage = UIImage(named: "placeholder")!
+                coverImage?.af_setImage(withURL: url, placeholderImage: placeholderImage)
+            }
+        } else {
+            titleLabel?.text = post.movie.title
+            yearLabel?.text = String(post.movie.year)
+        }
+    }
     
 }

@@ -73,7 +73,7 @@ class LeftViewController: UIViewController, LeftMenuProtocol {
     func afterLogin() {
         menuToReturn.removeAll()
         addChildView("HOME", titleOfMenu: NSLocalizedString("watchList", comment: ""), iconName: "home")
-        addChildView("WATCHING", titleOfMenu: NSLocalizedString("login", comment: ""), iconName: "config")
+        addChildView("WATCHING", titleOfMenu: NSLocalizedString("watched", comment: ""), iconName: "config")
         addChildView("LOGIN", titleOfMenu: NSLocalizedString("login", comment: ""), iconName: "config")
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let watching = watchingVC(storyboard: storyboard)

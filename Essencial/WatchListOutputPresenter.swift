@@ -12,18 +12,18 @@ class WatchListOutputPresenter: WatchListPresenterProtocol {
     weak var view: WatchListViewProtocol?
     var interactor: WatchListInteractorInputProtocol?
     
-    func viewDidLoad() {
+    func viewDidLoad(type: TraktTVAPI.type) {
         view?.showLoading()
-        interactor?.retrievePostList()
+        interactor?.retrievePostList(type: type)
     }
-    func image(_ posts: [MediaEntity], type: ThemoviedbAPI.typedb) {
+    func image(_ posts: [WatchList], type: ThemoviedbAPI.typedb) {
         interactor?.retrieveUpdatImageList(posts, type: type)
         view?.showUpdatePosts()
     }
 }
 extension WatchListOutputPresenter: WatchListInteractorOutputProtocol {
     
-    func didRetrievePosts(_ posts: [MediaEntity]) {
+    func didRetrievePosts(_ posts: [WatchList]) {
         view?.hideLoading()
         view?.showPosts(with: posts)
     }

@@ -12,12 +12,12 @@ class WatchListDataSource: NSObject, UITableViewDataSource {
     
     // MARK: Properties
     
-    var mediaItems: [MediaEntity] = []
+    var mediaItems: [WatchList] = []
     let cellIdentifier = "CustomerCell"
     
     // MARK: Initializers
     
-    init(mediaItems: [MediaEntity]) {
+    init(mediaItems: [WatchList]) {
         self.mediaItems = mediaItems
         super.init()
     }

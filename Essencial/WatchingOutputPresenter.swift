@@ -16,8 +16,8 @@ class WatchingOutputPresenter: WatchingPresenterProtocol {
         view?.showLoading()
         interactor?.retrievePostList(userEntity: posts, type: type)
     }
-    func image(_ posts: [Watched]) {
-        interactor?.retrieveUpdatImageList(posts)
+    func image(_ posts: [Watched], type: ThemoviedbAPI.typedb) {
+        interactor?.retrieveUpdatImageList(posts, type: type)
         view?.showUpdatePosts()
     }
 }

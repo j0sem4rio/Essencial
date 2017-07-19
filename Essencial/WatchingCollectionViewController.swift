@@ -17,8 +17,7 @@ class WatchingCollectionViewController: UIViewController, UICollectionViewDataSo
     
     // outlet - collection view
     @IBOutlet var moviesCollectionView: UICollectionView!
-    
-    
+
     // action - radious change stepper
     @IBAction func radiousStepperAction(_ sender: UIStepper) {
         
@@ -68,10 +67,7 @@ class WatchingCollectionViewController: UIViewController, UICollectionViewDataSo
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WatchingCollectionViewCell.identifier, for: indexPath) as? WatchingCollectionViewCell
-//        cell.coverImage.af_setImageWithURL(URL(string: movies[indexPath.row].coverImageAsString)!, placeholderImage: UIImage(named: "Placeholder"), mageTransition: .CrossDissolve(animationLength))
-        cell?.titleLabel.text = movies[indexPath.row].show.title
-        cell?.yearLabel.text = String(movies[indexPath.row].show.year)
-//        cell.watched = WatchlistManager.movieManager.isWatched(movies[indexPath.row].imdbId)
+        cell?.set(forPost: movies[indexPath.row])
         return cell!
     }
     
@@ -123,11 +119,12 @@ class WatchingCollectionViewController: UIViewController, UICollectionViewDataSo
 extension WatchingCollectionViewController: WatchingViewProtocol {
     
     func showPosts(with posts: [Watched]) {
-        presenter?.image(posts)
+        presenter?.image(posts, type: ThemoviedbAPI.typedb.Tv)
         movies = posts
         self.moviesCollectionView!.reloadData()
     }
     func showUpdatePosts() {
+        self.moviesCollectionView!.reloadData()
     }
     
     func showError() {

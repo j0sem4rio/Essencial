@@ -17,6 +17,9 @@
 		BD46940B1F17D9200055EAD7 /* WatchingOutputPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46940A1F17D9200055EAD7 /* WatchingOutputPresenter.swift */; };
 		BD46940E1F17DA5A0055EAD7 /* WatchingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD46940D1F17DA5A0055EAD7 /* WatchingInteractor.swift */; };
 		BD4694111F17DC6E0055EAD7 /* WatchingRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4694101F17DC6E0055EAD7 /* WatchingRemoteDataManager.swift */; };
+		BD4888771F1F7043004080AA /* WatchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4888761F1F7043004080AA /* WatchList.swift */; };
+		BD4888791F1F7852004080AA /* WatchPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4888781F1F7852004080AA /* WatchPattern.swift */; };
+		BD48887B1F1F8C03004080AA /* WatchListParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD48887A1F1F8C03004080AA /* WatchListParser.swift */; };
 		BD59ACD11EE6C3D4004DEBE4 /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD59ACD01EE6C3D4004DEBE4 /* SlideMenuController.swift */; };
 		BD59ACD31EE6C54C004DEBE4 /* ExSlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD59ACD21EE6C54C004DEBE4 /* ExSlideMenuController.swift */; };
 		BD59ACD61EE6C5A5004DEBE4 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD59ACD51EE6C5A5004DEBE4 /* UIApplication.swift */; };
@@ -50,7 +53,6 @@
 		BDA16F9B1EE58F2E00164AE2 /* WatchListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA16F9A1EE58F2E00164AE2 /* WatchListDataSource.swift */; };
 		BDA16F9E1EE58FE900164AE2 /* WatchListOutputPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA16F9D1EE58FE900164AE2 /* WatchListOutputPresenter.swift */; };
 		BDA16FA41EE591B000164AE2 /* WatchListItensInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA16FA31EE591B000164AE2 /* WatchListItensInteractor.swift */; };
-		BDA16FAA1EE597CA00164AE2 /* MediaEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA16FA91EE597CA00164AE2 /* MediaEntity.swift */; };
 		BDA32F881EE7867300078E1B /* TraktTVAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA32F871EE7867300078E1B /* TraktTVAPI.swift */; };
 		BDB32A831F1CCD27005C63F5 /* Watched.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB32A821F1CCD27005C63F5 /* Watched.swift */; };
 		BDB32A861F1CCF5B005C63F5 /* DateFormatTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB32A851F1CCF5B005C63F5 /* DateFormatTransform.swift */; };
@@ -95,6 +97,9 @@
 		BD46940A1F17D9200055EAD7 /* WatchingOutputPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchingOutputPresenter.swift; sourceTree = "<group>"; };
 		BD46940D1F17DA5A0055EAD7 /* WatchingInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchingInteractor.swift; sourceTree = "<group>"; };
 		BD4694101F17DC6E0055EAD7 /* WatchingRemoteDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchingRemoteDataManager.swift; sourceTree = "<group>"; };
+		BD4888761F1F7043004080AA /* WatchList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchList.swift; sourceTree = "<group>"; };
+		BD4888781F1F7852004080AA /* WatchPattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchPattern.swift; sourceTree = "<group>"; };
+		BD48887A1F1F8C03004080AA /* WatchListParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchListParser.swift; sourceTree = "<group>"; };
 		BD59ACD01EE6C3D4004DEBE4 /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
 		BD59ACD21EE6C54C004DEBE4 /* ExSlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExSlideMenuController.swift; path = ../ExSlideMenuController.swift; sourceTree = "<group>"; };
 		BD59ACD51EE6C5A5004DEBE4 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
@@ -134,7 +139,6 @@
 		BDA16F9A1EE58F2E00164AE2 /* WatchListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchListDataSource.swift; sourceTree = "<group>"; };
 		BDA16F9D1EE58FE900164AE2 /* WatchListOutputPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchListOutputPresenter.swift; sourceTree = "<group>"; };
 		BDA16FA31EE591B000164AE2 /* WatchListItensInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchListItensInteractor.swift; sourceTree = "<group>"; };
-		BDA16FA91EE597CA00164AE2 /* MediaEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaEntity.swift; sourceTree = "<group>"; };
 		BDA32F871EE7867300078E1B /* TraktTVAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraktTVAPI.swift; sourceTree = "<group>"; };
 		BDB32A821F1CCD27005C63F5 /* Watched.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Watched.swift; sourceTree = "<group>"; };
 		BDB32A851F1CCF5B005C63F5 /* DateFormatTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatTransform.swift; sourceTree = "<group>"; };
@@ -203,8 +207,7 @@
 		BD4693F81F16A00B0055EAD7 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				BD4693FA1F16A0730055EAD7 /* Watching */,
-				BD4693F91F16A0420055EAD7 /* Watched */,
+				BD4693FA1F16A0730055EAD7 /* Watched */,
 				BD59ACDD1EE6C6FE004DEBE4 /* LeftMenu */,
 				BDA16F971EE58E9A00164AE2 /* WatchList */,
 				BDA16F961EE58C3D00164AE2 /* Views */,
@@ -212,14 +215,7 @@
 			name = ViewController;
 			sourceTree = "<group>";
 		};
-		BD4693F91F16A0420055EAD7 /* Watched */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Watched;
-			sourceTree = "<group>";
-		};
-		BD4693FA1F16A0730055EAD7 /* Watching */ = {
+		BD4693FA1F16A0730055EAD7 /* Watched */ = {
 			isa = PBXGroup;
 			children = (
 				BD46940F1F17DC000055EAD7 /* Remote */,
@@ -228,7 +224,7 @@
 				BD4694061F17D6A00055EAD7 /* Protocol */,
 				BD4694001F1793740055EAD7 /* Views */,
 			);
-			name = Watching;
+			name = Watched;
 			sourceTree = "<group>";
 		};
 		BD4694001F1793740055EAD7 /* Views */ = {
@@ -489,7 +485,6 @@
 		BDA16FA81EE5979C00164AE2 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				BDA16FA91EE597CA00164AE2 /* MediaEntity.swift */,
 				BD881FA11EEF6764001A0FEB /* UserEntity.swift */,
 				BDB32A821F1CCD27005C63F5 /* Watched.swift */,
 				BDB32A871F1CD5B8005C63F5 /* Movie.swift */,
@@ -497,6 +492,7 @@
 				BDB32A8E1F1D4518005C63F5 /* Show.swift */,
 				BDB32A901F1D45B9005C63F5 /* Seasons.swift */,
 				BDB32A921F1D467A005C63F5 /* Episodes.swift */,
+				BD4888761F1F7043004080AA /* WatchList.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -522,6 +518,8 @@
 			isa = PBXGroup;
 			children = (
 				BDB32A8C1F1CF66F005C63F5 /* WatchedParser.swift */,
+				BD4888781F1F7852004080AA /* WatchPattern.swift */,
+				BD48887A1F1F8C03004080AA /* WatchListParser.swift */,
 			);
 			name = Parser;
 			sourceTree = "<group>";
@@ -834,6 +832,7 @@
 				BD59ACF31EE7190F004DEBE4 /* MenuController.swift in Sources */,
 				BDA16F6B1EE58BFA00164AE2 /* ViewController.swift in Sources */,
 				BDB32A931F1D467A005C63F5 /* Episodes.swift in Sources */,
+				BD48887B1F1F8C03004080AA /* WatchListParser.swift in Sources */,
 				BD981ADE1EF0503D00458123 /* UserRemoteDataManager.swift in Sources */,
 				BDB32A881F1CD5B9005C63F5 /* Movie.swift in Sources */,
 				BD881FA21EEF6764001A0FEB /* UserEntity.swift in Sources */,
@@ -847,6 +846,7 @@
 				BDB32A8F1F1D4518005C63F5 /* Show.swift in Sources */,
 				BD46940B1F17D9200055EAD7 /* WatchingOutputPresenter.swift in Sources */,
 				BD4694021F1795360055EAD7 /* WatchingCollectionViewCell.swift in Sources */,
+				BD4888791F1F7852004080AA /* WatchPattern.swift in Sources */,
 				BDA16F9B1EE58F2E00164AE2 /* WatchListDataSource.swift in Sources */,
 				BD59ACDC1EE6C681004DEBE4 /* String.swift in Sources */,
 				BDA16F691EE58BFA00164AE2 /* AppDelegate.swift in Sources */,
@@ -865,7 +865,7 @@
 				BD59ACED1EE6D7C8004DEBE4 /* UIViewController.swift in Sources */,
 				BD59ACDA1EE6C64B004DEBE4 /* UIColor.swift in Sources */,
 				BD59ACE51EE6D000004DEBE4 /* UIView.swift in Sources */,
-				BDA16FAA1EE597CA00164AE2 /* MediaEntity.swift in Sources */,
+				BD4888771F1F7043004080AA /* WatchList.swift in Sources */,
 				BDA16FA41EE591B000164AE2 /* WatchListItensInteractor.swift in Sources */,
 				BDB32A861F1CCF5B005C63F5 /* DateFormatTransform.swift in Sources */,
 			);

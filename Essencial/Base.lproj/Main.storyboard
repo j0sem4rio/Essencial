@@ -30,7 +30,7 @@
                                         <rect key="frame" x="0.0" y="28" width="288" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l1B-0q-MpN" id="lcl-zO-EzY">
-                                            <rect key="frame" x="0.0" y="0.0" width="288" height="90"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="288" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="EV8-un-UIt">
@@ -83,13 +83,35 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="cJW-su-xIq"/>
                                 </connections>
                             </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QCQ-CN-FiQ">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="mYq-kT-0IS"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="JRG-S7-p8z"/>
+                                    <barButtonItem style="plain" id="0L3-OX-BLD">
+                                        <stepper key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" stepValue="5" id="Vsa-Z2-tBH">
+                                            <rect key="frame" x="113" y="7.5" width="94" height="29"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <connections>
+                                                <action selector="radiousStepperAction:" destination="o7g-at-6oc" eventType="valueChanged" id="JaY-WU-Mcg"/>
+                                            </connections>
+                                        </stepper>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="6l7-DF-lZf"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="QCQ-CN-FiQ" secondAttribute="trailing" id="8Nr-WP-T9O"/>
                             <constraint firstItem="Mvk-ay-581" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="9zl-cl-k28"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Mvk-ay-581" secondAttribute="trailing" id="Dcx-CO-X3i"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QCQ-CN-FiQ" secondAttribute="bottom" id="EXs-2X-wKB"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Mvk-ay-581" secondAttribute="bottom" id="aPB-hd-jkO"/>
                             <constraint firstItem="Mvk-ay-581" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="iTu-8g-3WP"/>
+                            <constraint firstItem="QCQ-CN-FiQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xQE-TX-9HE"/>
                         </constraints>
                     </view>
                     <connections>
@@ -203,10 +225,10 @@
             </objects>
             <point key="canvasLocation" x="94" y="-646"/>
         </scene>
-        <!--Photos-->
+        <!--Watched-->
         <scene sceneID="VXe-Ok-Yl2">
             <objects>
-                <viewController storyboardIdentifier="WatchingCollectionViewController" id="o7g-at-6oc" customClass="WatchingCollectionViewController" customModule="Essencial" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WatchingCollectionViewController" id="o7g-at-6oc" userLabel="Watched" customClass="WatchingCollectionViewController" customModule="Essencial" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="N6w-Uz-wgu"/>
                         <viewControllerLayoutGuide type="bottom" id="FW0-18-EOc"/>

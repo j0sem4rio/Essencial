@@ -12,7 +12,7 @@ protocol WatchListViewProtocol: class {
     var presenter: WatchListPresenterProtocol? { get set }
     
     // PRESENTER -> VIEW
-    func showPosts(with posts: [MediaEntity])
+    func showPosts(with posts: [WatchList])
     
     func showUpdatePosts()
     
@@ -28,13 +28,13 @@ protocol WatchListPresenterProtocol: class {
     var interactor: WatchListInteractorInputProtocol? { get set }
     
     // VIEW -> PRESENTER
-    func viewDidLoad()
-    func image(_ posts: [MediaEntity], type: ThemoviedbAPI.typedb)
+    func viewDidLoad(type: TraktTVAPI.type)
+    func image(_ posts: [WatchList], type: ThemoviedbAPI.typedb)
 }
 
 protocol WatchListInteractorOutputProtocol: class {
     // INTERACTOR -> PRESENTER
-    func didRetrievePosts(_ posts: [MediaEntity])
+    func didRetrievePosts(_ posts: [WatchList])
     func onRetrieveImage()
     func onError()
 }
@@ -43,13 +43,13 @@ protocol WatchListRemoteDataManagerInputProtocol: class {
     var remoteRequestHandler: WatchListRemoteDataManagerOutputProtocol? { get set }
     
     // INTERACTOR -> REMOTEDATAMANAGER
-    func retrievePostList()
-    func retrieveLoadImageList(_ posts: [MediaEntity], type: ThemoviedbAPI.typedb)
+    func retrievePostList(type: TraktTVAPI.type)
+    func retrieveLoadImageList(_ posts: [WatchList], type: ThemoviedbAPI.typedb)
 }
 
 protocol WatchListRemoteDataManagerOutputProtocol: class {
     // REMOTEDATAMANAGER -> INTERACTOR
-    func onPostsRetrieved(_ posts: [MediaEntity])
+    func onPostsRetrieved(_ posts: [WatchList])
     func onPostsImage()
     func onError()
 }
@@ -59,6 +59,6 @@ protocol WatchListInteractorInputProtocol: class {
     var remoteDatamanager: WatchListRemoteDataManagerInputProtocol? { get set }
     
     // PRESENTER -> INTERACTOR
-    func retrievePostList()
-    func retrieveUpdatImageList(_ posts: [MediaEntity], type: ThemoviedbAPI.typedb)
+    func retrievePostList(type: TraktTVAPI.type)
+    func retrieveUpdatImageList(_ posts: [WatchList], type: ThemoviedbAPI.typedb)
 }

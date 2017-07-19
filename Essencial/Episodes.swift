@@ -10,7 +10,7 @@ import UIKit
 
 class Episodes: NSObject {
 
-    var plays = ""
+    var plays: Int!
     var last_watched_at: Date?
     var number: Int!
 }

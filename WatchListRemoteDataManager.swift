@@ -14,12 +14,12 @@ class WatchListRemoteDataManager: WatchListRemoteDataManagerInputProtocol {
     
     var remoteRequestHandler: WatchListRemoteDataManagerOutputProtocol?
     
-    func retrievePostList() {
-        TraktTVAPI().watchList(type: .Shows) { (medias) in
+    func retrievePostList(type: TraktTVAPI.type) {
+        TraktTVAPI().watchList(type: type) { (medias) in
             self.remoteRequestHandler?.onPostsRetrieved(medias)
         }
     }
-    func retrieveLoadImageList(_ posts: [MediaEntity], type: ThemoviedbAPI.typedb) {
+    func retrieveLoadImageList(_ posts: [WatchList], type: ThemoviedbAPI.typedb) {
         for medie in posts {
             ThemoviedbAPI().poster(mediaEntity: medie, type: type, completion: { _ in
                 self.remoteRequestHandler?.onPostsImage()

@@ -10,6 +10,6 @@ import UIKit
 
 class Seasons: NSObject {
     var number: Int!
-    var episodes: Episodes!
+    var episodes: [Episodes]!
 
 }

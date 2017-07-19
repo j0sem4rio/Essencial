@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class WatchedParser: NSObject {
+class WatchedParser: WatchPattern {
     
     func Parser(json: JSON) -> [Watched] {
         var watcheds: [Watched] = []
@@ -19,37 +19,17 @@ class WatchedParser: NSObject {
                 watched.plays = j["plays"].stringValue
                 print(j["last_watched_at"].stringValue)
                 watched.last_watched_at = jsonDateFormatter().date(from: j["last_watched_at"].stringValue)
-                if let shows = j["show"].dictionary {                    
-                    let show: Show = Show()
-                    show.title = shows["title"]?.stringValue
-                    show.year = shows["year"]?.intValue
-                    if let ids = shows["ids"]?.dictionary {
-                        let id: Ids = Ids()
-                        id.slug = ids["slug"]?.stringValue
-                        id.imdb = ids["imdb"]?.stringValue
-                        id.tmdb = ids["tmdb"]?.intValue
-                        id.tvrage = ids["tvrage"]?.intValue
-                        id.trakt = ids["trakt"]?.intValue
-                        show.ids = id
-                    }
+                if let shows = j["show"].dictionary {
+                    watched.show = ParserShow(json: shows)
                     if let seasons =  j["seasons"].array {
-                        for seasonjosn in seasons {
-                            let season: Seasons = Seasons()
-                            season.number = seasonjosn["number"].intValue
-                            
-                        }
+                         watched.show.seasons = parserSeasons(json: seasons)
                     }
-                    watched.show = show
                 }
+                
                 watcheds.append(watched)
             }
         }
         return watcheds
     }
-    func jsonDateFormatter() -> DateFormatter {
-        let jsonDateFormatter = DateFormatter()
-        jsonDateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-        jsonDateFormatter.timeZone = TimeZone.autoupdatingCurrent
-        return jsonDateFormatter
-    }
+    
 }

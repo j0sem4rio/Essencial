@@ -14,4 +14,5 @@ class Show: NSObject {
     var title: String!
     var ids: Ids!
     var seasons: [Seasons]!
+    var imageUrl: String!
 }

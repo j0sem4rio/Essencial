@@ -11,18 +11,18 @@ class WatchListItensInteractor: WatchListInteractorInputProtocol {
     weak var presenter: WatchListInteractorOutputProtocol?
     var remoteDatamanager: WatchListRemoteDataManagerInputProtocol?
     
-    func retrievePostList() {
-        remoteDatamanager?.retrievePostList()
+    func retrievePostList(type: TraktTVAPI.type) {
+        remoteDatamanager?.retrievePostList(type: type)
     }
     
-    func retrieveUpdatImageList(_ posts: [MediaEntity], type: ThemoviedbAPI.typedb) {
+    func retrieveUpdatImageList(_ posts: [WatchList], type: ThemoviedbAPI.typedb) {
         remoteDatamanager?.retrieveLoadImageList(posts, type: type)
     }    
 }
 
 extension WatchListItensInteractor: WatchListRemoteDataManagerOutputProtocol {
     
-    func onPostsRetrieved(_ posts: [MediaEntity]) {
+    func onPostsRetrieved(_ posts: [WatchList]) {
         presenter?.didRetrievePosts(posts)
         
     }

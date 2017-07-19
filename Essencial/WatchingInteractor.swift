@@ -17,8 +17,8 @@ class WatchingInteractor: WatchingInteractorInputProtocol {
         remoteDatamanager?.retrievePostList(userEntity: posts, type: type)
     }
     
-    func retrieveUpdatImageList(_ posts: [Watched]) {
-        remoteDatamanager?.retrieveLoadImageList(posts)
+    func retrieveUpdatImageList(_ posts: [Watched], type: ThemoviedbAPI.typedb) {
+        remoteDatamanager?.retrieveLoadImageList(posts, type: type)
     }
 }
 
