@@ -42,6 +42,11 @@ class WatchingCollectionViewCell: UICollectionViewCell {
         } else {
             titleLabel?.text = post.movie.title
             yearLabel?.text = String(post.movie.year)
+            if post.movie.imageUrl != nil {
+                let url = URL(string: post.movie.imageUrl!)!
+                let placeholderImage = UIImage(named: "placeholder")!
+                coverImage?.af_setImage(withURL: url, placeholderImage: placeholderImage)
+            }
         }
     }
     

@@ -43,7 +43,9 @@ class ThemoviedbAPI {
     func poster(watched: Watched, type: ThemoviedbAPI.typedb, completion: @escaping (Error?) -> Void ) {
         var movie_id: String = ""
         if type == .Movies {
-            movie_id = watched.movie.ids.imdb
+            if let imdb = watched.movie.ids.imdb {
+                movie_id = imdb
+            }
         } else {
             movie_id = String(watched.show.ids.tmdb)
         }

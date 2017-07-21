@@ -26,6 +26,10 @@ class WatchedParser: WatchPattern {
                     }
                 }
                 
+                if let movie = j["movie"].dictionary {
+                    watched.movie = ParserMovie(json: movie)
+                }
+                
                 watcheds.append(watched)
             }
         }

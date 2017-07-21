@@ -29,6 +29,17 @@ class WatchPattern: NSObject {
         }       
         return show
     }
+    
+    func ParserMovie(json: [String : JSON]) -> Movie {
+        let movie: Movie = Movie()
+        movie.title = json["title"]?.stringValue
+        movie.year = json["year"]?.intValue
+        if let ids = json["ids"]?.dictionary {
+            movie.ids = ParserIds(json: ids)
+        }
+        return movie
+    }
+    
     func jsonDateFormatter() -> DateFormatter {
         let jsonDateFormatter = DateFormatter()
         jsonDateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"

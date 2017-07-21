@@ -14,9 +14,11 @@ class WatchingCollectionViewController: UIViewController, UICollectionViewDataSo
     var movies = [Watched]()
     var presenter: WatchingPresenterProtocol?
     var user: UserEntity!
+    var type: TraktTVAPI.type!
     
     // outlet - collection view
     @IBOutlet var moviesCollectionView: UICollectionView!
+    @IBOutlet weak var movieSegmented: UISegmentedControl!
 
     // action - radious change stepper
     @IBAction func radiousStepperAction(_ sender: UIStepper) {
@@ -28,14 +30,20 @@ class WatchingCollectionViewController: UIViewController, UICollectionViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBarItem()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
+        
 //        self.collectionView!.register(WatchingCollectionViewCell.self, forCellWithReuseIdentifier: WatchingCollectionViewCell.identifier)
-
-        presenter?.viewDidLoad(userEntity: user, type: .Shows)
+        type = .Movies
+        presenter?.viewDidLoad(userEntity: user, type: .Movies)
+    }
+    @IBAction func segmentControlValueChanged(sender: UISegmentedControl) {
+        
+        if sender.selectedSegmentIndex == 0 {
+            presenter?.viewDidLoad(userEntity: user, type: .Movies)
+            type = .Movies
+        } else {
+            presenter?.viewDidLoad(userEntity: user, type: .Shows)
+             type = .Shows
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,6 +51,12 @@ class WatchingCollectionViewController: UIViewController, UICollectionViewDataSo
         // Dispose of any resources that can be recreated.
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        movieSegmented.removeAllSegments()
+        movieSegmented.insertSegment(withTitle: NSLocalizedString("movie", comment: ""), at: 0, animated: true)
+        movieSegmented.insertSegment(withTitle: NSLocalizedString("tv", comment: ""), at: 1, animated: true)
+    }
     /*
     // MARK: - Navigation
 
@@ -119,7 +133,11 @@ class WatchingCollectionViewController: UIViewController, UICollectionViewDataSo
 extension WatchingCollectionViewController: WatchingViewProtocol {
     
     func showPosts(with posts: [Watched]) {
-        presenter?.image(posts, type: ThemoviedbAPI.typedb.Tv)
+        if type == .Movies {
+            presenter?.image(posts, type: ThemoviedbAPI.typedb.Movies)
+        } else {
+            presenter?.image(posts, type: ThemoviedbAPI.typedb.Tv)
+        }
         movies = posts
         self.moviesCollectionView!.reloadData()
     }
