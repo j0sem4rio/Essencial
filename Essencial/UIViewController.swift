@@ -78,4 +78,33 @@ extension UIViewController {
             targetScrollView.panGestureRecognizer.require(toFail: recognizer)
         }
     }
+    
+    func fixIOS9PopOverAnchor(_ segue: UIStoryboardSegue?) {
+        if let popOver = segue?.destination.popoverPresentationController,
+            let anchor  = popOver.sourceView, popOver.sourceRect == CGRect()
+            && segue!.source === self {
+            popOver.sourceRect = anchor.bounds
+        }
+    }
+    func fixPopOverAnchor(_ controller: UIAlertController) {
+        if let popOver = controller.popoverPresentationController,
+            let anchor = popOver.sourceView, popOver.sourceRect == CGRect() {
+            popOver.sourceRect = anchor.bounds }
+    }
+    
+    func statusBarHeight() -> CGFloat {
+        let statusBarSize = UIApplication.shared.statusBarFrame.size
+        return Swift.min(statusBarSize.width, statusBarSize.height)
+    }
+    
+    func dismissUntilAnimated<T: UIViewController>(_ animated: Bool, viewController: T.Type, completion: ((_ viewController: T) -> Void)?) {
+        var vc = presentingViewController!
+        while let new = vc.presentingViewController, !(new is T) {
+            vc = new
+        }
+        vc.dismiss(animated: animated, completion: {
+            completion?((vc as? T)!)
+        })
+    }
+    
 }

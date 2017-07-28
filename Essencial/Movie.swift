@@ -8,10 +8,6 @@
 
 import UIKit
 
-class Movie: NSObject {
-    
-    var year: Int!
-    var title: String!
-    var ids: Ids!
-    var imageUrl: String!
+class Movie: Produce {    
+
 }

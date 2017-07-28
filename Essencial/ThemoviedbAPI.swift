@@ -62,6 +62,15 @@ class ThemoviedbAPI {
                     completion(nil)
                 }
                 
+                if let overview = JSON["overview"] as? String {
+                    if type == .Movies {
+                        watched.movie.synopsis = overview
+                    } else {
+                        watched.show.synopsis = overview
+                    }
+                    completion(nil)
+                }
+                
             }
         }
     }

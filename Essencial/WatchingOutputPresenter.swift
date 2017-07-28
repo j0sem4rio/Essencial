@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WatchingOutputPresenter: WatchingPresenterProtocol {
+class WatchingOutputPresenter: WatchedPresenterProtocol {
     weak var view: WatchingViewProtocol?
     var interactor: WatchingInteractorInputProtocol?
     
@@ -16,10 +16,10 @@ class WatchingOutputPresenter: WatchingPresenterProtocol {
         view?.showLoading()
         interactor?.retrievePostList(userEntity: posts, type: type)
     }
-    func image(_ posts: [Watched], type: ThemoviedbAPI.typedb) {
-        interactor?.retrieveUpdatImageList(posts, type: type)
-        view?.showUpdatePosts()
-    }
+//    func image(_ posts: [Watched], type: ThemoviedbAPI.typedb) {
+//        interactor?.retrieveUpdatImageList(posts, type: type)
+//        view?.showUpdatePosts()
+//    }
 }
 extension WatchingOutputPresenter: WatchingInteractorOutputProtocol {
     
@@ -27,9 +27,9 @@ extension WatchingOutputPresenter: WatchingInteractorOutputProtocol {
         view?.hideLoading()
         view?.showPosts(with: posts)
     }
-    func onRetrieveImage() {
-        view?.showUpdatePosts()
-    }
+//    func onRetrieveImage() {
+//        view?.showUpdatePosts()
+//    }
     
     func onError() {
         view?.hideLoading()

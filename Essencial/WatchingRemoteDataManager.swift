@@ -17,11 +17,11 @@ class WatchingRemoteDataManager: WatchingRemoteDataManagerInputProtocol {
             self.remoteRequestHandler?.onPostsRetrieved(medias)
         }
     }
-    func retrieveLoadImageList(_ posts: [Watched], type: ThemoviedbAPI.typedb) {
-        for medie in posts {
-            ThemoviedbAPI().poster(watched: medie, type: type, completion: { _ in
-                self.remoteRequestHandler?.onPostsImage()
-            })
-        }
-    }
+//    func retrieveLoadImageList(_ posts: [Watched], type: ThemoviedbAPI.typedb) {
+//        for medie in posts {
+//            ThemoviedbAPI().poster(watched: medie, type: type, completion: { _ in
+//                self.remoteRequestHandler?.onPostsImage()
+//            })
+//        }
+//    }
 }

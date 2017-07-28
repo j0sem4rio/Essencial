@@ -12,9 +12,10 @@ import PKHUD
 class WatchingCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     var movies = [Watched]()
-    var presenter: WatchingPresenterProtocol?
+    var presenter: WatchedPresenterProtocol?
     var user: UserEntity!
     var type: TraktTVAPI.type!
+    var currentItem: Watched!
     
     // outlet - collection view
     @IBOutlet var moviesCollectionView: UICollectionView!
@@ -97,6 +98,18 @@ class WatchingCollectionViewController: UIViewController, UICollectionViewDataSo
             return CGSize(width: wid, height: hei)
         }
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        currentItem = movies[indexPath.row]
+        performSegue(withIdentifier: "Detail", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "Detail" {
+            let detail = segue.destination as? DetailViewController
+            detail?.currentItem = currentItem
+        }
+    }
 
     // MARK: UICollectionViewDelegate
 
@@ -133,11 +146,11 @@ class WatchingCollectionViewController: UIViewController, UICollectionViewDataSo
 extension WatchingCollectionViewController: WatchingViewProtocol {
     
     func showPosts(with posts: [Watched]) {
-        if type == .Movies {
-            presenter?.image(posts, type: ThemoviedbAPI.typedb.Movies)
-        } else {
-            presenter?.image(posts, type: ThemoviedbAPI.typedb.Tv)
-        }
+//        if type == .Movies {
+//            presenter?.image(posts, type: ThemoviedbAPI.typedb.Movies)
+//        } else {
+//            presenter?.image(posts, type: ThemoviedbAPI.typedb.Tv)
+//        }
         movies = posts
         self.moviesCollectionView!.reloadData()
     }

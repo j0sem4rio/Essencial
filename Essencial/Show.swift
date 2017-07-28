@@ -8,11 +8,6 @@
 
 import UIKit
 
-class Show: NSObject {
-
-    var year: Int!
-    var title: String!
-    var ids: Ids!
+class Show: Produce {
     var seasons: [Seasons]!
-    var imageUrl: String!
 }

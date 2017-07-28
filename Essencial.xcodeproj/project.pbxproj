@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		4DF3D9DE0ED4FC52236CA9F2 /* Pods_EssencialUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4B7D333AB2964CC95F75DC /* Pods_EssencialUITests.framework */; };
 		AA965B5434608A4687AB0628 /* Pods_EssencialTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CACCE46EC8CA2AE7DE2FE72C /* Pods_EssencialTests.framework */; };
+		BD082C901F28FD200016C631 /* Produce.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD082C8F1F28FD200016C631 /* Produce.swift */; };
+		BD082C921F2907D00016C631 /* WatchedCellOutputPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD082C911F2907D00016C631 /* WatchedCellOutputPresenter.swift */; };
+		BD082C941F290E360016C631 /* WatchedCellInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD082C931F290E360016C631 /* WatchedCellInteractor.swift */; };
+		BD082C961F29132B0016C631 /* WatchedCellRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD082C951F29132B0016C631 /* WatchedCellRemoteDataManager.swift */; };
 		BD4693F51F163A370055EAD7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BD4693F41F163A370055EAD7 /* Localizable.strings */; };
 		BD4693F71F1687640055EAD7 /* ThemoviedbAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4693F61F1687640055EAD7 /* ThemoviedbAPI.swift */; };
 		BD4693FF1F1787390055EAD7 /* WatchingCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4693FE1F1787390055EAD7 /* WatchingCollectionViewController.swift */; };
@@ -35,6 +39,8 @@
 		BD59ACF31EE7190F004DEBE4 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD59ACF21EE7190F004DEBE4 /* MenuController.swift */; };
 		BD59AF631EE9B2D8004DEBE4 /* LoginTrakt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD59AF621EE9B2D8004DEBE4 /* LoginTrakt.swift */; };
 		BD881FA21EEF6764001A0FEB /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD881FA11EEF6764001A0FEB /* UserEntity.swift */; };
+		BD96F8C41F275A8800229D28 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96F8C31F275A8800229D28 /* DetailViewController.swift */; };
+		BD96F8CC1F27D2A800229D28 /* ShowDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96F8CB1F27D2A800229D28 /* ShowDetailTableViewCell.swift */; };
 		BD981AD81EF0248500458123 /* LeftMenuViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD981AD71EF0248500458123 /* LeftMenuViewProtocols.swift */; };
 		BD981ADB1EF04D3F00458123 /* UserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD981ADA1EF04D3F00458123 /* UserPresenter.swift */; };
 		BD981ADE1EF0503D00458123 /* UserRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD981ADD1EF0503D00458123 /* UserRemoteDataManager.swift */; };
@@ -89,6 +95,10 @@
 		78B9516709F628BD7CD332A1 /* Pods-EssencialTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EssencialTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EssencialTests/Pods-EssencialTests.release.xcconfig"; sourceTree = "<group>"; };
 		7F6C933E4E6E9538ED97D9C4 /* Pods-EssencialUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EssencialUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EssencialUITests/Pods-EssencialUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AC4B7D333AB2964CC95F75DC /* Pods_EssencialUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EssencialUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD082C8F1F28FD200016C631 /* Produce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Produce.swift; sourceTree = "<group>"; };
+		BD082C911F2907D00016C631 /* WatchedCellOutputPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchedCellOutputPresenter.swift; sourceTree = "<group>"; };
+		BD082C931F290E360016C631 /* WatchedCellInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchedCellInteractor.swift; sourceTree = "<group>"; };
+		BD082C951F29132B0016C631 /* WatchedCellRemoteDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchedCellRemoteDataManager.swift; sourceTree = "<group>"; };
 		BD4693F41F163A370055EAD7 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		BD4693F61F1687640055EAD7 /* ThemoviedbAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemoviedbAPI.swift; sourceTree = "<group>"; };
 		BD4693FE1F1787390055EAD7 /* WatchingCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchingCollectionViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +125,8 @@
 		BD59ACF21EE7190F004DEBE4 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		BD59AF621EE9B2D8004DEBE4 /* LoginTrakt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTrakt.swift; sourceTree = "<group>"; };
 		BD881FA11EEF6764001A0FEB /* UserEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
+		BD96F8C31F275A8800229D28 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		BD96F8CB1F27D2A800229D28 /* ShowDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDetailTableViewCell.swift; sourceTree = "<group>"; };
 		BD981AD71EF0248500458123 /* LeftMenuViewProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuViewProtocols.swift; sourceTree = "<group>"; };
 		BD981ADA1EF04D3F00458123 /* UserPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPresenter.swift; sourceTree = "<group>"; };
 		BD981ADD1EF0503D00458123 /* UserRemoteDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRemoteDataManager.swift; sourceTree = "<group>"; };
@@ -207,6 +219,7 @@
 		BD4693F81F16A00B0055EAD7 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				BD96F8C21F2759F500229D28 /* Detail */,
 				BD4693FA1F16A0730055EAD7 /* Watched */,
 				BD59ACDD1EE6C6FE004DEBE4 /* LeftMenu */,
 				BDA16F971EE58E9A00164AE2 /* WatchList */,
@@ -248,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				BD46940A1F17D9200055EAD7 /* WatchingOutputPresenter.swift */,
+				BD082C911F2907D00016C631 /* WatchedCellOutputPresenter.swift */,
 			);
 			name = Presenters;
 			sourceTree = "<group>";
@@ -256,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				BD46940D1F17DA5A0055EAD7 /* WatchingInteractor.swift */,
+				BD082C931F290E360016C631 /* WatchedCellInteractor.swift */,
 			);
 			name = Interactors;
 			sourceTree = "<group>";
@@ -264,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				BD4694101F17DC6E0055EAD7 /* WatchingRemoteDataManager.swift */,
+				BD082C951F29132B0016C631 /* WatchedCellRemoteDataManager.swift */,
 			);
 			name = Remote;
 			sourceTree = "<group>";
@@ -308,6 +324,30 @@
 				BD59AF621EE9B2D8004DEBE4 /* LoginTrakt.swift */,
 			);
 			name = login;
+			sourceTree = "<group>";
+		};
+		BD96F8C21F2759F500229D28 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				BD96F8CA1F27D26D00229D28 /* Views */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
+		BD96F8C51F275CAA00229D28 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		BD96F8CA1F27D26D00229D28 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BD96F8C31F275A8800229D28 /* DetailViewController.swift */,
+				BD96F8CB1F27D2A800229D28 /* ShowDetailTableViewCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		BD981AD51EF0243400458123 /* View */ = {
@@ -403,6 +443,7 @@
 		BDA16F671EE58BFA00164AE2 /* Essencial */ = {
 			isa = PBXGroup;
 			children = (
+				BD96F8C51F275CAA00229D28 /* Resources */,
 				BDB32A8B1F1CEE2F005C63F5 /* Parser */,
 				BDB32A841F1CCF39005C63F5 /* Transform */,
 				BDA32F861EE7862700078E1B /* Api */,
@@ -493,6 +534,7 @@
 				BDB32A901F1D45B9005C63F5 /* Seasons.swift */,
 				BDB32A921F1D467A005C63F5 /* Episodes.swift */,
 				BD4888761F1F7043004080AA /* WatchList.swift */,
+				BD082C8F1F28FD200016C631 /* Produce.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -828,6 +870,7 @@
 				BDB32A911F1D45B9005C63F5 /* Seasons.swift in Sources */,
 				BD981AE41EF070A500458123 /* WatchListViewProtocol.swift in Sources */,
 				BD981AE71EF0745600458123 /* WatchListRemoteDataManager.swift in Sources */,
+				BD082C921F2907D00016C631 /* WatchedCellOutputPresenter.swift in Sources */,
 				BD981AEA1EF1B8F200458123 /* WatchListTableViewCell.swift in Sources */,
 				BD59ACF31EE7190F004DEBE4 /* MenuController.swift in Sources */,
 				BDA16F6B1EE58BFA00164AE2 /* ViewController.swift in Sources */,
@@ -837,12 +880,15 @@
 				BDB32A881F1CD5B9005C63F5 /* Movie.swift in Sources */,
 				BD881FA21EEF6764001A0FEB /* UserEntity.swift in Sources */,
 				BD981AE11EF052A900458123 /* UserInteractor.swift in Sources */,
+				BD96F8CC1F27D2A800229D28 /* ShowDetailTableViewCell.swift in Sources */,
 				BDA16F991EE58EE100164AE2 /* WatchListViewController.swift in Sources */,
+				BD96F8C41F275A8800229D28 /* DetailViewController.swift in Sources */,
 				BDB32A8A1F1CD6D3005C63F5 /* Ids.swift in Sources */,
 				BD59ACDF1EE6C72E004DEBE4 /* LeftViewController.swift in Sources */,
 				BD59ACE91EE6D3EA004DEBE4 /* BaseTableViewCell.swift in Sources */,
 				BD981AD81EF0248500458123 /* LeftMenuViewProtocols.swift in Sources */,
 				BD59AF631EE9B2D8004DEBE4 /* LoginTrakt.swift in Sources */,
+				BD082C941F290E360016C631 /* WatchedCellInteractor.swift in Sources */,
 				BDB32A8F1F1D4518005C63F5 /* Show.swift in Sources */,
 				BD46940B1F17D9200055EAD7 /* WatchingOutputPresenter.swift in Sources */,
 				BD4694021F1795360055EAD7 /* WatchingCollectionViewCell.swift in Sources */,
@@ -850,6 +896,7 @@
 				BDA16F9B1EE58F2E00164AE2 /* WatchListDataSource.swift in Sources */,
 				BD59ACDC1EE6C681004DEBE4 /* String.swift in Sources */,
 				BDA16F691EE58BFA00164AE2 /* AppDelegate.swift in Sources */,
+				BD082C901F28FD200016C631 /* Produce.swift in Sources */,
 				BDA32F881EE7867300078E1B /* TraktTVAPI.swift in Sources */,
 				BD59ACE11EE6C78E004DEBE4 /* ImageHeaderView.swift in Sources */,
 				BDA16F9E1EE58FE900164AE2 /* WatchListOutputPresenter.swift in Sources */,
@@ -863,6 +910,7 @@
 				BD981ADB1EF04D3F00458123 /* UserPresenter.swift in Sources */,
 				BD59ACD11EE6C3D4004DEBE4 /* SlideMenuController.swift in Sources */,
 				BD59ACED1EE6D7C8004DEBE4 /* UIViewController.swift in Sources */,
+				BD082C961F29132B0016C631 /* WatchedCellRemoteDataManager.swift in Sources */,
 				BD59ACDA1EE6C64B004DEBE4 /* UIColor.swift in Sources */,
 				BD59ACE51EE6D000004DEBE4 /* UIView.swift in Sources */,
 				BD4888771F1F7043004080AA /* WatchList.swift in Sources */,

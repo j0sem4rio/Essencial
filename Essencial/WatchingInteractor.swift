@@ -16,10 +16,6 @@ class WatchingInteractor: WatchingInteractorInputProtocol {
     func retrievePostList(userEntity posts: UserEntity, type: TraktTVAPI.type) {
         remoteDatamanager?.retrievePostList(userEntity: posts, type: type)
     }
-    
-    func retrieveUpdatImageList(_ posts: [Watched], type: ThemoviedbAPI.typedb) {
-        remoteDatamanager?.retrieveLoadImageList(posts, type: type)
-    }
 }
 
 extension WatchingInteractor: WatchingRemoteDataManagerOutputProtocol {
@@ -27,10 +23,6 @@ extension WatchingInteractor: WatchingRemoteDataManagerOutputProtocol {
     func onPostsRetrieved(_ posts: [Watched]) {
         presenter?.didRetrievePosts(posts)
         
-    }
-    
-    func onPostsImage() {
-        presenter?.onRetrieveImage()
     }
     
     func onError() {

@@ -58,7 +58,7 @@ class LeftViewController: UIViewController, LeftMenuProtocol {
     func watchingVC(storyboard: UIStoryboard) -> WatchingCollectionViewController {
         let watching = storyboard.instantiateViewController(withIdentifier: "WatchingCollectionViewController") as? WatchingCollectionViewController
         watching?.user = user
-        let presenter: WatchingPresenterProtocol & WatchingInteractorOutputProtocol = WatchingOutputPresenter()
+        let presenter: WatchedPresenterProtocol & WatchingInteractorOutputProtocol = WatchingOutputPresenter()
         let interactor: WatchingInteractorInputProtocol & WatchingRemoteDataManagerOutputProtocol = WatchingInteractor()
         let remoteDataManager: WatchingRemoteDataManagerInputProtocol = WatchingRemoteDataManager()
         

@@ -10,6 +10,7 @@ import UIKit
 
 class Episodes: NSObject {
 
+    var title: String!
     var plays: Int!
     var last_watched_at: Date?
     var number: Int!
