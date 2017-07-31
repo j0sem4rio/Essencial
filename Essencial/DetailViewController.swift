@@ -22,7 +22,7 @@ class DetailViewController: UIViewController {
     }
     
     @IBOutlet var headerHeightConstraint: NSLayoutConstraint!
-    @IBOutlet var tableView: UITableView?
+    @IBOutlet var tableView: PCTTableView?
     @IBOutlet var blurView: UIVisualEffectView!
 //    @IBOutlet var gradientViews: [GradientView]!
     @IBOutlet var backgroundImageView: UIImageView!
@@ -32,6 +32,7 @@ class DetailViewController: UIViewController {
     @IBOutlet var showDescriptionView: UITextView!
     @IBOutlet var showInfoLabel: UILabel!
     @IBOutlet var tableHeaderView: UIView!
+    @IBOutlet var scrollView: PCTScrollView?
     var episodes: [Episodes]?
     
     var currentItem: Watched!
@@ -93,4 +94,96 @@ class DetailViewController: UIViewController {
         return (cell)!
     }
     
+    @IBAction func handleGesture(_ sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in: sender.view!.superview!)
+        let offset = translation.y - lastTranslation
+        let scrollDirection: ScrollDirection = offset > 0 ? .up : .down
+        var scrollingView: AnyObject
+        if let tableView = tableView {
+            scrollingView = tableView
+        } else {
+            scrollingView = scrollView!
+        }
+        
+        if sender.state == .changed || sender.state == .began {
+            if (headerHeightConstraint.constant + offset) >= minimumHeight && (scrollingView.value(forKey: "programaticScrollEnabled")! as AnyObject).boolValue == false {
+                if ((headerHeightConstraint.constant + offset) - minimumHeight) <= 8.0 // Stops scrolling from sticking just before we transition to scroll view input.
+                {
+                    headerHeightConstraint.constant = self.minimumHeight
+                    updateScrolling(true)
+                } else {
+                    headerHeightConstraint.constant += offset
+                    updateScrolling(false)
+                }
+            }
+            if headerHeightConstraint.constant == minimumHeight && scrollingView.value(forKey: "isAtTop")!.boolValue {
+//                 if headerHeightConstraint.constant == minimumHeight && scrollingView.value(forKey: "isAtTop")!.boolValue {
+                if scrollDirection == .up {
+                    scrollingView.perform(#selector(setter: PCTScrollView.programaticScrollEnabled), with: NSNumber(value: false as Bool))
+                } else // If header is fully collapsed and we are not at the end of scroll view, hand scrolling to scroll view
+                {
+                    scrollingView.perform(#selector(setter: PCTScrollView.programaticScrollEnabled), with: NSNumber(value: true as Bool))
+                }
+            }
+            lastTranslation = translation.y
+        } else if sender.state == .ended {
+            if headerHeightConstraint.constant > maximumHeight {
+                headerHeightConstraint.constant = maximumHeight
+                updateScrolling(true)
+            } else if (scrollingView.value(forKey: "frame")! as AnyObject).cgRectValue.size.height > (scrollingView.value(forKey: "contentSize")! as AnyObject).cgSizeValue.height + (scrollingView.value(forKey: "contentInset")! as AnyObject).uiEdgeInsetsValue.bottom {
+                resetToEnd(scrollingView)
+            }
+            lastTranslation = 0.0
+        }
+    }
+    func updateScrolling(_ animated: Bool) {
+        self.progressiveness = 1.0 - (self.headerHeightConstraint.constant - self.minimumHeight)/(self.maximumHeight - self.minimumHeight)
+        if animated {
+            UIView.animate(withDuration: animationLength, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .allowUserInteraction, animations: {
+                self.view.layoutIfNeeded()
+                self.blurView.alpha = self.progressiveness
+                self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white.withAlphaComponent(self.progressiveness)]
+            }, completion: nil)
+        } else {
+            self.blurView.alpha = self.progressiveness
+            self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white.withAlphaComponent(self.progressiveness)]
+        }
+    }
+    
+    func resetToEnd(_ scrollingView: AnyObject, animated: Bool = true) {
+        headerHeightConstraint.constant += (scrollingView.value(forKey: "frame")! as AnyObject).cgRectValue.size.height - ((scrollingView.value(forKey: "contentSize")! as AnyObject).cgSizeValue.height + (scrollingView.value(forKey: "contentInset")! as AnyObject).uiEdgeInsetsValue.bottom)
+        if headerHeightConstraint.constant > maximumHeight {
+            headerHeightConstraint.constant = maximumHeight
+        }
+        if headerHeightConstraint.constant >= minimumHeight // User does not go over the "bridge area" so programmatic scrolling has to be explicitly disabled
+        {
+            scrollingView.perform(#selector(setter: PCTScrollView.programaticScrollEnabled), with: NSNumber(value: false as Bool))
+        }
+        updateScrolling(animated)
+    }
+    
+}
+
+class PCTScrollView: UIScrollView {
+    var programaticScrollEnabled = NSNumber(value: false as Bool)
+    
+    override var contentOffset: CGPoint {
+        didSet {
+            if !programaticScrollEnabled.boolValue {
+                super.contentOffset = CGPoint.zero
+            }
+        }
+    }
+}
+
+class PCTTableView: UITableView {
+    var programaticScrollEnabled = NSNumber(value: false as Bool)
+    
+    override var contentOffset: CGPoint {
+        didSet {
+            if !programaticScrollEnabled.boolValue {
+                super.contentOffset = CGPoint.zero
+            }
+        }
+    }
 }

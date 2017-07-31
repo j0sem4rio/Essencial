@@ -14,6 +14,7 @@ target 'Essencial' do
   pod 'SkyFloatingLabelTextField'
   pod 'PKHUD', '~> 4.0'
   pod 'SwiftyJSON'
+  pod 'OBSlider'
   
 
   target 'EssencialTests' do

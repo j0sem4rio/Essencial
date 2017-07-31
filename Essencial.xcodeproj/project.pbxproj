@@ -24,6 +24,7 @@
 		BD4888771F1F7043004080AA /* WatchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4888761F1F7043004080AA /* WatchList.swift */; };
 		BD4888791F1F7852004080AA /* WatchPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4888781F1F7852004080AA /* WatchPattern.swift */; };
 		BD48887B1F1F8C03004080AA /* WatchListParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD48887A1F1F8C03004080AA /* WatchListParser.swift */; };
+		BD5399E21F2BD58200A32827 /* UIKit+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5399E11F2BD58200A32827 /* UIKit+Extension.swift */; };
 		BD59ACD11EE6C3D4004DEBE4 /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD59ACD01EE6C3D4004DEBE4 /* SlideMenuController.swift */; };
 		BD59ACD31EE6C54C004DEBE4 /* ExSlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD59ACD21EE6C54C004DEBE4 /* ExSlideMenuController.swift */; };
 		BD59ACD61EE6C5A5004DEBE4 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD59ACD51EE6C5A5004DEBE4 /* UIApplication.swift */; };
@@ -110,6 +111,7 @@
 		BD4888761F1F7043004080AA /* WatchList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchList.swift; sourceTree = "<group>"; };
 		BD4888781F1F7852004080AA /* WatchPattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchPattern.swift; sourceTree = "<group>"; };
 		BD48887A1F1F8C03004080AA /* WatchListParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchListParser.swift; sourceTree = "<group>"; };
+		BD5399E11F2BD58200A32827 /* UIKit+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+Extension.swift"; sourceTree = "<group>"; };
 		BD59ACD01EE6C3D4004DEBE4 /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
 		BD59ACD21EE6C54C004DEBE4 /* ExSlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExSlideMenuController.swift; path = ../ExSlideMenuController.swift; sourceTree = "<group>"; };
 		BD59ACD51EE6C5A5004DEBE4 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 		BD59ACD41EE6C57E004DEBE4 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				BD5399E11F2BD58200A32827 /* UIKit+Extension.swift */,
 				BD59ACD51EE6C5A5004DEBE4 /* UIApplication.swift */,
 				BD59ACD91EE6C64B004DEBE4 /* UIColor.swift */,
 				BD59ACDB1EE6C681004DEBE4 /* String.swift */,
@@ -880,6 +883,7 @@
 				BDB32A881F1CD5B9005C63F5 /* Movie.swift in Sources */,
 				BD881FA21EEF6764001A0FEB /* UserEntity.swift in Sources */,
 				BD981AE11EF052A900458123 /* UserInteractor.swift in Sources */,
+				BD5399E21F2BD58200A32827 /* UIKit+Extension.swift in Sources */,
 				BD96F8CC1F27D2A800229D28 /* ShowDetailTableViewCell.swift in Sources */,
 				BDA16F991EE58EE100164AE2 /* WatchListViewController.swift in Sources */,
 				BD96F8C41F275A8800229D28 /* DetailViewController.swift in Sources */,
