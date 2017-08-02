@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var progressiveness: CGFloat = 0.0
     var lastTranslation: CGFloat = 0.0
     var lastHeaderHeight: CGFloat = 0.0
@@ -45,10 +45,10 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         headerHeightConstraint.constant = maximumHeight
-//        let adjustForTabbarInsets = UIEdgeInsetsMake(0, 0, tabBarController!.tabBar.frame.height, 0)
+//        let adjustForTabbarInsets = UIEdgeInsetsMake(0, 0, 80, 0)
 //        tableView!.contentInset = adjustForTabbarInsets
 //        tableView!.scrollIndicatorInsets = adjustForTabbarInsets
-        tableView!.rowHeight = UITableViewAutomaticDimension
+//        tableView!.rowHeight = UITableViewAutomaticDimension
         if let movie = currentItem.movie {
             navigationItem.title = movie.title
             showTitleLabel.text = movie.title
@@ -61,6 +61,7 @@ class DetailViewController: UIViewController {
             showInfoLabel.text = "\(currentItem.show.year)"
             showDescriptionView.text = currentItem.show.synopsis
             backgroundImageView.image = currentItem.show.poster.image
+            tableView?.reloadData()
         }
 
     }
@@ -76,23 +77,36 @@ class DetailViewController: UIViewController {
         }
     }
     
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        
+//        return 1
+//    }
     func numberOfSections(in tableView: UITableView) -> Int {
-        
+        if currentItem.movie != nil {
+            tableView.tableHeaderView = tableHeaderView
+            return 0
+        }
+        tableView.tableHeaderView = nil
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if currentSeasonArray.isEmpty {
+        if !currentSeasonArray.isEmpty {
             return currentSeasonArray.count
         }
         return 0
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ShowDetailTableViewCell.identifier, for: indexPath) as? ShowDetailTableViewCell
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ShowDetailTableViewCell
         cell?.titleLabel.text = "\(currentSeasonArray[indexPath.row].number)"
-        return (cell)!
+        return cell!
     }
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ShowDetailTableViewCell
+////        let cell = tableView.dequeueReusableCell(withIdentifier: ShowDetailTableViewCell.identifier, for: indexPath) as? ShowDetailTableViewCell
+//        cell?.titleLabel.text = "\(currentSeasonArray[indexPath.row].number)"
+//        return (cell)!
+//    }
     
     @IBAction func handleGesture(_ sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: sender.view!.superview!)
@@ -116,13 +130,13 @@ class DetailViewController: UIViewController {
                     updateScrolling(false)
                 }
             }
-            if headerHeightConstraint.constant == minimumHeight && scrollingView.value(forKey: "isAtTop")!.boolValue {
+            if headerHeightConstraint.constant == minimumHeight && (scrollingView.value(forKey: "isAtTop")! as? Bool)! {
 //                 if headerHeightConstraint.constant == minimumHeight && scrollingView.value(forKey: "isAtTop")!.boolValue {
                 if scrollDirection == .up {
-                    scrollingView.perform(#selector(setter: PCTScrollView.programaticScrollEnabled), with: NSNumber(value: false as Bool))
+                   _ = scrollingView.perform(#selector(setter: PCTScrollView.programaticScrollEnabled), with: NSNumber(value: false as Bool))
                 } else // If header is fully collapsed and we are not at the end of scroll view, hand scrolling to scroll view
                 {
-                    scrollingView.perform(#selector(setter: PCTScrollView.programaticScrollEnabled), with: NSNumber(value: true as Bool))
+                   _ = scrollingView.perform(#selector(setter: PCTScrollView.programaticScrollEnabled), with: NSNumber(value: true as Bool))
                 }
             }
             lastTranslation = translation.y
@@ -130,7 +144,9 @@ class DetailViewController: UIViewController {
             if headerHeightConstraint.constant > maximumHeight {
                 headerHeightConstraint.constant = maximumHeight
                 updateScrolling(true)
-            } else if (scrollingView.value(forKey: "frame")! as AnyObject).cgRectValue.size.height > (scrollingView.value(forKey: "contentSize")! as AnyObject).cgSizeValue.height + (scrollingView.value(forKey: "contentInset")! as AnyObject).uiEdgeInsetsValue.bottom {
+            } else if (scrollingView.value(forKey: "frame")! as AnyObject).cgRectValue.size.height >
+                (scrollingView.value(forKey: "contentSize")! as AnyObject).cgSizeValue.height +
+                (scrollingView.value(forKey: "contentInset")! as AnyObject).uiEdgeInsetsValue.bottom {
                 resetToEnd(scrollingView)
             }
             lastTranslation = 0.0
@@ -151,17 +167,23 @@ class DetailViewController: UIViewController {
     }
     
     func resetToEnd(_ scrollingView: AnyObject, animated: Bool = true) {
-        headerHeightConstraint.constant += (scrollingView.value(forKey: "frame")! as AnyObject).cgRectValue.size.height - ((scrollingView.value(forKey: "contentSize")! as AnyObject).cgSizeValue.height + (scrollingView.value(forKey: "contentInset")! as AnyObject).uiEdgeInsetsValue.bottom)
+        headerHeightConstraint.constant += (scrollingView.value(forKey: "frame")! as AnyObject).cgRectValue.size.height -
+            ((scrollingView.value(forKey: "contentSize")! as AnyObject).cgSizeValue.height +
+                (scrollingView.value(forKey: "contentInset")! as AnyObject).uiEdgeInsetsValue.bottom)
         if headerHeightConstraint.constant > maximumHeight {
             headerHeightConstraint.constant = maximumHeight
         }
         if headerHeightConstraint.constant >= minimumHeight // User does not go over the "bridge area" so programmatic scrolling has to be explicitly disabled
         {
-            scrollingView.perform(#selector(setter: PCTScrollView.programaticScrollEnabled), with: NSNumber(value: false as Bool))
+            _ = scrollingView.perform(#selector(setter: PCTScrollView.programaticScrollEnabled), with: NSNumber(value: false as Bool))
         }
         updateScrolling(animated)
     }
     
+}
+
+func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    return true
 }
 
 class PCTScrollView: UIScrollView {

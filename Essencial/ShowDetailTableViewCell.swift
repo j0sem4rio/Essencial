@@ -15,4 +15,7 @@ class ShowDetailTableViewCell: UITableViewCell {
     @IBOutlet var seasonLabel: UILabel!
     @IBOutlet var watchedButton: UIButton!
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
 }

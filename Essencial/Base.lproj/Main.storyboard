@@ -536,7 +536,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ShowDetailTableViewCell" id="bS6-RF-LsW" customClass="ShowDetailTableViewCell" customModule="Essencial" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="bS6-RF-LsW" customClass="ShowDetailTableViewCell" customModule="Essencial" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="278" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bS6-RF-LsW" id="txb-1M-FIn">
@@ -565,9 +565,6 @@
                                                     </constraints>
                                                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" image="WatchedOff"/>
-                                                    <connections>
-                                                        <action selector="toggleWatched" destination="bS6-RF-LsW" eventType="touchUpInside" id="iXm-DB-YVS"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -590,8 +587,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="IPI-Vo-W1g" id="Eft-VD-jHI"/>
-                                    <outlet property="delegate" destination="IPI-Vo-W1g" id="9l3-pp-I3j"/>
+                                    <outlet property="dataSource" destination="IPI-Vo-W1g" id="zwa-9O-bag"/>
+                                    <outlet property="delegate" destination="IPI-Vo-W1g" id="BOK-HA-Dm6"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -623,7 +620,7 @@
                         <outlet property="showInfoLabel" destination="bRa-Ix-Pmo" id="wc9-dm-ioO"/>
                         <outlet property="showTitleLabel" destination="nNK-jk-mkl" id="rhc-lb-qv0"/>
                         <outlet property="tableHeaderView" destination="RzO-XB-dJb" id="rP0-9I-Bfp"/>
-                        <outlet property="tableView" destination="20c-OK-8Uj" id="jlg-Gp-hnA"/>
+                        <outlet property="tableView" destination="20c-OK-8Uj" id="k8J-vc-A3R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CTs-3b-og2" userLabel="First Responder" sceneMemberID="firstResponder"/>

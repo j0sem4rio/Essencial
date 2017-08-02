@@ -13,9 +13,7 @@ target 'Essencial' do
   pod 'RxCocoa'
   pod 'SkyFloatingLabelTextField'
   pod 'PKHUD', '~> 4.0'
-  pod 'SwiftyJSON'
-  pod 'OBSlider'
-  
+  pod 'SwiftyJSON'  
 
   target 'EssencialTests' do
     inherit! :search_paths
