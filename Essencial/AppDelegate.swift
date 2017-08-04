@@ -12,6 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+//    static var shared: AppDelegate = (UIApplication.shared.delegate as? AppDelegate)!
     
     fileprivate func createMenuView() {
 

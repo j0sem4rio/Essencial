@@ -33,17 +33,17 @@ class WatchingCollectionViewController: UIViewController, UICollectionViewDataSo
         setNavigationBarItem()
         
 //        self.collectionView!.register(WatchingCollectionViewCell.self, forCellWithReuseIdentifier: WatchingCollectionViewCell.identifier)
-        type = .Movies
-        presenter?.viewDidLoad(userEntity: user, type: .Movies)
+        type = .movies
+        presenter?.viewDidLoad(userEntity: user, type: .movies)
     }
     @IBAction func segmentControlValueChanged(sender: UISegmentedControl) {
         
         if sender.selectedSegmentIndex == 0 {
-            presenter?.viewDidLoad(userEntity: user, type: .Movies)
-            type = .Movies
+            presenter?.viewDidLoad(userEntity: user, type: .movies)
+            type = .movies
         } else {
-            presenter?.viewDidLoad(userEntity: user, type: .Shows)
-             type = .Shows
+            presenter?.viewDidLoad(userEntity: user, type: .shows)
+             type = .shows
         }
     }
 

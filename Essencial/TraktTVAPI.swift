@@ -13,10 +13,11 @@ import SwiftyJSON
 
 class TraktTVAPI {
     enum type: String {
-        case Movies = "movies"
-        case Shows = "shows"
-        case Episodes = "episodes"
-        case Animes = "animes"
+        case movies = "movies"
+        case shows = "shows"
+        case episodes = "episodes"
+        case animes = "animes"
+        case people = "people"
     }
     enum status: String {
         case Watching = "start"
@@ -50,7 +51,7 @@ class TraktTVAPI {
     func toQueryItem(key: String, value: String) -> URLQueryItem {
         return URLQueryItem(name: key, value: value)
     }
-    
+        
 //    func scrobble(id: String, progress: Float, type: TraktTVAPI.type, status: TraktTVAPI.status, completion: (_ backgroundImageAsString: [WatchList]) -> Void ) {
 //        
 //        let credential = defs.string(forKey: "password_preference")

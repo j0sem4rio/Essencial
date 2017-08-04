@@ -40,6 +40,19 @@
 		BD59ACF31EE7190F004DEBE4 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD59ACF21EE7190F004DEBE4 /* MenuController.swift */; };
 		BD59AF631EE9B2D8004DEBE4 /* LoginTrakt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD59AF621EE9B2D8004DEBE4 /* LoginTrakt.swift */; };
 		BD881FA21EEF6764001A0FEB /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD881FA11EEF6764001A0FEB /* UserEntity.swift */; };
+		BD8DDE881F323BC8002B78EE /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8DDE871F323BC8002B78EE /* CollectionViewController.swift */; };
+		BD8DDE8A1F323DB0002B78EE /* ResponsiveCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8DDE891F323DB0002B78EE /* ResponsiveCollectionViewController.swift */; };
+		BD8DDE8E1F323F11002B78EE /* ContinueWatchingCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8DDE8D1F323F11002B78EE /* ContinueWatchingCollectionReusableView.swift */; };
+		BD8DDE911F32416D002B78EE /* ContinueWatchingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8DDE901F32416D002B78EE /* ContinueWatchingCollectionViewCell.swift */; };
+		BD8DDE931F3241AF002B78EE /* ContinueWatchingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD8DDE921F3241AF002B78EE /* ContinueWatchingCollectionViewCell.xib */; };
+		BD8DDE951F32458E002B78EE /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8DDE941F32458E002B78EE /* BaseCollectionViewCell.swift */; };
+		BD8DDE981F324887002B78EE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8DDE971F324887002B78EE /* MainViewController.swift */; };
+		BD8DDE9C1F3263C8002B78EE /* UICollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8DDE9B1F3263C8002B78EE /* UICollectionViewController.swift */; };
+		BD8DDE9E1F326DAB002B78EE /* CGSize+Min.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8DDE9D1F326DAB002B78EE /* CGSize+Min.swift */; };
+		BD8DDEA01F3336F4002B78EE /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8DDE9F1F3336F4002B78EE /* MoviesViewController.swift */; };
+		BD8DDEA21F333DED002B78EE /* CoverCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8DDEA11F333DED002B78EE /* CoverCollectionViewCell.swift */; };
+		BD8DDEA41F334469002B78EE /* MediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8DDEA31F334469002B78EE /* MediaViewController.swift */; };
+		BD8DDEA61F334812002B78EE /* MovieManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8DDEA51F334812002B78EE /* MovieManager.swift */; };
 		BD96F8C41F275A8800229D28 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96F8C31F275A8800229D28 /* DetailViewController.swift */; };
 		BD96F8CC1F27D2A800229D28 /* ShowDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96F8CB1F27D2A800229D28 /* ShowDetailTableViewCell.swift */; };
 		BD981AD81EF0248500458123 /* LeftMenuViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD981AD71EF0248500458123 /* LeftMenuViewProtocols.swift */; };
@@ -69,6 +82,9 @@
 		BDB32A8F1F1D4518005C63F5 /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB32A8E1F1D4518005C63F5 /* Show.swift */; };
 		BDB32A911F1D45B9005C63F5 /* Seasons.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB32A901F1D45B9005C63F5 /* Seasons.swift */; };
 		BDB32A931F1D467A005C63F5 /* Episodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB32A921F1D467A005C63F5 /* Episodes.swift */; };
+		BDCC4EE21F34871E001FC712 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCC4EE11F34871D001FC712 /* ItemViewController.swift */; };
+		BDCC4EE51F348A55001FC712 /* EpisodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCC4EE41F348A55001FC712 /* EpisodeDetailViewController.swift */; };
+		BDCC4EE71F348CC6001FC712 /* UpNextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCC4EE61F348CC6001FC712 /* UpNextViewController.swift */; };
 		ED5E0B33DFF9891684A6063E /* Pods_Essencial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34645EC8031336918A509D9D /* Pods_Essencial.framework */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +143,19 @@
 		BD59ACF21EE7190F004DEBE4 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		BD59AF621EE9B2D8004DEBE4 /* LoginTrakt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTrakt.swift; sourceTree = "<group>"; };
 		BD881FA11EEF6764001A0FEB /* UserEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
+		BD8DDE871F323BC8002B78EE /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		BD8DDE891F323DB0002B78EE /* ResponsiveCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponsiveCollectionViewController.swift; sourceTree = "<group>"; };
+		BD8DDE8D1F323F11002B78EE /* ContinueWatchingCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContinueWatchingCollectionReusableView.swift; sourceTree = "<group>"; };
+		BD8DDE901F32416D002B78EE /* ContinueWatchingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContinueWatchingCollectionViewCell.swift; sourceTree = "<group>"; };
+		BD8DDE921F3241AF002B78EE /* ContinueWatchingCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContinueWatchingCollectionViewCell.xib; sourceTree = "<group>"; };
+		BD8DDE941F32458E002B78EE /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		BD8DDE971F324887002B78EE /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		BD8DDE9B1F3263C8002B78EE /* UICollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewController.swift; sourceTree = "<group>"; };
+		BD8DDE9D1F326DAB002B78EE /* CGSize+Min.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize+Min.swift"; sourceTree = "<group>"; };
+		BD8DDE9F1F3336F4002B78EE /* MoviesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
+		BD8DDEA11F333DED002B78EE /* CoverCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoverCollectionViewCell.swift; sourceTree = "<group>"; };
+		BD8DDEA31F334469002B78EE /* MediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaViewController.swift; sourceTree = "<group>"; };
+		BD8DDEA51F334812002B78EE /* MovieManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieManager.swift; sourceTree = "<group>"; };
 		BD96F8C31F275A8800229D28 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BD96F8CB1F27D2A800229D28 /* ShowDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDetailTableViewCell.swift; sourceTree = "<group>"; };
 		BD981AD71EF0248500458123 /* LeftMenuViewProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuViewProtocols.swift; sourceTree = "<group>"; };
@@ -162,6 +191,9 @@
 		BDB32A8E1F1D4518005C63F5 /* Show.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Show.swift; sourceTree = "<group>"; };
 		BDB32A901F1D45B9005C63F5 /* Seasons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seasons.swift; sourceTree = "<group>"; };
 		BDB32A921F1D467A005C63F5 /* Episodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Episodes.swift; sourceTree = "<group>"; };
+		BDCC4EE11F34871D001FC712 /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		BDCC4EE41F348A55001FC712 /* EpisodeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeDetailViewController.swift; sourceTree = "<group>"; };
+		BDCC4EE61F348CC6001FC712 /* UpNextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpNextViewController.swift; sourceTree = "<group>"; };
 		CACCE46EC8CA2AE7DE2FE72C /* Pods_EssencialTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EssencialTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6B5DADAC6D5F968C81BB22A /* Pods-Essencial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Essencial.release.xcconfig"; path = "Pods/Target Support Files/Pods-Essencial/Pods-Essencial.release.xcconfig"; sourceTree = "<group>"; };
 		D6FC6C2DFBC871A3699D5C9B /* Pods-Essencial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Essencial.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Essencial/Pods-Essencial.debug.xcconfig"; sourceTree = "<group>"; };
@@ -289,6 +321,7 @@
 		BD59ACD41EE6C57E004DEBE4 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				BD8DDE9D1F326DAB002B78EE /* CGSize+Min.swift */,
 				BD5399E11F2BD58200A32827 /* UIKit+Extension.swift */,
 				BD59ACD51EE6C5A5004DEBE4 /* UIApplication.swift */,
 				BD59ACD91EE6C64B004DEBE4 /* UIColor.swift */,
@@ -296,6 +329,7 @@
 				BD59ACE41EE6D000004DEBE4 /* UIView.swift */,
 				BD59ACEA1EE6D4EC004DEBE4 /* UITableView.swift */,
 				BD59ACEC1EE6D7C8004DEBE4 /* UIViewController.swift */,
+				BD8DDE9B1F3263C8002B78EE /* UICollectionViewController.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -329,6 +363,56 @@
 			name = login;
 			sourceTree = "<group>";
 		};
+		BD8DDE861F323B6C002B78EE /* Collection View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BD8DDE871F323BC8002B78EE /* CollectionViewController.swift */,
+				BD8DDE891F323DB0002B78EE /* ResponsiveCollectionViewController.swift */,
+			);
+			name = "Collection View Controllers";
+			sourceTree = "<group>";
+		};
+		BD8DDE8B1F323ED9002B78EE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BD8DDE8D1F323F11002B78EE /* ContinueWatchingCollectionReusableView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		BD8DDE8C1F323EEE002B78EE /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				BDCC4EE31F348729001FC712 /* View Controllers */,
+				BD8DDE961F32485C002B78EE /* Main View Controllers */,
+				BD8DDE8F1F324125002B78EE /* Collection View Cells */,
+				BD8DDE8B1F323ED9002B78EE /* Views */,
+				BD8DDE861F323B6C002B78EE /* Collection View Controllers */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		BD8DDE8F1F324125002B78EE /* Collection View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BD8DDE921F3241AF002B78EE /* ContinueWatchingCollectionViewCell.xib */,
+				BD8DDE901F32416D002B78EE /* ContinueWatchingCollectionViewCell.swift */,
+				BD8DDE941F32458E002B78EE /* BaseCollectionViewCell.swift */,
+				BD8DDEA11F333DED002B78EE /* CoverCollectionViewCell.swift */,
+			);
+			name = "Collection View Cells";
+			sourceTree = "<group>";
+		};
+		BD8DDE961F32485C002B78EE /* Main View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BD8DDE971F324887002B78EE /* MainViewController.swift */,
+				BD8DDE9F1F3336F4002B78EE /* MoviesViewController.swift */,
+				BD8DDEA31F334469002B78EE /* MediaViewController.swift */,
+			);
+			name = "Main View Controllers";
+			sourceTree = "<group>";
+		};
 		BD96F8C21F2759F500229D28 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,6 +433,7 @@
 			children = (
 				BD96F8C31F275A8800229D28 /* DetailViewController.swift */,
 				BD96F8CB1F27D2A800229D28 /* ShowDetailTableViewCell.swift */,
+				BDCC4EE41F348A55001FC712 /* EpisodeDetailViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -446,6 +531,7 @@
 		BDA16F671EE58BFA00164AE2 /* Essencial */ = {
 			isa = PBXGroup;
 			children = (
+				BD8DDE8C1F323EEE002B78EE /* UI */,
 				BD96F8C51F275CAA00229D28 /* Resources */,
 				BDB32A8B1F1CEE2F005C63F5 /* Parser */,
 				BDB32A841F1CCF39005C63F5 /* Transform */,
@@ -547,6 +633,7 @@
 			children = (
 				BDA32F871EE7867300078E1B /* TraktTVAPI.swift */,
 				BD4693F61F1687640055EAD7 /* ThemoviedbAPI.swift */,
+				BD8DDEA51F334812002B78EE /* MovieManager.swift */,
 			);
 			name = Api;
 			sourceTree = "<group>";
@@ -567,6 +654,15 @@
 				BD48887A1F1F8C03004080AA /* WatchListParser.swift */,
 			);
 			name = Parser;
+			sourceTree = "<group>";
+		};
+		BDCC4EE31F348729001FC712 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BDCC4EE11F34871D001FC712 /* ItemViewController.swift */,
+				BDCC4EE61F348CC6001FC712 /* UpNextViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -691,6 +787,7 @@
 				BDA16F731EE58BFA00164AE2 /* LaunchScreen.storyboard in Resources */,
 				BDA16F701EE58BFA00164AE2 /* Assets.xcassets in Resources */,
 				BDA16F6E1EE58BFA00164AE2 /* Main.storyboard in Resources */,
+				BD8DDE931F3241AF002B78EE /* ContinueWatchingCollectionViewCell.xib in Resources */,
 				BD59ACE31EE6C7AF004DEBE4 /* ImageHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -867,44 +964,57 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD8DDE881F323BC8002B78EE /* CollectionViewController.swift in Sources */,
 				BD46940E1F17DA5A0055EAD7 /* WatchingInteractor.swift in Sources */,
 				BDB32A8D1F1CF66F005C63F5 /* WatchedParser.swift in Sources */,
+				BDCC4EE51F348A55001FC712 /* EpisodeDetailViewController.swift in Sources */,
 				BD59ACD61EE6C5A5004DEBE4 /* UIApplication.swift in Sources */,
 				BDB32A911F1D45B9005C63F5 /* Seasons.swift in Sources */,
+				BD8DDE8A1F323DB0002B78EE /* ResponsiveCollectionViewController.swift in Sources */,
 				BD981AE41EF070A500458123 /* WatchListViewProtocol.swift in Sources */,
+				BDCC4EE71F348CC6001FC712 /* UpNextViewController.swift in Sources */,
 				BD981AE71EF0745600458123 /* WatchListRemoteDataManager.swift in Sources */,
 				BD082C921F2907D00016C631 /* WatchedCellOutputPresenter.swift in Sources */,
 				BD981AEA1EF1B8F200458123 /* WatchListTableViewCell.swift in Sources */,
 				BD59ACF31EE7190F004DEBE4 /* MenuController.swift in Sources */,
+				BDCC4EE21F34871E001FC712 /* ItemViewController.swift in Sources */,
 				BDA16F6B1EE58BFA00164AE2 /* ViewController.swift in Sources */,
+				BD8DDE981F324887002B78EE /* MainViewController.swift in Sources */,
 				BDB32A931F1D467A005C63F5 /* Episodes.swift in Sources */,
 				BD48887B1F1F8C03004080AA /* WatchListParser.swift in Sources */,
 				BD981ADE1EF0503D00458123 /* UserRemoteDataManager.swift in Sources */,
 				BDB32A881F1CD5B9005C63F5 /* Movie.swift in Sources */,
 				BD881FA21EEF6764001A0FEB /* UserEntity.swift in Sources */,
 				BD981AE11EF052A900458123 /* UserInteractor.swift in Sources */,
+				BD8DDEA41F334469002B78EE /* MediaViewController.swift in Sources */,
 				BD5399E21F2BD58200A32827 /* UIKit+Extension.swift in Sources */,
 				BD96F8CC1F27D2A800229D28 /* ShowDetailTableViewCell.swift in Sources */,
 				BDA16F991EE58EE100164AE2 /* WatchListViewController.swift in Sources */,
+				BD8DDE951F32458E002B78EE /* BaseCollectionViewCell.swift in Sources */,
 				BD96F8C41F275A8800229D28 /* DetailViewController.swift in Sources */,
 				BDB32A8A1F1CD6D3005C63F5 /* Ids.swift in Sources */,
 				BD59ACDF1EE6C72E004DEBE4 /* LeftViewController.swift in Sources */,
 				BD59ACE91EE6D3EA004DEBE4 /* BaseTableViewCell.swift in Sources */,
 				BD981AD81EF0248500458123 /* LeftMenuViewProtocols.swift in Sources */,
 				BD59AF631EE9B2D8004DEBE4 /* LoginTrakt.swift in Sources */,
+				BD8DDE8E1F323F11002B78EE /* ContinueWatchingCollectionReusableView.swift in Sources */,
 				BD082C941F290E360016C631 /* WatchedCellInteractor.swift in Sources */,
 				BDB32A8F1F1D4518005C63F5 /* Show.swift in Sources */,
 				BD46940B1F17D9200055EAD7 /* WatchingOutputPresenter.swift in Sources */,
 				BD4694021F1795360055EAD7 /* WatchingCollectionViewCell.swift in Sources */,
 				BD4888791F1F7852004080AA /* WatchPattern.swift in Sources */,
 				BDA16F9B1EE58F2E00164AE2 /* WatchListDataSource.swift in Sources */,
+				BD8DDE9C1F3263C8002B78EE /* UICollectionViewController.swift in Sources */,
 				BD59ACDC1EE6C681004DEBE4 /* String.swift in Sources */,
+				BD8DDE911F32416D002B78EE /* ContinueWatchingCollectionViewCell.swift in Sources */,
 				BDA16F691EE58BFA00164AE2 /* AppDelegate.swift in Sources */,
 				BD082C901F28FD200016C631 /* Produce.swift in Sources */,
 				BDA32F881EE7867300078E1B /* TraktTVAPI.swift in Sources */,
 				BD59ACE11EE6C78E004DEBE4 /* ImageHeaderView.swift in Sources */,
+				BD8DDEA01F3336F4002B78EE /* MoviesViewController.swift in Sources */,
 				BDA16F9E1EE58FE900164AE2 /* WatchListOutputPresenter.swift in Sources */,
 				BD4693FF1F1787390055EAD7 /* WatchingCollectionViewController.swift in Sources */,
+				BD8DDEA61F334812002B78EE /* MovieManager.swift in Sources */,
 				BD4694111F17DC6E0055EAD7 /* WatchingRemoteDataManager.swift in Sources */,
 				BD4694081F17D7410055EAD7 /* WatchingViewProtocol.swift in Sources */,
 				BD59ACEB1EE6D4EC004DEBE4 /* UITableView.swift in Sources */,
@@ -915,6 +1025,8 @@
 				BD59ACD11EE6C3D4004DEBE4 /* SlideMenuController.swift in Sources */,
 				BD59ACED1EE6D7C8004DEBE4 /* UIViewController.swift in Sources */,
 				BD082C961F29132B0016C631 /* WatchedCellRemoteDataManager.swift in Sources */,
+				BD8DDE9E1F326DAB002B78EE /* CGSize+Min.swift in Sources */,
+				BD8DDEA21F333DED002B78EE /* CoverCollectionViewCell.swift in Sources */,
 				BD59ACDA1EE6C64B004DEBE4 /* UIColor.swift in Sources */,
 				BD59ACE51EE6D000004DEBE4 /* UIView.swift in Sources */,
 				BD4888771F1F7043004080AA /* WatchList.swift in Sources */,

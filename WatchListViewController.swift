@@ -26,7 +26,7 @@ class WatchListViewController: UIViewController, UITableViewDelegate, SFSafariVi
     
     override func viewDidLoad() {
         super.viewDidLoad()  
-        presenter?.viewDidLoad(type: .Shows)
+        presenter?.viewDidLoad(type: .shows)
     }
     
     func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
